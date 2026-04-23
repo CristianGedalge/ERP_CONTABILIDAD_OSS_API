@@ -9,9 +9,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import java.util.HashSet;
 import java.util.Set;
+
 
 @Entity
 @Table(name = "rol")
@@ -33,6 +35,9 @@ public class Rol {
 		inverseJoinColumns = @JoinColumn(name = "id_permiso")
 	)
 	private Set<Permiso> permisos = new HashSet<>();
+
+	@OneToMany(mappedBy = "rol")
+	private Set<Usuario> usuarios = new HashSet<>();
 
 	public Long getId() {
 		return id;
@@ -64,5 +69,13 @@ public class Rol {
 
 	public void setPermisos(Set<Permiso> permisos) {
 		this.permisos = permisos;
+	}
+
+	public Set<Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(Set<Usuario> usuarios) {
+		this.usuarios = usuarios;
 	}
 }

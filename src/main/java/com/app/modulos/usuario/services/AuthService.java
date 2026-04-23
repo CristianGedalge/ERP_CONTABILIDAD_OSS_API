@@ -7,7 +7,6 @@ import com.app.modulos.usuario.entities.Usuario;
 import com.app.modulos.usuario.repositories.UserRepository;
 import com.app.modulos.usuario.security.JwtService;
 import com.app.modulos.usuario.security.UserDetailsServiceImpl;
-import java.util.HashSet;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -40,7 +39,7 @@ public class AuthService {
 		authenticationManager.authenticate(
 			new UsernamePasswordAuthenticationToken(request.getCorreo(), request.getPassword())
 		);
-		UserDetails userDetails = userDetailsService.loadUserByUsername(request.getCorreo());
+		UserDetails userDetails = userDetailsService.loadUserByCorreo(request.getCorreo());
 		String token = jwtService.generateToken(userDetails);
 		return new AuthResponse(token);
 	}
@@ -57,10 +56,9 @@ public class AuthService {
 		usuario.setUsername(request.getUsername());
 		usuario.setCorreo(request.getCorreo());
 		usuario.setPassword(passwordEncoder.encode(request.getPassword()));
-		usuario.setUsuarioRoles(new HashSet<>());
 		userRepository.save(usuario);
 
-		UserDetails userDetails = userDetailsService.loadUserByUsername(usuario.getCorreo());
+		UserDetails userDetails = userDetailsService.loadUserByCorreo(usuario.getCorreo());
 		String token = jwtService.generateToken(userDetails);
 		return new AuthResponse(token);
 	}

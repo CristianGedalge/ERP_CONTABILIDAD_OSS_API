@@ -2,14 +2,12 @@ package com.app.modulos.usuario.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
-import java.util.HashSet;
-import java.util.Set;
 
 @Entity
 @Table(name = "usuario")
@@ -33,8 +31,9 @@ public class Usuario {
 	@Column(name = "id_empresa")
 	private Long idEmpresa;
 
-	@OneToMany(mappedBy = "usuario", fetch = FetchType.EAGER)
-	private Set<UsuarioRol> usuarioRoles = new HashSet<>();
+	@ManyToOne
+	@JoinColumn(name = "id_rol")
+	private Rol rol;
 
 	public Long getId() {
 		return id;
@@ -76,6 +75,7 @@ public class Usuario {
 		this.estado = estado;
 	}
 
+
 	public Long getIdEmpresa() {
 		return idEmpresa;
 	}
@@ -84,11 +84,11 @@ public class Usuario {
 		this.idEmpresa = idEmpresa;
 	}
 
-	public Set<UsuarioRol> getUsuarioRoles() {
-		return usuarioRoles;
+	public Rol getRol() {
+		return rol;
 	}
 
-	public void setUsuarioRoles(Set<UsuarioRol> usuarioRoles) {
-		this.usuarioRoles = usuarioRoles;
+	public void setRol(Rol rol) {
+		this.rol = rol;
 	}
 }
