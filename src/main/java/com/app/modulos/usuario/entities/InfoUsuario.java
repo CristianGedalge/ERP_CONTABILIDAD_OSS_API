@@ -1,22 +1,25 @@
-package com.app.modulos.empresa.entities;
+package com.app.modulos.usuario.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "personal")
-public class Personal {
+@Table(name = "info_usuario")
+public class InfoUsuario {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@Column(name = "nombre", nullable = false, length = 150)
 	private String nombre;
-    
+
 	@Column(name = "ci", length = 50)
 	private String ci;
 
@@ -26,14 +29,10 @@ public class Personal {
 	@Column(name = "telefono", length = 50)
 	private String telefono;
 
-	@Column(name = "correo", length = 150)
-	private String correo;
-
-	@Column(name = "estado", nullable = false)
-	private Boolean estado = true;
-
-	@Column(name = "id_empresa")
-	private Long idEmpresa;
+	@OneToOne
+	@JoinColumn(name = "id_usuario", unique = true)
+	@JsonIgnore
+	private Usuario usuario;
 
 	public Long getId() {
 		return id;
@@ -75,27 +74,11 @@ public class Personal {
 		this.telefono = telefono;
 	}
 
-	public String getCorreo() {
-		return correo;
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setCorreo(String correo) {
-		this.correo = correo;
-	}
-
-	public Boolean getEstado() {
-		return estado;
-	}
-
-	public void setEstado(Boolean estado) {
-		this.estado = estado;
-	}
-
-	public Long getIdEmpresa() {
-		return idEmpresa;
-	}
-
-	public void setIdEmpresa(Long idEmpresa) {
-		this.idEmpresa = idEmpresa;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 }

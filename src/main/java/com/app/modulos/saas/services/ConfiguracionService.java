@@ -18,6 +18,18 @@ public class ConfiguracionService {
 		return configuracionRepository.findAll();
 	}
 
+	public List<Configuracion> findAllActivas() {
+		return configuracionRepository.findByEstadoTrue();
+	}
+
+	public List<Configuracion> findAllByEmpresa(Long idEmpresa) {
+		return configuracionRepository.findByIdEmpresa(idEmpresa);
+	}
+
+	public Optional<Configuracion> findByEmpresa(Long idEmpresa) {
+		return configuracionRepository.findFirstByIdEmpresa(idEmpresa);
+	}
+
 	public Optional<Configuracion> findById(Long id) {
 		return configuracionRepository.findById(id);
 	}
@@ -32,7 +44,12 @@ public class ConfiguracionService {
 			existing.setIt(input.getIt());
 			existing.setMoneda(input.getMoneda());
 			existing.setTipoCambio(input.getTipoCambio());
-			existing.setIdEmpresa(input.getIdEmpresa());
+			if (input.getEstado() != null) {
+				existing.setEstado(input.getEstado());
+			}
+			if (input.getIdEmpresa() != null) {
+				existing.setIdEmpresa(input.getIdEmpresa());
+			}
 			return configuracionRepository.save(existing);
 		});
 	}

@@ -2,6 +2,7 @@ package com.app.modulos.usuario.controllers;
 
 import com.app.modulos.usuario.dto.AuthRequest;
 import com.app.modulos.usuario.dto.AuthResponse;
+import com.app.modulos.usuario.dto.RegisterEmpresaRequest;
 import com.app.modulos.usuario.dto.RegisterRequest;
 import com.app.modulos.usuario.services.AuthService;
 import org.springframework.http.ResponseEntity;
@@ -27,5 +28,10 @@ public class AuthController {
 	@PostMapping("/register")
 	public ResponseEntity<AuthResponse> register(@RequestBody RegisterRequest request) {
 		return ResponseEntity.ok(authService.register(request));
+	}
+
+	@PostMapping("/register-empresa")
+	public ResponseEntity<AuthResponse> registerEmpresa(@RequestBody RegisterEmpresaRequest request) {
+		return ResponseEntity.ok(authService.registerEmpresa(request));
 	}
 }

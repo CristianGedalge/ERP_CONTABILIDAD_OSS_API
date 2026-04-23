@@ -18,8 +18,20 @@ public class UserService {
 		return userRepository.findAll();
 	}
 
+	public List<Usuario> findAllByEmpresa(Long idEmpresa) {
+		return userRepository.findByIdEmpresa(idEmpresa);
+	}
+
 	public Optional<Usuario> findById(Long id) {
 		return userRepository.findById(id);
+	}
+
+	public Optional<Usuario> findByUsername(String username) {
+		return userRepository.findByUsername(username);
+	}
+
+	public Optional<Usuario> findByCorreo(String correo) {
+		return userRepository.findByCorreo(correo);
 	}
 
 	public Usuario save(Usuario usuario) {
@@ -36,7 +48,9 @@ public class UserService {
 			if (input.getEstado() != null) {
 				existing.setEstado(input.getEstado());
 			}
-			existing.setIdEmpresa(input.getIdEmpresa());
+			if (input.getIdEmpresa() != null) {
+				existing.setIdEmpresa(input.getIdEmpresa());
+			}
 			return userRepository.save(existing);
 		});
 	}
