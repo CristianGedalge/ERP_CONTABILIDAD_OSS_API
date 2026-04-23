@@ -3,7 +3,6 @@ package com.app.modulos.usuario.security;
 import com.app.modulos.usuario.entities.Permiso;
 import com.app.modulos.usuario.entities.Rol;
 import com.app.modulos.usuario.entities.Usuario;
-import com.app.modulos.usuario.entities.UsuarioRol;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
@@ -21,13 +20,11 @@ public class UserPrincipal implements UserDetails {
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		Set<GrantedAuthority> authorities = new HashSet<>();
-		for (UsuarioRol usuarioRol : usuario.getUsuarioRoles()) {
-			Rol rol = usuarioRol.getRol();
-			if (rol != null) {
-				authorities.add(new SimpleGrantedAuthority("ROLE_" + rol.getNombre()));
-				for (Permiso permiso : rol.getPermisos()) {
-					authorities.add(new SimpleGrantedAuthority("PERM_" + permiso.getNombre()));
-				}
+		Rol rol = usuario.getRol();
+		if (rol != null) {
+			authorities.add(new SimpleGrantedAuthority("ROLE_" + rol.getNombre()));
+			for (Permiso permiso : rol.getPermisos()) {
+				authorities.add(new SimpleGrantedAuthority("PERM_" + permiso.getNombre()));
 			}
 		}
 		return authorities;
