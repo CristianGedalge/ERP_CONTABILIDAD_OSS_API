@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.usuario.security.UserPrincipal;
 
@@ -25,11 +26,13 @@ public class EmpresaController {
 	}
 
 	@GetMapping
+	@PreAuthorize("hasRole('SUPERADMIN')")
 	public ResponseEntity<List<Empresa>> list() {
 		return ResponseEntity.ok(empresaService.findAll());
 	}
 
 	@GetMapping("/{id}")
+	@PreAuthorize("hasRole('SUPERADMIN') or hasRole('ADMIN') or hasAuthority('PERM_EMPRESA_READ')")
 	public ResponseEntity<Empresa> get(@PathVariable Long id) {
 		return empresaService.findById(id)
 			.map(ResponseEntity::ok)
@@ -37,6 +40,7 @@ public class EmpresaController {
 	}
 
 	@PostMapping
+	@PreAuthorize("hasRole('SUPERADMIN')")
 	public ResponseEntity<Empresa> create(
 		@RequestBody Empresa empresa,
 		@AuthenticationPrincipal UserPrincipal principal
@@ -49,6 +53,7 @@ public class EmpresaController {
 	}
 
 	@PutMapping("/{id}")
+	@PreAuthorize("hasRole('SUPERADMIN') or hasRole('ADMIN') or hasAuthority('PERM_EMPRESA_WRITE')")
 	public ResponseEntity<Empresa> update(@PathVariable Long id, @RequestBody Empresa empresa) {
 		return empresaService.update(id, empresa)
 			.map(ResponseEntity::ok)
@@ -56,6 +61,7 @@ public class EmpresaController {
 	}
 
 	@DeleteMapping("/{id}")
+	@PreAuthorize("hasRole('SUPERADMIN')")
 	public ResponseEntity<Empresa> disable(@PathVariable Long id) {
 		return empresaService.disable(id)
 			.map(ResponseEntity::ok)

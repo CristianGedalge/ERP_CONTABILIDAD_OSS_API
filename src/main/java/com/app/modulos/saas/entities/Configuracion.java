@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
 
@@ -27,8 +29,15 @@ public class Configuracion {
 	@Column(name = "tipo_cambio")
 	private BigDecimal tipoCambio;
 
+	@Column(name = "estado", nullable = false)
+	private Boolean estado = true;
+
 	@Column(name = "id_empresa")
 	private Long idEmpresa;
+
+	@OneToOne
+	@JoinColumn(name = "id_empresa", insertable = false, updatable = false)
+	private com.app.modulos.empresa.entities.Empresa empresa;
 
 	public Long getId() {
 		return id;
@@ -70,11 +79,27 @@ public class Configuracion {
 		this.tipoCambio = tipoCambio;
 	}
 
+	public Boolean getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Boolean estado) {
+		this.estado = estado;
+	}
+
 	public Long getIdEmpresa() {
 		return idEmpresa;
 	}
 
 	public void setIdEmpresa(Long idEmpresa) {
 		this.idEmpresa = idEmpresa;
+	}
+
+	public com.app.modulos.empresa.entities.Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(com.app.modulos.empresa.entities.Empresa empresa) {
+		this.empresa = empresa;
 	}
 }
