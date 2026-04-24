@@ -19,7 +19,7 @@ public class UserService {
 	}
 
 	public List<Usuario> findAllByEmpresa(Long idEmpresa) {
-		return userRepository.findByIdEmpresa(idEmpresa);
+		return userRepository.findByIdEmpresaAndEstadoTrue(idEmpresa);
 	}
 
 	public Optional<Usuario> findById(Long id) {
