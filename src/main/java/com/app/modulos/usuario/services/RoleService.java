@@ -18,11 +18,36 @@ public class RoleService {
 		return roleRepository.findAll();
 	}
 
+	public List<Rol> findAllByEmpresa(Long idEmpresa) {
+		return roleRepository.findByIdEmpresaAndEstadoTrueOrderByIdAsc(idEmpresa);
+	}
+
 	public Optional<Rol> findById(Long id) {
-		return roleRepository.findById(id);
+		return roleRepository.findByIdAndEstadoTrue(id);
 	}
 
 	public Rol save(Rol rol) {
 		return roleRepository.save(rol);
+	}
+
+	public Optional<Rol> update(Long id, Rol input) {
+		return roleRepository.findById(id).map(existing -> {
+			existing.setNombre(input.getNombre());
+			existing.setDescripcion(input.getDescripcion());
+			if (input.getIdEmpresa() != null) {
+				existing.setIdEmpresa(input.getIdEmpresa());
+			}
+			if (input.getEstado() != null && Boolean.TRUE.equals(input.getEstado())) {
+				existing.setEstado(true);
+			}
+			return roleRepository.save(existing);
+		});
+	}
+
+	public Optional<Rol> disable(Long id) {
+		return roleRepository.findById(id).map(existing -> {
+			existing.setEstado(false);
+			return roleRepository.save(existing);
+		});
 	}
 }

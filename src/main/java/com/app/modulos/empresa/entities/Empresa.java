@@ -1,11 +1,16 @@
 package com.app.modulos.empresa.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 @Table(name = "empresa")
@@ -34,6 +39,16 @@ public class Empresa {
 
 	@Column(name = "estado", nullable = false)
 	private Boolean estado = true;
+
+	@OneToMany(mappedBy = "empresa")
+	private Set<com.app.modulos.saas.entities.Suscripcion> suscripciones = new HashSet<>();
+
+	@OneToOne(mappedBy = "empresa")
+	private com.app.modulos.saas.entities.Configuracion configuracion;
+
+	@OneToMany(mappedBy = "empresa")
+	@JsonIgnore
+	private Set<com.app.modulos.usuario.entities.Usuario> usuarios = new HashSet<>();
 
 	public Long getId() {
 		return id;
@@ -97,5 +112,29 @@ public class Empresa {
 
 	public void setEstado(Boolean estado) {
 		this.estado = estado;
+	}
+
+	public Set<com.app.modulos.saas.entities.Suscripcion> getSuscripciones() {
+		return suscripciones;
+	}
+
+	public void setSuscripciones(Set<com.app.modulos.saas.entities.Suscripcion> suscripciones) {
+		this.suscripciones = suscripciones;
+	}
+
+	public com.app.modulos.saas.entities.Configuracion getConfiguracion() {
+		return configuracion;
+	}
+
+	public void setConfiguracion(com.app.modulos.saas.entities.Configuracion configuracion) {
+		this.configuracion = configuracion;
+	}
+
+	public Set<com.app.modulos.usuario.entities.Usuario> getUsuarios() {
+		return usuarios;
+	}
+
+	public void setUsuarios(Set<com.app.modulos.usuario.entities.Usuario> usuarios) {
+		this.usuarios = usuarios;
 	}
 }

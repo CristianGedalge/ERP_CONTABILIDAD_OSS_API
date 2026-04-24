@@ -1,5 +1,6 @@
 package com.app.modulos.usuario.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -22,11 +23,17 @@ public class Rol {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "nombre", nullable = false, unique = true, length = 100)
+	@Column(name = "nombre", nullable = false, length = 100)
 	private String nombre;
 
 	@Column(name = "descripcion", length = 200)
 	private String descripcion;
+
+	@Column(name = "id_empresa")
+	private Long idEmpresa;
+
+	@Column(name = "estado", nullable = false)
+	private Boolean estado = true;
 
 	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(
@@ -37,6 +44,7 @@ public class Rol {
 	private Set<Permiso> permisos = new HashSet<>();
 
 	@OneToMany(mappedBy = "rol")
+	@JsonIgnore
 	private Set<Usuario> usuarios = new HashSet<>();
 
 	public Long getId() {
@@ -61,6 +69,22 @@ public class Rol {
 
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
+	}
+
+	public Long getIdEmpresa() {
+		return idEmpresa;
+	}
+
+	public void setIdEmpresa(Long idEmpresa) {
+		this.idEmpresa = idEmpresa;
+	}
+
+	public Boolean getEstado() {
+		return estado;
+	}
+
+	public void setEstado(Boolean estado) {
+		this.estado = estado;
 	}
 
 	public Set<Permiso> getPermisos() {

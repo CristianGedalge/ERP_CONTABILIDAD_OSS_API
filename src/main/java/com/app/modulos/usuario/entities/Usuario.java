@@ -1,5 +1,6 @@
 package com.app.modulos.usuario.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -7,6 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -23,6 +25,7 @@ public class Usuario {
 	private String correo;
 
 	@Column(name = "password", nullable = false)
+	@com.fasterxml.jackson.annotation.JsonIgnore
 	private String password;
 
 	@Column(name = "estado", nullable = false)
@@ -32,8 +35,16 @@ public class Usuario {
 	private Long idEmpresa;
 
 	@ManyToOne
+	@JoinColumn(name = "id_empresa", insertable = false, updatable = false)
+	@JsonIgnore
+	private com.app.modulos.empresa.entities.Empresa empresa;
+
+	@ManyToOne
 	@JoinColumn(name = "id_rol")
 	private Rol rol;
+
+	@OneToOne(mappedBy = "usuario")
+	private InfoUsuario infoUsuario;
 
 	public Long getId() {
 		return id;
@@ -84,11 +95,27 @@ public class Usuario {
 		this.idEmpresa = idEmpresa;
 	}
 
+	public com.app.modulos.empresa.entities.Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(com.app.modulos.empresa.entities.Empresa empresa) {
+		this.empresa = empresa;
+	}
+
 	public Rol getRol() {
 		return rol;
 	}
 
 	public void setRol(Rol rol) {
 		this.rol = rol;
+	}
+
+	public InfoUsuario getInfoUsuario() {
+		return infoUsuario;
+	}
+
+	public void setInfoUsuario(InfoUsuario infoUsuario) {
+		this.infoUsuario = infoUsuario;
 	}
 }

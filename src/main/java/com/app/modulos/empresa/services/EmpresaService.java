@@ -19,11 +19,11 @@ public class EmpresaService {
 	}
 
 	public List<Empresa> findAll() {
-		return empresaRepository.findAll();
+		return empresaRepository.findByEstadoTrueOrderByIdAsc();
 	}
 
 	public Optional<Empresa> findById(Long id) {
-		return empresaRepository.findById(id);
+		return empresaRepository.findByIdAndEstadoTrue(id);
 	}
 
 	public Empresa save(Empresa empresa) {

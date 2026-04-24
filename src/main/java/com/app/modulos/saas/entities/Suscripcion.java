@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -33,6 +35,10 @@ public class Suscripcion {
 
 	@Column(name = "id_empresa")
 	private Long idEmpresa;
+
+	@ManyToOne
+	@JoinColumn(name = "id_empresa", insertable = false, updatable = false)
+	private com.app.modulos.empresa.entities.Empresa empresa;
 
 	public Long getId() {
 		return id;
@@ -88,5 +94,13 @@ public class Suscripcion {
 
 	public void setIdEmpresa(Long idEmpresa) {
 		this.idEmpresa = idEmpresa;
+	}
+
+	public com.app.modulos.empresa.entities.Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(com.app.modulos.empresa.entities.Empresa empresa) {
+		this.empresa = empresa;
 	}
 }
