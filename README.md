@@ -79,6 +79,24 @@ mvnw.cmd spring-boot:run -Dspring-boot.run.profiles=local
 
 Para ejecutar con el perfil por defecto (variables de entorno), elimina `-Dspring-boot.run.profiles=local`.
 
+## Ejecutar con Docker
+
+El proyecto incluye un entorno preconfigurado usando `docker-compose`. Esto levantará tanto la base de datos PostgreSQL como la aplicación Spring Boot.
+
+### Construir y levantar los contenedores
+
+```bash
+docker-compose up --build -d
+```
+
+### Detener los contenedores
+
+```bash
+docker-compose down
+```
+
+**Nota sobre Docker**: El archivo `docker-compose.yml` ya configura las variables de entorno necesarias para que el contenedor de Spring Boot se comunique correctamente con la base de datos a través de la red interna de Docker.
+
 ## Notas
 
 - El perfil `local` lee `application-local.properties`.
