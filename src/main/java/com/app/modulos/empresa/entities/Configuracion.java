@@ -1,4 +1,4 @@
-package com.app.modulos.saas.entities;
+package com.app.modulos.empresa.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

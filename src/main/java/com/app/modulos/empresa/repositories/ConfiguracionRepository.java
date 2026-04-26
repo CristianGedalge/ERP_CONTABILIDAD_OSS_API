@@ -1,6 +1,6 @@
-package com.app.modulos.saas.repositories;
+package com.app.modulos.empresa.repositories;
 
-import com.app.modulos.saas.entities.Configuracion;
+import com.app.modulos.empresa.entities.Configuracion;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;

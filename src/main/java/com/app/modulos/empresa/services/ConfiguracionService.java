@@ -1,7 +1,7 @@
-package com.app.modulos.saas.services;
+package com.app.modulos.empresa.services;
 
-import com.app.modulos.saas.entities.Configuracion;
-import com.app.modulos.saas.repositories.ConfiguracionRepository;
+import com.app.modulos.empresa.entities.Configuracion;
+import com.app.modulos.empresa.repositories.ConfiguracionRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
