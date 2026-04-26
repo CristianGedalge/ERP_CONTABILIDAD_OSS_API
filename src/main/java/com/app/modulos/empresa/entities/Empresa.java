@@ -1,5 +1,7 @@
 package com.app.modulos.empresa.entities;
 
+import com.app.modulos.saas.entities.Suscripcion;
+import com.app.modulos.usuario.entities.Usuario;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -41,14 +43,14 @@ public class Empresa {
 	private Boolean estado = true;
 
 	@OneToMany(mappedBy = "empresa")
-	private Set<com.app.modulos.saas.entities.Suscripcion> suscripciones = new HashSet<>();
+	private Set<Suscripcion> suscripciones = new HashSet<>();
 
 	@OneToOne(mappedBy = "empresa")
-	private com.app.modulos.saas.entities.Configuracion configuracion;
+	private Configuracion configuracion;
 
 	@OneToMany(mappedBy = "empresa")
 	@JsonIgnore
-	private Set<com.app.modulos.usuario.entities.Usuario> usuarios = new HashSet<>();
+	private Set<Usuario> usuarios = new HashSet<>();
 
 	public Long getId() {
 		return id;
@@ -114,27 +116,27 @@ public class Empresa {
 		this.estado = estado;
 	}
 
-	public Set<com.app.modulos.saas.entities.Suscripcion> getSuscripciones() {
+	public Set<Suscripcion> getSuscripciones() {
 		return suscripciones;
 	}
 
-	public void setSuscripciones(Set<com.app.modulos.saas.entities.Suscripcion> suscripciones) {
+	public void setSuscripciones(Set<Suscripcion> suscripciones) {
 		this.suscripciones = suscripciones;
 	}
 
-	public com.app.modulos.saas.entities.Configuracion getConfiguracion() {
+	public Configuracion getConfiguracion() {
 		return configuracion;
 	}
 
-	public void setConfiguracion(com.app.modulos.saas.entities.Configuracion configuracion) {
+	public void setConfiguracion(Configuracion configuracion) {
 		this.configuracion = configuracion;
 	}
 
-	public Set<com.app.modulos.usuario.entities.Usuario> getUsuarios() {
+	public Set<Usuario> getUsuarios() {
 		return usuarios;
 	}
 
-	public void setUsuarios(Set<com.app.modulos.usuario.entities.Usuario> usuarios) {
+	public void setUsuarios(Set<Usuario> usuarios) {
 		this.usuarios = usuarios;
 	}
 }
