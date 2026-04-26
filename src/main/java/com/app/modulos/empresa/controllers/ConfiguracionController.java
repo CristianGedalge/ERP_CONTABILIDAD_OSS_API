@@ -1,7 +1,7 @@
-package com.app.modulos.saas.controllers;
+package com.app.modulos.empresa.controllers;
 
-import com.app.modulos.saas.entities.Configuracion;
-import com.app.modulos.saas.services.ConfiguracionService;
+import com.app.modulos.empresa.entities.Configuracion;
+import com.app.modulos.empresa.services.ConfiguracionService;
 import jakarta.servlet.http.HttpServletRequest;
 import java.util.List;
 import org.springframework.http.ResponseEntity;

@@ -1,5 +1,6 @@
 package com.app.modulos.usuario.entities;
 
+import com.app.modulos.empresa.entities.Empresa;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -37,7 +38,7 @@ public class Usuario {
 	@ManyToOne
 	@JoinColumn(name = "id_empresa", insertable = false, updatable = false)
 	@JsonIgnore
-	private com.app.modulos.empresa.entities.Empresa empresa;
+	private Empresa empresa;
 
 	@ManyToOne
 	@JoinColumn(name = "id_rol")
@@ -95,11 +96,11 @@ public class Usuario {
 		this.idEmpresa = idEmpresa;
 	}
 
-	public com.app.modulos.empresa.entities.Empresa getEmpresa() {
+	public Empresa getEmpresa() {
 		return empresa;
 	}
 
-	public void setEmpresa(com.app.modulos.empresa.entities.Empresa empresa) {
+	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
 	}
 
