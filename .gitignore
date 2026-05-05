@@ -39,3 +39,6 @@ build/
 
 ### Local env overrides ###
 src/main/resources/application-local.properties
+.env
+
+
