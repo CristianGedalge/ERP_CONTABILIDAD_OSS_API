@@ -37,7 +37,7 @@ public class Configuracion {
 
 	@OneToOne
 	@JoinColumn(name = "id_empresa", insertable = false, updatable = false)
-	private com.app.modulos.empresa.entities.Empresa empresa;
+	private Empresa empresa;
 
 	public Long getId() {
 		return id;
@@ -95,11 +95,11 @@ public class Configuracion {
 		this.idEmpresa = idEmpresa;
 	}
 
-	public com.app.modulos.empresa.entities.Empresa getEmpresa() {
+	public Empresa getEmpresa() {
 		return empresa;
 	}
 
-	public void setEmpresa(com.app.modulos.empresa.entities.Empresa empresa) {
+	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
 	}
 }
