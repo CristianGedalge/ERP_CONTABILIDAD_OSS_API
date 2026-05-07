@@ -27,7 +27,7 @@ public class RoleController {
 	@GetMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_ROL_READ')")
 	public ResponseEntity<List<Rol>> list(HttpServletRequest request) {
-    Long empresaId = (Long) request.getAttribute("empresaId");
+    	Long empresaId = (Long) request.getAttribute("empresaId");
 		return ResponseEntity.ok(roleService.findAllByEmpresa(empresaId));
 	}
 

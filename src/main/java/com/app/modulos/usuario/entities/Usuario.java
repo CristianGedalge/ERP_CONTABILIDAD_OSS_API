@@ -4,6 +4,7 @@ import com.app.modulos.empresa.entities.Empresa;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+//import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -40,7 +41,7 @@ public class Usuario {
 	@JsonIgnore
 	private Empresa empresa;
 
-	@ManyToOne
+	@ManyToOne	
 	@JoinColumn(name = "id_rol")
 	private Rol rol;
 
