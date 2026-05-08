@@ -4,9 +4,9 @@ services:
     container_name: postgres_db
     restart: always
     environment:
-      - POSTGRES_DB=ERP_OPENSOURCE_DB
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=tu_password_aqui
+      - POSTGRES_DB=erp_db
+      - POSTGRES_USER=erp
+      - POSTGRES_PASSWORD=Abril2026+++
     ports:
       - "5432:5432"
     volumes:
@@ -21,10 +21,10 @@ services:
       - db
     environment:
       # NOTA: Aquí el host es 'db', no 'localhost'
-      - DB_URL=jdbc:postgresql://db:5432/ERP_OPENSOURCE_DB
-      - DB_USERNAME=postgres
-      - DB_PASSWORD=tu_password_aqui
-      - JWT_SECRET=${JWT_SECRET:-mi_secreto_local_seguro}
+      - DB_URL=jdbc:postgresql://db:5432/erp_db
+      - DB_USERNAME=erp
+      - DB_PASSWORD=Abril2026+++
+      - JWT_SECRET=Zm9yZ2V0LW5vdC10by11c2UtemUta2V5LXdpdGgtZW5vdWdoLWxlbmd0aC1pbi1iYXNlNjQ0NA==
       - JWT_EXPIRATION_MS=86400000
 
 volumes:

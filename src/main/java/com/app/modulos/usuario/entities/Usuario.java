@@ -26,7 +26,7 @@ public class Usuario {
 	private String correo;
 
 	@Column(name = "password", nullable = false)
-	@com.fasterxml.jackson.annotation.JsonIgnore
+	@com.fasterxml.jackson.annotation.JsonProperty(access = com.fasterxml.jackson.annotation.JsonProperty.Access.WRITE_ONLY)
 	private String password;
 
 	@Column(name = "estado", nullable = false)
@@ -45,6 +45,7 @@ public class Usuario {
 	private Rol rol;
 
 	@OneToOne(mappedBy = "usuario")
+	@JsonIgnore
 	private InfoUsuario infoUsuario;
 
 	public Long getId() {

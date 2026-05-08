@@ -42,16 +42,19 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 			UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 			if (jwtService.isTokenValid(token, userDetails)) {
 				request.setAttribute("correo", username);
-				Long empresaId = jwtService.extractClaim(token, "empresaId", Long.class);
-				Long roleId = jwtService.extractClaim(token, "roleId", Long.class);
+				Object empresaIdObj = jwtService.extractClaim(token, "empresaId", Object.class);
+				Object roleIdObj = jwtService.extractClaim(token, "roleId", Object.class);
+				
+				if (empresaIdObj != null) {
+					request.setAttribute("empresaId", Long.valueOf(empresaIdObj.toString()));
+				}
+				if (roleIdObj != null) {
+					request.setAttribute("roleId", Long.valueOf(roleIdObj.toString()));
+				}
+				
 				String roleName = jwtService.extractClaim(token, "roleName", String.class);
 				String claimUsername = jwtService.extractClaim(token, "username", String.class);
-				if (empresaId != null) {
-					request.setAttribute("empresaId", empresaId);
-				}
-				if (roleId != null) {
-					request.setAttribute("roleId", roleId);
-				}
+				
 				if (roleName != null) {
 					request.setAttribute("roleName", roleName);
 				}

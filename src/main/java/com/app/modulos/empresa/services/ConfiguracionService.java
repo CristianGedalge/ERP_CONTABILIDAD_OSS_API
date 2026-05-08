@@ -38,6 +38,19 @@ public class ConfiguracionService {
 		return configuracionRepository.save(configuracion);
 	}
 
+	public Optional<Configuracion> updateByEmpresa(Long idEmpresa, Configuracion input) {
+		return configuracionRepository.findFirstByIdEmpresa(idEmpresa).map(existing -> {
+			existing.setIva(input.getIva());
+			existing.setIt(input.getIt());
+			existing.setMoneda(input.getMoneda());
+			existing.setTipoCambio(input.getTipoCambio());
+			if (input.getEstado() != null) {
+				existing.setEstado(input.getEstado());
+			}
+			return configuracionRepository.save(existing);
+		});
+	}
+
 	public Optional<Configuracion> update(Long id, Configuracion input) {
 		return configuracionRepository.findById(id).map(existing -> {
 			existing.setIva(input.getIva());

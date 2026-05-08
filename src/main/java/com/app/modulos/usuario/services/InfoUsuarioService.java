@@ -18,6 +18,10 @@ public class InfoUsuarioService {
 		return infoUsuarioRepository.findAll();
 	}
 
+	public List<InfoUsuario> findAllByEmpresa(Long idEmpresa) {
+		return infoUsuarioRepository.findByUsuarioIdEmpresa(idEmpresa);
+	}
+
 	public Optional<InfoUsuario> findById(Long id) {
 		return infoUsuarioRepository.findById(id);
 	}

@@ -34,6 +34,9 @@ public class RoleService {
 		return roleRepository.findById(id).map(existing -> {
 			existing.setNombre(input.getNombre());
 			existing.setDescripcion(input.getDescripcion());
+			if (input.getPermisos() != null) {
+				existing.setPermisos(input.getPermisos());
+			}
 			if (input.getIdEmpresa() != null) {
 				existing.setIdEmpresa(input.getIdEmpresa());
 			}

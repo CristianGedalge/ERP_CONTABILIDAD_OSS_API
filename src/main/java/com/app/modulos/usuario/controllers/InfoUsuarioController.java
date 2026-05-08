@@ -13,6 +13,11 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import com.app.modulos.usuario.security.UserPrincipal;
+import org.springframework.http.HttpStatus;
+
 @RestController
 @RequestMapping("/api/info-usuario")
 public class InfoUsuarioController {
@@ -23,14 +28,30 @@ public class InfoUsuarioController {
 	}
 
 	@GetMapping
-	public ResponseEntity<List<InfoUsuario>> list() {
-		return ResponseEntity.ok(infoUsuarioService.findAll());
+	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_USER_READ')")
+	public ResponseEntity<List<InfoUsuario>> list(@AuthenticationPrincipal UserPrincipal principal) {
+		if (principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
+			return ResponseEntity.ok(infoUsuarioService.findAll());
+		}
+		return ResponseEntity.ok(infoUsuarioService.findAllByEmpresa(principal.getEmpresaId()));
 	}
 
 	@GetMapping("/{id}")
-	public ResponseEntity<InfoUsuario> get(@PathVariable Long id) {
+	@PreAuthorize("isAuthenticated()")
+	public ResponseEntity<InfoUsuario> get(@PathVariable Long id, @AuthenticationPrincipal UserPrincipal principal) {
 		return infoUsuarioService.findById(id)
-			.map(ResponseEntity::ok)
+			.map(info -> {
+				// Seguridad: Solo el dueño, su ADMIN o SUPERADMIN pueden ver
+				boolean isOwner = info.getUsuario() != null && info.getUsuario().getId().equals(principal.getUsuario().getId());
+				boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
+				boolean isAdminOfCompany = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN")) 
+					&& info.getUsuario() != null && info.getUsuario().getIdEmpresa().equals(principal.getEmpresaId());
+
+				if (isOwner || isSuperAdmin || isAdminOfCompany) {
+					return ResponseEntity.ok(info);
+				}
+				return ResponseEntity.status(HttpStatus.FORBIDDEN).<InfoUsuario>build();
+			})
 			.orElseGet(() -> ResponseEntity.notFound().build());
 	}
 
@@ -40,10 +61,26 @@ public class InfoUsuarioController {
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<InfoUsuario> update(@PathVariable Long id, @RequestBody InfoUsuario infoUsuario) {
-		return infoUsuarioService.update(id, infoUsuario)
-			.map(ResponseEntity::ok)
-			.orElseGet(() -> ResponseEntity.notFound().build());
+	@PreAuthorize("isAuthenticated()")
+	public ResponseEntity<InfoUsuario> update(
+		@PathVariable Long id, 
+		@RequestBody InfoUsuario infoUsuario,
+		@AuthenticationPrincipal UserPrincipal principal
+	) {
+		return infoUsuarioService.findById(id).map(existing -> {
+			// Seguridad: Solo el dueño, su ADMIN o SUPERADMIN pueden editar
+			boolean isOwner = existing.getUsuario() != null && existing.getUsuario().getId().equals(principal.getUsuario().getId());
+			boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
+			boolean isAdminOfCompany = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN")) 
+				&& existing.getUsuario() != null && existing.getUsuario().getIdEmpresa().equals(principal.getEmpresaId());
+
+			if (isOwner || isSuperAdmin || isAdminOfCompany) {
+				return infoUsuarioService.update(id, infoUsuario)
+					.map(ResponseEntity::ok)
+					.orElseGet(() -> ResponseEntity.notFound().build());
+			}
+			return ResponseEntity.status(HttpStatus.FORBIDDEN).<InfoUsuario>build();
+		}).orElseGet(() -> ResponseEntity.notFound().build());
 	}
 
 	@DeleteMapping("/{id}")
