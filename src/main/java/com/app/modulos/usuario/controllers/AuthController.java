@@ -8,6 +8,7 @@ import com.app.modulos.usuario.services.AuthService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -31,7 +32,17 @@ public class AuthController {
 	}
 
 	@PostMapping("/register-empresa")
-	public ResponseEntity<AuthResponse> registerEmpresa(@RequestBody RegisterEmpresaRequest request) {
+	public ResponseEntity<?> registerEmpresa(@RequestBody RegisterEmpresaRequest request) {
 		return ResponseEntity.ok(authService.registerEmpresa(request));
+	}
+
+	@PostMapping("/logout")
+	public ResponseEntity<?> logout(@RequestHeader("Authorization") String token) {
+		try {
+			authService.logout(token);
+			return ResponseEntity.ok("Sesión cerrada exitosamente");
+		} catch (Exception e) {
+			return ResponseEntity.badRequest().body("Error al cerrar sesión: " + e.getMessage());
+		}
 	}
 }

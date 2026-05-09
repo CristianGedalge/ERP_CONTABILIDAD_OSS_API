@@ -17,10 +17,16 @@ import org.springframework.web.filter.OncePerRequestFilter;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 	private final JwtService jwtService;
 	private final UserDetailsServiceImpl userDetailsService;
+	private final com.app.modulos.usuario.repositories.TokenRevocadoRepository tokenRevocadoRepository;
 
-	public JwtAuthenticationFilter(JwtService jwtService, UserDetailsServiceImpl userDetailsService) {
+	public JwtAuthenticationFilter(
+			JwtService jwtService, 
+			UserDetailsServiceImpl userDetailsService,
+			com.app.modulos.usuario.repositories.TokenRevocadoRepository tokenRevocadoRepository
+	) {
 		this.jwtService = jwtService;
 		this.userDetailsService = userDetailsService;
+		this.tokenRevocadoRepository = tokenRevocadoRepository;
 	}
 
 	@Override
@@ -36,6 +42,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 		}
 
 		String token = authHeader.substring(7);
+		
+		// VALIDACIÓN DE BLACKLIST: Si el token está revocado, no seguir
+		if (tokenRevocadoRepository.existsByToken(token)) {
+			filterChain.doFilter(request, response);
+			return;
+		}
+
 		String username = jwtService.extractUsername(token);
 
 		if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
