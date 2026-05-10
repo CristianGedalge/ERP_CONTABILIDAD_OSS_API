@@ -36,6 +36,14 @@ public class InfoUsuarioController {
 		return ResponseEntity.ok(infoUsuarioService.findAllByEmpresa(principal.getEmpresaId()));
 	}
 
+	@GetMapping("/me")
+	@PreAuthorize("isAuthenticated()")
+	public ResponseEntity<InfoUsuario> getMe(@AuthenticationPrincipal UserPrincipal principal) {
+		return infoUsuarioService.findByUsuarioId(principal.getUsuario().getId())
+			.map(ResponseEntity::ok)
+			.orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+	}
+
 	@GetMapping("/{id}")
 	@PreAuthorize("isAuthenticated()")
 	public ResponseEntity<InfoUsuario> get(@PathVariable Long id, @AuthenticationPrincipal UserPrincipal principal) {
@@ -56,25 +64,41 @@ public class InfoUsuarioController {
 	}
 
 	@PostMapping
-	public ResponseEntity<InfoUsuario> create(@RequestBody InfoUsuario infoUsuario) {
+	@PreAuthorize("isAuthenticated()")
+	public ResponseEntity<InfoUsuario> create(
+		@RequestBody InfoUsuario infoUsuario,
+		@AuthenticationPrincipal UserPrincipal principal
+	) {
+		// Seguridad: Forzamos que la información se asocie al usuario autenticado
+		infoUsuario.setUsuario(principal.getUsuario());
 		return ResponseEntity.ok(infoUsuarioService.save(infoUsuario));
 	}
 
-	@PutMapping("/{id}")
+	@PutMapping("/me")
 	@PreAuthorize("isAuthenticated()")
+	public ResponseEntity<InfoUsuario> updateMe(
+		@RequestBody InfoUsuario infoUsuario,
+		@AuthenticationPrincipal UserPrincipal principal
+	) {
+		return infoUsuarioService.updateByUsuarioId(principal.getUsuario().getId(), infoUsuario)
+			.map(ResponseEntity::ok)
+			.orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+	}
+
+	@PutMapping("/{id}")
+	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN')")
 	public ResponseEntity<InfoUsuario> update(
 		@PathVariable Long id, 
 		@RequestBody InfoUsuario infoUsuario,
 		@AuthenticationPrincipal UserPrincipal principal
 	) {
 		return infoUsuarioService.findById(id).map(existing -> {
-			// Seguridad: Solo el dueño, su ADMIN o SUPERADMIN pueden editar
-			boolean isOwner = existing.getUsuario() != null && existing.getUsuario().getId().equals(principal.getUsuario().getId());
+			// Seguridad administrativa: Solo SUPERADMIN o ADMIN de la misma empresa
 			boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
 			boolean isAdminOfCompany = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN")) 
 				&& existing.getUsuario() != null && existing.getUsuario().getIdEmpresa().equals(principal.getEmpresaId());
 
-			if (isOwner || isSuperAdmin || isAdminOfCompany) {
+			if (isSuperAdmin || isAdminOfCompany) {
 				return infoUsuarioService.update(id, infoUsuario)
 					.map(ResponseEntity::ok)
 					.orElseGet(() -> ResponseEntity.notFound().build());
