@@ -43,6 +43,7 @@ public class Empresa {
 	private Boolean estado = true;
 
 	@OneToMany(mappedBy = "empresa")
+	@JsonIgnore
 	private Set<Suscripcion> suscripciones = new HashSet<>();
 
 	@OneToOne(mappedBy = "empresa")

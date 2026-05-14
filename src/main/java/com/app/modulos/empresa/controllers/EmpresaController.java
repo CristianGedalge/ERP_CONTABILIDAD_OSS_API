@@ -33,7 +33,17 @@ public class EmpresaController {
 
 	@GetMapping("/{id}")
 	@PreAuthorize("hasRole('SUPERADMIN') or hasRole('ADMIN') or hasAuthority('PERM_EMPRESA_READ')")
-	public ResponseEntity<Empresa> get(@PathVariable Long id) {
+	public ResponseEntity<Empresa> get(
+		@PathVariable Long id,
+		@AuthenticationPrincipal UserPrincipal principal
+	) {
+		// Seguridad: Si no es SUPERADMIN, solo puede ver SU empresa
+		if (!principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
+			if (!id.equals(principal.getEmpresaId())) {
+				return ResponseEntity.status(403).build(); // Acceso Denegado
+			}
+		}
+		
 		return empresaService.findById(id)
 			.map(ResponseEntity::ok)
 			.orElseGet(() -> ResponseEntity.notFound().build());
@@ -54,7 +64,18 @@ public class EmpresaController {
 
 	@PutMapping("/{id}")
 	@PreAuthorize("hasRole('SUPERADMIN') or hasRole('ADMIN') or hasAuthority('PERM_EMPRESA_WRITE')")
-	public ResponseEntity<Empresa> update(@PathVariable Long id, @RequestBody Empresa empresa) {
+	public ResponseEntity<Empresa> update(
+		@PathVariable Long id, 
+		@RequestBody Empresa empresa,
+		@AuthenticationPrincipal UserPrincipal principal
+	) {
+		// Seguridad: Si no es SUPERADMIN, solo puede editar SU empresa
+		if (!principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
+			if (!id.equals(principal.getEmpresaId())) {
+				return ResponseEntity.status(403).build(); // Acceso Denegado
+			}
+		}
+
 		return empresaService.update(id, empresa)
 			.map(ResponseEntity::ok)
 			.orElseGet(() -> ResponseEntity.notFound().build());

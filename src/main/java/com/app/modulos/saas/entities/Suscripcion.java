@@ -18,22 +18,29 @@ public class Suscripcion {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
-	@Column(name = "plan", nullable = false, length = 100)
-	private String plan;
+	@ManyToOne
+	@JoinColumn(name = "plan_id", nullable = false)
+	private Plan plan;
 
-	@Column(name = "fecha_inicio")
+	@Column(name = "fecha_inicio", nullable = false)
 	private LocalDate fechaInicio;
 
-	@Column(name = "fecha_fin")
+	@Column(name = "fecha_fin", nullable = false)
 	private LocalDate fechaFin;
 
 	@Column(name = "estado", nullable = false)
 	private Boolean estado = true;
 
-	@Column(name = "monto")
+	@Column(name = "monto", nullable = false)
 	private BigDecimal monto;
 
-	@Column(name = "id_empresa")
+	@Column(name = "monto_pagado", nullable = false)
+	private BigDecimal montoPagado;
+
+	@Column(name = "tipo_renovacion", length = 50)
+	private String tipoRenovacion; // Ej: MENSUAL, ANUAL
+
+	@Column(name = "id_empresa", nullable = false)
 	private Long idEmpresa;
 
 	@ManyToOne
@@ -48,11 +55,11 @@ public class Suscripcion {
 		this.id = id;
 	}
 
-	public String getPlan() {
+	public Plan getPlan() {
 		return plan;
 	}
 
-	public void setPlan(String plan) {
+	public void setPlan(Plan plan) {
 		this.plan = plan;
 	}
 
@@ -86,6 +93,22 @@ public class Suscripcion {
 
 	public void setMonto(BigDecimal monto) {
 		this.monto = monto;
+	}
+
+	public BigDecimal getMontoPagado() {
+		return montoPagado;
+	}
+
+	public void setMontoPagado(BigDecimal montoPagado) {
+		this.montoPagado = montoPagado;
+	}
+
+	public String getTipoRenovacion() {
+		return tipoRenovacion;
+	}
+
+	public void setTipoRenovacion(String tipoRenovacion) {
+		this.tipoRenovacion = tipoRenovacion;
 	}
 
 	public Long getIdEmpresa() {

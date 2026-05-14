@@ -4,14 +4,17 @@ import com.app.modulos.usuario.entities.Usuario;
 import com.app.modulos.usuario.repositories.UserRepository;
 import java.util.List;
 import java.util.Optional;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
 public class UserService {
 	private final UserRepository userRepository;
+	private final PasswordEncoder passwordEncoder;
 
-	public UserService(UserRepository userRepository) {
+	public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
 		this.userRepository = userRepository;
+		this.passwordEncoder = passwordEncoder;
 	}
 
 	public List<Usuario> findAll() {
@@ -35,6 +38,9 @@ public class UserService {
 	}
 
 	public Usuario save(Usuario usuario) {
+		if (usuario.getPassword() != null) {
+			usuario.setPassword(passwordEncoder.encode(usuario.getPassword()));
+		}
 		return userRepository.save(usuario);
 	}
 
@@ -42,8 +48,8 @@ public class UserService {
 		return userRepository.findById(id).map(existing -> {
 			existing.setUsername(input.getUsername());
 			existing.setCorreo(input.getCorreo());
-			if (input.getPassword() != null) {
-				existing.setPassword(input.getPassword());
+			if (input.getPassword() != null && !input.getPassword().isBlank()) {
+				existing.setPassword(passwordEncoder.encode(input.getPassword()));
 			}
 			if (input.getEstado() != null) {
 				existing.setEstado(input.getEstado());
