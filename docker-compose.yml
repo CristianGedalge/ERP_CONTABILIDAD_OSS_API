@@ -1,31 +1,9 @@
 services:
-  db:
-    image: postgres:16
-    container_name: postgres_db
-    restart: always
-    environment:
-      - POSTGRES_DB=ERP_OPENSOURCE_DB
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=tu_password_aqui
-    ports:
-      - "5432:5432"
-    volumes:
-      - db_data:/var/lib/postgresql/data
-
   app:
     build: .
     container_name: spring_app
     ports:
       - "8080:8080"
-    depends_on:
-      - db
-    environment:
-      # NOTA: Aquí el host es 'db', no 'localhost'
-      - DB_URL=jdbc:postgresql://db:5432/ERP_OPENSOURCE_DB
-      - DB_USERNAME=postgres
-      - DB_PASSWORD=tu_password_aqui
-      - JWT_SECRET=${JWT_SECRET:-mi_secreto_local_seguro}
-      - JWT_EXPIRATION_MS=86400000
-
-volumes:
-  db_data:
+    env_file:
+      - .env  # <--- Esto le dice a Docker: "Lee las variables de AWS de aquí"
+    restart: always
