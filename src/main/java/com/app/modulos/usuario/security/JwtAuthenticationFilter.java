@@ -17,10 +17,16 @@ import org.springframework.web.filter.OncePerRequestFilter;
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
 	private final JwtService jwtService;
 	private final UserDetailsServiceImpl userDetailsService;
+	private final com.app.modulos.usuario.repositories.TokenRevocadoRepository tokenRevocadoRepository;
 
-	public JwtAuthenticationFilter(JwtService jwtService, UserDetailsServiceImpl userDetailsService) {
+	public JwtAuthenticationFilter(
+			JwtService jwtService, 
+			UserDetailsServiceImpl userDetailsService,
+			com.app.modulos.usuario.repositories.TokenRevocadoRepository tokenRevocadoRepository
+	) {
 		this.jwtService = jwtService;
 		this.userDetailsService = userDetailsService;
+		this.tokenRevocadoRepository = tokenRevocadoRepository;
 	}
 
 	@Override
@@ -36,22 +42,32 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 		}
 
 		String token = authHeader.substring(7);
+		
+		// VALIDACIÓN DE BLACKLIST: Si el token está revocado, no seguir
+		if (tokenRevocadoRepository.existsByToken(token)) {
+			filterChain.doFilter(request, response);
+			return;
+		}
+
 		String username = jwtService.extractUsername(token);
 
 		if (username != null && SecurityContextHolder.getContext().getAuthentication() == null) {
 			UserDetails userDetails = userDetailsService.loadUserByUsername(username);
 			if (jwtService.isTokenValid(token, userDetails)) {
 				request.setAttribute("correo", username);
-				Long empresaId = jwtService.extractClaim(token, "empresaId", Long.class);
-				Long roleId = jwtService.extractClaim(token, "roleId", Long.class);
+				Object empresaIdObj = jwtService.extractClaim(token, "empresaId", Object.class);
+				Object roleIdObj = jwtService.extractClaim(token, "roleId", Object.class);
+				
+				if (empresaIdObj != null) {
+					request.setAttribute("empresaId", Long.valueOf(empresaIdObj.toString()));
+				}
+				if (roleIdObj != null) {
+					request.setAttribute("roleId", Long.valueOf(roleIdObj.toString()));
+				}
+				
 				String roleName = jwtService.extractClaim(token, "roleName", String.class);
 				String claimUsername = jwtService.extractClaim(token, "username", String.class);
-				if (empresaId != null) {
-					request.setAttribute("empresaId", empresaId);
-				}
-				if (roleId != null) {
-					request.setAttribute("roleId", roleId);
-				}
+				
 				if (roleName != null) {
 					request.setAttribute("roleName", roleName);
 				}

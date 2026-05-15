@@ -1,5 +1,6 @@
 package com.app.modulos.empresa.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -37,6 +38,7 @@ public class Configuracion {
 
 	@OneToOne
 	@JoinColumn(name = "id_empresa", insertable = false, updatable = false)
+	@JsonIgnore
 	private Empresa empresa;
 
 	public Long getId() {
