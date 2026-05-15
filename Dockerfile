@@ -19,4 +19,4 @@ COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080
 
 # Ejecutar la aplicación con el perfil local (o el que prefieras)
-ENTRYPOINT ["java", "-jar", "app.jar", "--spring.profiles.active=local"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
