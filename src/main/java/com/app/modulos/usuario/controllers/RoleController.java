@@ -15,6 +15,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import com.app.modulos.usuario.security.UserPrincipal;
+import org.springframework.http.HttpStatus;
+
 @RestController
 @RequestMapping("/api/roles")
 public class RoleController {
@@ -26,40 +30,69 @@ public class RoleController {
 
 	@GetMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_ROL_READ')")
-	public ResponseEntity<List<Rol>> list(HttpServletRequest request) {
-    	Long empresaId = (Long) request.getAttribute("empresaId");
-		return ResponseEntity.ok(roleService.findAllByEmpresa(empresaId));
+	public ResponseEntity<List<Rol>> list(@AuthenticationPrincipal UserPrincipal principal) {
+		if (principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
+			return ResponseEntity.ok(roleService.findAll());
+		}
+		return ResponseEntity.ok(roleService.findAllByEmpresa(principal.getEmpresaId()));
 	}
 
 	@GetMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_ROL_READ')")
-	public ResponseEntity<Rol> get(@PathVariable Long id) {
+	public ResponseEntity<Rol> get(@PathVariable Long id, @AuthenticationPrincipal UserPrincipal principal) {
 		return roleService.findById(id)
-			.map(ResponseEntity::ok)
-			.orElseGet(() -> ResponseEntity.notFound().build());
+				.map(rol -> {
+					// Seguridad: Si no es SUPERADMIN, solo puede ver roles de SU empresa
+					if (!principal.getAuthorities().stream()
+							.anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
+						if (!rol.getIdEmpresa().equals(principal.getEmpresaId())) {
+							return ResponseEntity.status(HttpStatus.FORBIDDEN).<Rol>build();
+						}
+					}
+					return ResponseEntity.ok(rol);
+				})
+				.orElseGet(() -> ResponseEntity.notFound().build());
 	}
 
 	@PostMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_ROL_WRITE')")
-	public ResponseEntity<Rol> create(@RequestBody Rol rol, HttpServletRequest request) {
-		Long idEmpresa = (Long) request.getAttribute("empresaId");
-		rol.setIdEmpresa(idEmpresa);
+	public ResponseEntity<Rol> create(@RequestBody Rol rol, @AuthenticationPrincipal UserPrincipal principal) {
+		rol.setIdEmpresa(principal.getEmpresaId());
 		return ResponseEntity.ok(roleService.save(rol));
 	}
 
 	@PutMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_ROL_WRITE')")
-	public ResponseEntity<Rol> update(@PathVariable Long id, @RequestBody Rol rol) {
-		return roleService.update(id, rol)
-			.map(ResponseEntity::ok)
-			.orElseGet(() -> ResponseEntity.notFound().build());
+	public ResponseEntity<Rol> update(
+			@PathVariable Long id,
+			@RequestBody Rol rol,
+			@AuthenticationPrincipal UserPrincipal principal) {
+		return roleService.findById(id).map(existing -> {
+			// Seguridad
+			if (!principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
+				if (!existing.getIdEmpresa().equals(principal.getEmpresaId())) {
+					return ResponseEntity.status(HttpStatus.FORBIDDEN).<Rol>build();
+				}
+			}
+			return roleService.update(id, rol)
+					.map(ResponseEntity::ok)
+					.orElseGet(() -> ResponseEntity.notFound().build());
+		}).orElseGet(() -> ResponseEntity.notFound().build());
 	}
 
 	@DeleteMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_ROL_WRITE')")
-	public ResponseEntity<Rol> disable(@PathVariable Long id) {
-		return roleService.disable(id)
-			.map(ResponseEntity::ok)
-			.orElseGet(() -> ResponseEntity.notFound().build());
+	public ResponseEntity<Rol> disable(@PathVariable Long id, @AuthenticationPrincipal UserPrincipal principal) {
+		return roleService.findById(id).map(existing -> {
+			// Seguridad
+			if (!principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
+				if (!existing.getIdEmpresa().equals(principal.getEmpresaId())) {
+					return ResponseEntity.status(HttpStatus.FORBIDDEN).<Rol>build();
+				}
+			}
+			return roleService.disable(id)
+					.map(ResponseEntity::ok)
+					.orElseGet(() -> ResponseEntity.notFound().build());
+		}).orElseGet(() -> ResponseEntity.notFound().build());
 	}
 }

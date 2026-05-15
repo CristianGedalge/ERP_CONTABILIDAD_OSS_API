@@ -63,4 +63,8 @@ public class UserPrincipal implements UserDetails {
 	public Usuario getUsuario() {
 		return usuario;
 	}
+
+	public Long getEmpresaId() {
+		return usuario != null ? usuario.getIdEmpresa() : null;
+	}
 }

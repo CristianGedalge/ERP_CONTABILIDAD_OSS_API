@@ -31,6 +31,7 @@ public class AuthService {
 	private final PasswordEncoder passwordEncoder;
 	private final JwtService jwtService;
 	private final UserDetailsServiceImpl userDetailsService;
+	private final com.app.modulos.usuario.repositories.TokenRevocadoRepository tokenRevocadoRepository;
 
 	public AuthService(
 		AuthenticationManager authenticationManager,
@@ -40,7 +41,8 @@ public class AuthService {
 		InfoUsuarioRepository infoUsuarioRepository,
 		PasswordEncoder passwordEncoder,
 		JwtService jwtService,
-		UserDetailsServiceImpl userDetailsService
+		UserDetailsServiceImpl userDetailsService,
+		com.app.modulos.usuario.repositories.TokenRevocadoRepository tokenRevocadoRepository
 	) {
 		this.authenticationManager = authenticationManager;
 		this.userRepository = userRepository;
@@ -50,6 +52,7 @@ public class AuthService {
 		this.passwordEncoder = passwordEncoder;
 		this.jwtService = jwtService;
 		this.userDetailsService = userDetailsService;
+		this.tokenRevocadoRepository = tokenRevocadoRepository;
 	}
 
 	public AuthResponse login(AuthRequest request) {
@@ -138,5 +141,29 @@ public class AuthService {
 		UserDetails userDetails = userDetailsService.loadUserByCorreo(usuario.getCorreo());
 		String token = jwtService.generateToken(userDetails);
 		return new AuthResponse(token);
+	}
+
+	@Transactional
+	public void logout(String authHeader) {
+		if (authHeader == null || !authHeader.startsWith("Bearer ")) {
+			throw new IllegalArgumentException("Token no proporcionado o inválido");
+		}
+		
+		String token = authHeader.substring(7);
+		
+		// Evitar duplicados si ya fue revocado
+		if (tokenRevocadoRepository.existsByToken(token)) {
+			return;
+		}
+
+		java.util.Date expirationDate = jwtService.extractExpiration(token);
+		java.time.LocalDateTime expiry = expirationDate.toInstant()
+			.atZone(java.time.ZoneId.systemDefault())
+			.toLocalDateTime();
+
+		com.app.modulos.usuario.entities.TokenRevocado tokenRevocado = 
+			new com.app.modulos.usuario.entities.TokenRevocado(token, expiry);
+		
+		tokenRevocadoRepository.save(tokenRevocado);
 	}
 }

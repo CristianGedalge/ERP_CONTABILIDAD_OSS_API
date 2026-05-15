@@ -18,11 +18,31 @@ public class InfoUsuarioService {
 		return infoUsuarioRepository.findAll();
 	}
 
+	public List<InfoUsuario> findAllByEmpresa(Long idEmpresa) {
+		return infoUsuarioRepository.findByUsuarioIdEmpresa(idEmpresa);
+	}
+
 	public Optional<InfoUsuario> findById(Long id) {
 		return infoUsuarioRepository.findById(id);
 	}
 
+	public Optional<InfoUsuario> findByUsuarioId(Long usuarioId) {
+		return infoUsuarioRepository.findByUsuarioId(usuarioId);
+	}
+
 	public InfoUsuario save(InfoUsuario infoUsuario) {
+		if (infoUsuario.getUsuario() != null && infoUsuario.getUsuario().getId() != null) {
+			Optional<InfoUsuario> existing = infoUsuarioRepository.findByUsuarioId(infoUsuario.getUsuario().getId());
+			if (existing.isPresent()) {
+				// Si ya existe, actualizamos los datos en lugar de crear uno nuevo para evitar errores de duplicado
+				InfoUsuario current = existing.get();
+				current.setNombre(infoUsuario.getNombre());
+				current.setCi(infoUsuario.getCi());
+				current.setCargo(infoUsuario.getCargo());
+				current.setTelefono(infoUsuario.getTelefono());
+				return infoUsuarioRepository.save(current);
+			}
+		}
 		return infoUsuarioRepository.save(infoUsuario);
 	}
 
@@ -32,7 +52,17 @@ public class InfoUsuarioService {
 			existing.setCi(input.getCi());
 			existing.setCargo(input.getCargo());
 			existing.setTelefono(input.getTelefono());
-			existing.setUsuario(input.getUsuario());
+			// No cambiamos el usuario en un update por ID
+			return infoUsuarioRepository.save(existing);
+		});
+	}
+
+	public Optional<InfoUsuario> updateByUsuarioId(Long usuarioId, InfoUsuario input) {
+		return infoUsuarioRepository.findByUsuarioId(usuarioId).map(existing -> {
+			existing.setNombre(input.getNombre());
+			existing.setCi(input.getCi());
+			existing.setCargo(input.getCargo());
+			existing.setTelefono(input.getTelefono());
 			return infoUsuarioRepository.save(existing);
 		});
 	}

@@ -31,7 +31,7 @@ public class InfoUsuario {
 
 	@OneToOne
 	@JoinColumn(name = "id_usuario", unique = true)
-	@JsonIgnore
+	@com.fasterxml.jackson.annotation.JsonProperty(access = com.fasterxml.jackson.annotation.JsonProperty.Access.WRITE_ONLY)
 	private Usuario usuario;
 
 	public Long getId() {
