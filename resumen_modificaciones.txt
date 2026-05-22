@@ -1,0 +1,156 @@
+================================================================================
+RESUMEN DETALLADO DE MODIFICACIONES Y NUEVAS FUNCIONALIDADES DEL PROYECTO
+================================================================================
+Este documento detalla todas las modificaciones, refactorizaciones y nuevos modulos
+desarrollados desde el inicio de nuestra colaboracion. Esta pensado para que todo
+el equipo de desarrollo comprenda el estado actual del codigo, la arquitectura,
+los endpoints disponibles (tanto nuevos como modificados) y los pasos a seguir.
+
+--------------------------------------------------------------------------------
+1. RESUMEN GENERAL DE LOS CAMBIOS
+--------------------------------------------------------------------------------
+- Estructuracion y Refactorizacion del Modulo Odoo: Se movieron los endpoints de 
+  integracion con Odoo a su propio controlador y paquete dedicado, asegurando 
+  que mantenga la misma arquitectura de capas que el resto del ERP.
+- Modulo Contable con Logica Tributaria de Bolivia: Se crearon entidades, servicios
+  y repositorios para registrar asientos contables de "Partida Doble" de forma automatica
+  a partir de la sincronizacion con las ventas y compras registradas en Odoo, aplicando 
+  los impuestos correspondientes a la legislacion boliviana (IVA 13%, IT 3%).
+- Credenciales en Produccion: Se configuro el archivo `.env` para usar las nuevas 
+  credenciales maestras del servidor Odoo de produccion en AWS.
+- Organizacion de Ramas Git: Se creo la rama `jhonny`, se subieron los cambios, y
+  se realizo el merge de forma exitosa hacia `main` (tanto local como remoto).
+- Colecciones de Postman: Se empaquetaron colecciones de Postman actualizadas en la
+  raiz del proyecto para que los desarrolladores y QA puedan probar los endpoints
+  rapidamente.
+
+--------------------------------------------------------------------------------
+2. DETALLE DE ARCHIVOS MODIFICADOS Y NUEVOS
+--------------------------------------------------------------------------------
+
+A. Dependencias del Proyecto
+   - pom.xml (MODIFICADO): Se añadieron las dependencias de Apache XML-RPC
+     (`xmlrpc-client` y `xmlrpc-common` version 3.1.3) para habilitar la comunicacion 
+     con el API de Odoo.
+
+B. Configuraciones de Entorno
+   - src/main/resources/application.properties (MODIFICADO): Se mapearon las variables
+     de entorno para leer la configuracion de Odoo.
+   - .env (MODIFICADO): Se agregaron las credenciales de produccion para Odoo:
+     * ODOO_MASTER_URL=http://54.208.229.53:8069/
+     * ODOO_MASTER_DB=ADMIN_ODOO
+     * ODOO_MASTER_USER=jaduranmarin@gmail.com
+     * ODOO_MASTER_PASSWORD=Abril2026+++
+
+C. Modulo de Empresa (Configuraciones)
+   - ConfiguracionController.java (MODIFICADO): Se removio la inyeccion de `OdooClientService`
+     y se eliminaron los endpoints `/odoo/productos` y `/odoo/ventas` para limpiar la clase.
+   - Configuracion.java (MODIFICADO): Añade propiedades para almacenar datos de
+     configuracion del Tenant frente a Odoo (ej. `odooCompaniaId`).
+   - ConfiguracionService.java y EmpresaService.java (MODIFICADOS): Se añadio soporte para
+     obtener y validar la configuracion del vinculo entre cada empresa (Tenant) y Odoo.
+
+D. Reorganizacion del Modulo de Odoo (`com.app.modulos.odoo`)
+   - OdooController.java (NUEVO): Se creo el controlador exclusivo para integracion directa 
+     con Odoo en `com.app.modulos.odoo.controllers`.
+   - package-info.java (NUEVOS en `entities` y `repositories`): Archivos marcador para mantener 
+     la estructura de directorios en Git, preparandolos para futuros desarrollos.
+   - OdooClientService.java (MODIFICADO/NUEVO): Centraliza la logica del cliente XML-RPC 
+     para interactuar con Odoo utilizando las credenciales maestras y filtrando por compania.
+
+E. Modulo de Contabilidad (`com.app.modulos.contabilidad`) (NUEVO)
+   - ContabilidadController.java (NUEVO): Controlador REST para las operaciones contables.
+   - AsientoContable.java, CuentaContable.java, DetalleAsiento.java (NUEVOS): Entidades JPA 
+     que modelan el sistema contable por partida doble de la empresa.
+   - Repositorios (NUEVOS): `AsientoContableRepository`, `CuentaContableRepository`, 
+     `DetalleAsientoRepository` con soporte para multi-tenant (filtrado por `idEmpresa`).
+   - ContabilidadComprasService.java (NUEVO): Logica para leer facturas de compra de Odoo y 
+     generar asientos contables en el ERP.
+   - ContabilidadVentasService.java (NUEVO): Logica para leer ordenes de venta facturadas de 
+     Odoo y generar asientos contables en el ERP.
+
+F. Archivos Postman
+   - ERP_Odoo_Completo.postman_collection.json (NUEVO): Coleccion unificada con todas las 
+     solicitudes autenticadas para probar el modulo Odoo y Contabilidad.
+   - postman_contabilidad.json (NUEVO): Coleccion especifica de contabilidad.
+   - ERP_Odoo_Integration.postman_collection.json (NUEVO): Coleccion especifica de Odoo.
+
+--------------------------------------------------------------------------------
+3. ENDPOINTS: MODIFICADOS Y NUEVOS
+--------------------------------------------------------------------------------
+
+>>> A. ENDPOINTS QUE YA EXISTIAN Y FUERON MODIFICADOS (RETROCOMPATIBILIDAD) <<<
+
+Se modificaron los endpoints de consulta de Odoo. Antes estaban dentro de `/api/configuraciones`. 
+Ahora estan dentro de `OdooController` con un sistema de rutas doble (mediante `@RequestMapping({"/api/odoo", "/api/configuraciones/odoo"})`). Esto garantiza que los clientes antiguos y las colecciones de Postman no fallen.
+
+1. Endpoint de Productos de Odoo:
+   - Ruta antigua (Sigue funcionando): GET /api/configuraciones/odoo/productos
+   - Ruta nueva y limpia: GET /api/odoo/productos
+   - Descripcion: Consulta y lista los productos de Odoo de la empresa vinculada al usuario logueado.
+   - Requiere: Token de autenticacion Bearer y rol ADMIN/SUPERADMIN o permisos `PERM_PRODUCTO_READ`/`PERM_CONFIG_READ`.
+
+2. Endpoint de Ventas de Odoo:
+   - Ruta antigua (Sigue funcionando): GET /api/configuraciones/odoo/ventas
+   - Ruta nueva y limpia: GET /api/odoo/ventas
+   - Descripcion: Obtiene las ordenes de venta de Odoo asociadas a la empresa vinculada al usuario logueado.
+   - Requiere: Token de autenticacion Bearer y rol ADMIN/SUPERADMIN o permisos `PERM_VENTA_READ`/`PERM_CONFIG_READ`.
+
+
+>>> B. NUEVOS ENDPOINTS (MODULO CONTABLE) <<<
+
+Todos estos endpoints se encuentran bajo el prefijo `/api/contabilidad`. Requieren autenticacion mediante token Bearer.
+
+1. Sincronizar Compras desde Odoo:
+   - Ruta: POST /api/contabilidad/sincronizar-compras
+   - Query Parameter (Opcional): `idEmpresa` (Solo permitido para SUPERADMIN para forzar sincronizacion de una empresa especifica).
+   - Descripcion: Consulta las facturas de compra en el Odoo de produccion y genera los asientos contables en el ERP local aplicando la logica tributaria de Bolivia (IVA Credito Fiscal del 13% y Costo/Gasto del 87%).
+   - Requiere: Rol ADMIN o SUPERADMIN.
+
+2. Sincronizar Ventas desde Odoo:
+   - Ruta: POST /api/contabilidad/sincronizar-ventas
+   - Query Parameter (Opcional): `idEmpresa` (Solo permitido para SUPERADMIN).
+   - Descripcion: Consulta las facturas de venta en Odoo y genera los asientos contables en el ERP local aplicando la logica de impuestos de Bolivia (Debito Fiscal IVA 13%, Impuesto a las Transacciones IT 3%, IT por pagar 3%, Ingreso por Ventas 87%).
+   - Requiere: Rol ADMIN o SUPERADMIN.
+
+3. Obtener Asientos Contables:
+   - Ruta: GET /api/contabilidad/asientos
+   - Query Parameter (Opcional): `idEmpresa` (Si es SUPERADMIN, filtra por empresa. Si no se envia, el SUPERADMIN ve todos. Los usuarios normales solo ven los de su propia empresa).
+   - Descripcion: Retorna el listado de los asientos contables registrados por partida doble, ordenados por fecha descendente.
+   - Requiere: Usuario autenticado.
+
+4. Obtener Plan de Cuentas (Cuentas Contables):
+   - Ruta: GET /api/contabilidad/cuentas
+   - Query Parameter (Opcional): `idEmpresa` (Si es SUPERADMIN).
+   - Descripcion: Retorna las cuentas contables activas del plan de cuentas de la empresa, ordenadas por codigo ascendente.
+   - Requiere: Usuario autenticado.
+
+--------------------------------------------------------------------------------
+4. LOGICA DE IMPUESTOS EN BOLIVIA APLICADA
+--------------------------------------------------------------------------------
+
+- REGISTRO DE VENTAS (Sincronizacion desde Odoo):
+  Supongamos una venta de 1000 BOB en Odoo. Al sincronizar en el ERP:
+  * Debe (Deudor): Cuenta de Activo (ej. Clientes o Caja/Bancos) por el 100% -> 1000 BOB
+  * Debe (Deudor): Cuenta de Gasto "Impuesto a las Transacciones (IT)" por el 3% -> 30 BOB
+  * Haber (Acreedor): Cuenta de Ingreso "Ventas de Mercaderia" por el 87% -> 870 BOB
+  * Haber (Acreedor): Cuenta de Pasivo "Debito Fiscal IVA" por el 13% -> 130 BOB
+  * Haber (Acreedor): Cuenta de Pasivo "Impuesto a las Transacciones por Pagar" por el 3% -> 30 BOB
+  (El asiento cuadra perfectamente: 1030 BOB en el Debe y 1030 BOB en el Haber).
+
+- REGISTRO DE COMPRAS (Sincronizacion desde Odoo):
+  Supongamos una compra de 1000 BOB en Odoo. Al sincronizar en el ERP:
+  * Debe (Deudor): Cuenta de Gasto/Costo o Inventario por el 87% -> 870 BOB
+  * Debe (Deudor): Cuenta de Activo "Credito Fiscal IVA" por el 13% -> 130 BOB
+  * Haber (Acreedor): Cuenta de Pasivo o Banco por el 100% -> 1000 BOB
+  (El asiento cuadra perfectamente: 1000 BOB en el Debe y 1000 BOB en el Haber).
+
+--------------------------------------------------------------------------------
+5. GUIA DE TRABAJO PARA COMPAÑEROS
+--------------------------------------------------------------------------------
+Si vas a continuar el desarrollo, ten en cuenta lo siguiente:
+1. Base de Datos local: Asegúrate de tener las tablas de `asiento_contable`, `detalle_asiento` y `cuenta_contable` creadas (JPA las creara automaticamente si tienes configurado `ddl-auto=update`).
+2. Plan de Cuentas: Para sincronizar ventas o compras, cada empresa (tenant) debe tener cuentas contables registradas en la base de datos local que coincidan con la logica del negocio para que el servicio pueda asociar los debitos y creditos correctos.
+3. Multi-Compañia en Odoo: Odoo maneja un sistema multi-compañia. Si creas una empresa mediante el ERP en Odoo y el administrador general no la ve en el portal de Odoo, recuerda activar el check de esa compania en la esquina superior derecha del portal web de Odoo (Mitchell Admin tiene acceso a todas, pero deben estar seleccionadas en la interfaz).
+4. Actualizacion de Variables de Entorno: Si cambias valores en el archivo `.env`, debes detener completamente la ejecucion de la aplicacion y volver a arrancar (`mvnw spring-boot:run`) para que se recarguen las variables. El hot reload no recarga los cambios en el archivo `.env`.
+5. Coleccion de Postman: Importa el archivo `ERP_Odoo_Completo.postman_collection.json` ubicado en la raiz para probar todos los flujos inmediatamente.
