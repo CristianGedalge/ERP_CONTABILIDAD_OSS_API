@@ -1,0 +1,162 @@
+{
+	"info": {
+		"_postman_id": "8c6b75c1-8409-4171-bc01-e2d9a9f24ba2",
+		"name": "ERP Contable - Modulo Contabilidad",
+		"description": "Colección de endpoints para la gestión contable (sincronización con Odoo bajo normativa impositiva boliviana)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Sincronizar Compras de Odoo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/contabilidad/sincronizar-compras",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"contabilidad",
+						"sincronizar-compras"
+					]
+				},
+				"description": "Sincroniza e impacta contablemente las compras (purchase.order) del tenant autenticado desde Odoo."
+			},
+			"response": []
+		},
+		{
+			"name": "Sincronizar Ventas de Odoo",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/contabilidad/sincronizar-ventas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"contabilidad",
+						"sincronizar-ventas"
+					]
+				},
+				"description": "Sincroniza e impacta contablemente las ventas (sale.order) del tenant autenticado desde Odoo."
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Asientos Contables",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/contabilidad/asientos",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"contabilidad",
+						"asientos"
+					]
+				},
+				"description": "Obtiene la lista de todos los asientos contables generados para la empresa del tenant."
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener Plan de Cuentas",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{jwt_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/contabilidad/cuentas",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"contabilidad",
+						"cuentas"
+					]
+				},
+				"description": "Obtiene el catálogo/plan de cuentas del tenant que se han creado dinámicamente o existen."
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "jwt_token",
+			"value": "PONER_AQUI_TU_TOKEN_JWT",
+			"type": "string"
+		}
+	]
+}

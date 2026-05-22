@@ -1,0 +1,323 @@
+{
+	"info": {
+		"_postman_id": "9a1b2c3d-4e5f-6a7b-8c9d-0e1f2a3b4c5d",
+		"name": "ERP Contable - Integracion Completa Odoo",
+		"description": "Colección completa para probar el flujo de Multi-Tenant, Registro de Empresa, Consultas de Odoo y Sincronización Contable Boliviana",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Autenticación y Registro",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"if (jsonData.token) {",
+									"    pm.collectionVariables.set(\"jwtToken\", jsonData.token);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"correo\": \"admin@minuevaempresa.com\",\n  \"password\": \"MiPasswordSeguro123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/login",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						},
+						"description": "Inicia sesión con el correo del administrador del tenant. Al completarse con éxito, guarda el token JWT automáticamente en la variable de colección `jwtToken`."
+					},
+					"response": []
+				},
+				{
+					"name": "Registrar Empresa y Administrador",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = pm.response.json();",
+									"if (jsonData.token) {",
+									"    pm.collectionVariables.set(\"jwtToken\", jsonData.token);",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"empresaNombre\": \"Mi Nueva Empresa Boliviana\",\n  \"empresaRazonSocial\": \"Mi Nueva Empresa Boliviana S.R.L.\",\n  \"empresaNit\": \"123456789\",\n  \"empresaDireccion\": \"Av. Principal 123\",\n  \"empresaTelefono\": \"78945612\",\n  \"empresaCorreo\": \"contacto@minuevaempresa.com\",\n  \"usuarioUsername\": \"admin_empresa_bol\",\n  \"usuarioCorreo\": \"admin@minuevaempresa.com\",\n  \"usuarioPassword\": \"MiPasswordSeguro123\",\n  \"infoNombre\": \"Juan Perez\",\n  \"infoCi\": \"9876543\",\n  \"infoCargo\": \"Gerente General\",\n  \"infoTelefono\": \"6543210\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/api/auth/register-empresa",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"register-empresa"
+							]
+						},
+						"description": "Registra una nueva empresa en el ERP local, crea automáticamente la compañía correspondiente en Odoo Community y el usuario administrador vinculados a esta nueva empresa, y devuelve el token JWT."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "2. Consultas Directas Odoo",
+			"item": [
+				{
+					"name": "Obtener Productos de Odoo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/odoo/productos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"odoo",
+								"productos"
+							]
+						},
+						"description": "Obtiene la lista de plantillas de productos (`product.template`) de Odoo de la compañía asociada a este tenant."
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Ventas de Odoo",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/odoo/ventas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"odoo",
+								"ventas"
+							]
+						},
+						"description": "Obtiene la lista de órdenes de venta (`sale.order`) de Odoo de la compañía asociada a este tenant."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "3. Sincronización Contable (Bolivia)",
+			"item": [
+				{
+					"name": "Sincronizar Ventas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/contabilidad/sincronizar-ventas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"contabilidad",
+								"sincronizar-ventas"
+							]
+						},
+						"description": "Obtiene las ventas de Odoo del tenant y genera los asientos contables locales aplicando IVA (13%) e IT (3%) con partida doble exacta."
+					},
+					"response": []
+				},
+				{
+					"name": "Sincronizar Compras",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/contabilidad/sincronizar-compras",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"contabilidad",
+								"sincronizar-compras"
+							]
+						},
+						"description": "Obtiene las compras de Odoo del tenant y genera los asientos contables locales aplicando IVA (13%) e Inventario (87%) con partida doble exacta."
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Asientos Contables Locales",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/contabilidad/asientos",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"contabilidad",
+								"asientos"
+							]
+						},
+						"description": "Muestra los asientos contables (cabeceras y detalles de debe/haber) generados en la base de datos local del ERP para la empresa autenticada."
+					},
+					"response": []
+				},
+				{
+					"name": "Obtener Plan de Cuentas Local",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{jwtToken}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/api/contabilidad/cuentas",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"api",
+								"contabilidad",
+								"cuentas"
+							]
+						},
+						"description": "Muestra las cuentas contables (Caja, Débito Fiscal, Crédito Fiscal, IT, Gasto IT, etc.) creadas dinámicamente o existentes para la empresa."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "jwtToken",
+			"value": "",
+			"type": "string"
+		}
+	]
+}

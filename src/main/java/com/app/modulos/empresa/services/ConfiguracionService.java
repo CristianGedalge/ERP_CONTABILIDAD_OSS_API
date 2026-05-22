@@ -44,6 +44,11 @@ public class ConfiguracionService {
 			existing.setIt(input.getIt());
 			existing.setMoneda(input.getMoneda());
 			existing.setTipoCambio(input.getTipoCambio());
+			existing.setOdooUrl(input.getOdooUrl());
+			existing.setOdooDb(input.getOdooDb());
+			existing.setOdooUser(input.getOdooUser());
+			existing.setOdooPassword(input.getOdooPassword());
+			existing.setOdooCompanyId(input.getOdooCompanyId());
 			if (input.getEstado() != null) {
 				existing.setEstado(input.getEstado());
 			}
@@ -57,6 +62,11 @@ public class ConfiguracionService {
 			existing.setIt(input.getIt());
 			existing.setMoneda(input.getMoneda());
 			existing.setTipoCambio(input.getTipoCambio());
+			existing.setOdooUrl(input.getOdooUrl());
+			existing.setOdooDb(input.getOdooDb());
+			existing.setOdooUser(input.getOdooUser());
+			existing.setOdooPassword(input.getOdooPassword());
+			existing.setOdooCompanyId(input.getOdooCompanyId());
 			if (input.getEstado() != null) {
 				existing.setEstado(input.getEstado());
 			}

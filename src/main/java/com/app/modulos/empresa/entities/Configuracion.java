@@ -36,6 +36,21 @@ public class Configuracion {
 	@Column(name = "id_empresa")
 	private Long idEmpresa;
 
+	@Column(name = "odoo_url")
+	private String odooUrl;
+
+	@Column(name = "odoo_db")
+	private String odooDb;
+
+	@Column(name = "odoo_user")
+	private String odooUser;
+
+	@Column(name = "odoo_password")
+	private String odooPassword;
+
+	@Column(name = "odoo_company_id")
+	private Integer odooCompanyId;
+
 	@OneToOne
 	@JoinColumn(name = "id_empresa", insertable = false, updatable = false)
 	@JsonIgnore
@@ -103,5 +118,45 @@ public class Configuracion {
 
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
+	}
+
+	public String getOdooUrl() {
+		return odooUrl;
+	}
+
+	public void setOdooUrl(String odooUrl) {
+		this.odooUrl = odooUrl;
+	}
+
+	public String getOdooDb() {
+		return odooDb;
+	}
+
+	public void setOdooDb(String odooDb) {
+		this.odooDb = odooDb;
+	}
+
+	public String getOdooUser() {
+		return odooUser;
+	}
+
+	public void setOdooUser(String odooUser) {
+		this.odooUser = odooUser;
+	}
+
+	public String getOdooPassword() {
+		return odooPassword;
+	}
+
+	public void setOdooPassword(String odooPassword) {
+		this.odooPassword = odooPassword;
+	}
+
+	public Integer getOdooCompanyId() {
+		return odooCompanyId;
+	}
+
+	public void setOdooCompanyId(Integer odooCompanyId) {
+		this.odooCompanyId = odooCompanyId;
 	}
 }
