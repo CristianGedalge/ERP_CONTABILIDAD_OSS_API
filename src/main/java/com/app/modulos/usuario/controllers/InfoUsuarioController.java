@@ -108,9 +108,22 @@ public class InfoUsuarioController {
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<InfoUsuario> delete(@PathVariable Long id) {
-		return infoUsuarioService.delete(id)
-			.map(ResponseEntity::ok)
-			.orElseGet(() -> ResponseEntity.notFound().build());
+	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN')")
+	public ResponseEntity<InfoUsuario> delete(
+		@PathVariable Long id, 
+		@AuthenticationPrincipal UserPrincipal principal
+	) {
+		return infoUsuarioService.findById(id).map(existing -> {
+			boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
+			boolean isAdminOfCompany = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN")) 
+				&& existing.getUsuario() != null && existing.getUsuario().getIdEmpresa().equals(principal.getEmpresaId());
+
+			if (isSuperAdmin || isAdminOfCompany) {
+				return infoUsuarioService.delete(id)
+					.map(ResponseEntity::ok)
+					.orElseGet(() -> ResponseEntity.notFound().build());
+			}
+			return ResponseEntity.status(HttpStatus.FORBIDDEN).<InfoUsuario>build();
+		}).orElseGet(() -> ResponseEntity.notFound().build());
 	}
 }

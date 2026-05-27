@@ -123,10 +123,7 @@ public class AuthService {
 		usuario.setCorreo(request.getCorreo());
 		usuario.setPassword(passwordEncoder.encode(request.getPassword()));
 		if (request.getRolId() != null) {
-			Rol rol = roleRepository.findById(request.getRolId())
-				.orElseThrow(() -> new IllegalArgumentException("Rol no encontrado"));
-			usuario.setRol(rol);
-			usuario.setIdEmpresa(rol.getIdEmpresa());
+			throw new IllegalArgumentException("El registro público no permite la asignación de roles. Los usuarios deben ser creados por el administrador de su empresa.");
 		}
 		usuario = userRepository.save(usuario);
 

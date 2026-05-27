@@ -56,7 +56,10 @@ public class RoleController {
 	@PostMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_ROL_WRITE')")
 	public ResponseEntity<Rol> create(@RequestBody Rol rol, @AuthenticationPrincipal UserPrincipal principal) {
-		rol.setIdEmpresa(principal.getEmpresaId());
+		boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
+		if (!isSuperAdmin) {
+			rol.setIdEmpresa(principal.getEmpresaId());
+		}
 		return ResponseEntity.ok(roleService.save(rol));
 	}
 
@@ -68,11 +71,13 @@ public class RoleController {
 		@AuthenticationPrincipal UserPrincipal principal
 	) {
 		return roleService.findById(id).map(existing -> {
+			boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
 			// Seguridad
-			if (!principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
+			if (!isSuperAdmin) {
 				if (!existing.getIdEmpresa().equals(principal.getEmpresaId())) {
 					return ResponseEntity.status(HttpStatus.FORBIDDEN).<Rol>build();
 				}
+				rol.setIdEmpresa(principal.getEmpresaId()); // Prevenir cambio de empresa por un ADMIN
 			}
 			return roleService.update(id, rol)
 				.map(ResponseEntity::ok)

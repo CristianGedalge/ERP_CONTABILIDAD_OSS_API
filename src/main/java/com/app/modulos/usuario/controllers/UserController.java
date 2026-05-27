@@ -70,12 +70,18 @@ public class UserController {
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_USER_WRITE')")
 	public ResponseEntity<?> create(@RequestBody Usuario usuario, @AuthenticationPrincipal UserPrincipal principal) {
 		try {
-			Long empresaId = principal.getEmpresaId();
-			if (empresaId == null) {
-				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: No se detectó empresa en tu sesión.");
+			boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
+			if (isSuperAdmin) {
+				if (usuario.getIdEmpresa() == null) {
+					return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: Como SUPERADMIN, debes especificar el idEmpresa del usuario.");
+				}
+			} else {
+				Long empresaId = principal.getEmpresaId();
+				if (empresaId == null) {
+					return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: No se detectó empresa en tu sesión.");
+				}
+				usuario.setIdEmpresa(empresaId);
 			}
-			
-			usuario.setIdEmpresa(empresaId);
 			
 			// Si viene un rol, intentar cargarlo
 			if (usuario.getRol() != null && usuario.getRol().getId() != null) {
@@ -109,11 +115,14 @@ public class UserController {
 		@AuthenticationPrincipal UserPrincipal principal
 	) {
 		return userService.findById(id).map(existing -> {
+			boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
 			// Seguridad
-			if (!principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
+			if (!isSuperAdmin) {
 				if (!existing.getIdEmpresa().equals(principal.getEmpresaId())) {
 					return ResponseEntity.status(HttpStatus.FORBIDDEN).<Usuario>build();
 				}
+				// Evitar que un ADMIN cambie a un usuario a otra empresa
+				usuario.setIdEmpresa(principal.getEmpresaId());
 			}
 			return userService.update(id, usuario)
 				.map(ResponseEntity::ok)

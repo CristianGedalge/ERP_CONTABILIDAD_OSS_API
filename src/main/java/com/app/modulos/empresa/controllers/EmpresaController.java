@@ -56,9 +56,6 @@ public class EmpresaController {
 		@AuthenticationPrincipal UserPrincipal principal
 	) {
 		Empresa saved = empresaService.save(empresa);
-		if (principal != null) {
-			empresaService.assignEmpresaToUser(saved.getId(), principal.getUsername());
-		}
 		return ResponseEntity.ok(saved);
 	}
 

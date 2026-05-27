@@ -47,6 +47,17 @@ public class ConfiguracionService {
 			if (input.getEstado() != null) {
 				existing.setEstado(input.getEstado());
 			}
+			existing.setIdCuentaCaja(input.getIdCuentaCaja());
+			existing.setIdCuentaClientes(input.getIdCuentaClientes());
+			existing.setIdCuentaProveedores(input.getIdCuentaProveedores());
+			existing.setIdCuentaVentas(input.getIdCuentaVentas());
+			existing.setIdCuentaCompras(input.getIdCuentaCompras());
+			existing.setIdCuentaIvaDebito(input.getIdCuentaIvaDebito());
+			existing.setIdCuentaIvaCredito(input.getIdCuentaIvaCredito());
+			existing.setIdCuentaItGasto(input.getIdCuentaItGasto());
+			existing.setIdCuentaItPasivo(input.getIdCuentaItPasivo());
+			existing.setIdCuentaInventario(input.getIdCuentaInventario());
+			existing.setIdCuentaCostoVentas(input.getIdCuentaCostoVentas());
 			return configuracionRepository.save(existing);
 		});
 	}
@@ -63,6 +74,17 @@ public class ConfiguracionService {
 			if (input.getIdEmpresa() != null) {
 				existing.setIdEmpresa(input.getIdEmpresa());
 			}
+			existing.setIdCuentaCaja(input.getIdCuentaCaja());
+			existing.setIdCuentaClientes(input.getIdCuentaClientes());
+			existing.setIdCuentaProveedores(input.getIdCuentaProveedores());
+			existing.setIdCuentaVentas(input.getIdCuentaVentas());
+			existing.setIdCuentaCompras(input.getIdCuentaCompras());
+			existing.setIdCuentaIvaDebito(input.getIdCuentaIvaDebito());
+			existing.setIdCuentaIvaCredito(input.getIdCuentaIvaCredito());
+			existing.setIdCuentaItGasto(input.getIdCuentaItGasto());
+			existing.setIdCuentaItPasivo(input.getIdCuentaItPasivo());
+			existing.setIdCuentaInventario(input.getIdCuentaInventario());
+			existing.setIdCuentaCostoVentas(input.getIdCuentaCostoVentas());
 			return configuracionRepository.save(existing);
 		});
 	}
