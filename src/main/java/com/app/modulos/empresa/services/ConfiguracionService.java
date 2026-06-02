@@ -58,6 +58,11 @@ public class ConfiguracionService {
 			existing.setIdCuentaItPasivo(input.getIdCuentaItPasivo());
 			existing.setIdCuentaInventario(input.getIdCuentaInventario());
 			existing.setIdCuentaCostoVentas(input.getIdCuentaCostoVentas());
+			
+			// Color branding properties
+			existing.setColorPrimario(input.getColorPrimario());
+			existing.setColorSecundario(input.getColorSecundario());
+			
 			return configuracionRepository.save(existing);
 		});
 	}
@@ -85,6 +90,11 @@ public class ConfiguracionService {
 			existing.setIdCuentaItPasivo(input.getIdCuentaItPasivo());
 			existing.setIdCuentaInventario(input.getIdCuentaInventario());
 			existing.setIdCuentaCostoVentas(input.getIdCuentaCostoVentas());
+			
+			// Color branding properties
+			existing.setColorPrimario(input.getColorPrimario());
+			existing.setColorSecundario(input.getColorSecundario());
+			
 			return configuracionRepository.save(existing);
 		});
 	}

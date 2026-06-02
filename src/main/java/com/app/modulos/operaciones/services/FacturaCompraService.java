@@ -155,7 +155,7 @@ public class FacturaCompraService {
 
     private void generarAsientoAutomatico(FacturaCompra f, Configuracion config, Long idUsuario) {
         BigDecimal total = f.getTotal();
-        BigDecimal tasaIva = config.getIva() != null ? config.getIva() : new BigDecimal("0.13");
+        BigDecimal tasaIva = config.getIva() != null ? config.getIva().divide(new BigDecimal("100")) : new BigDecimal("0.13");
 
         BigDecimal ivaCredito = total.multiply(tasaIva);
         BigDecimal costoNeto = total.subtract(ivaCredito);

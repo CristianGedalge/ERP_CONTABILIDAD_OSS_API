@@ -77,6 +77,12 @@ public class Configuracion {
 	@Column(name = "id_cuenta_costo_ventas")
 	private Long idCuentaCostoVentas;
 
+	@Column(name = "color_primario", length = 7)
+	private String colorPrimario;
+
+	@Column(name = "color_secundario", length = 7)
+	private String colorSecundario;
+
 	public Long getId() {
 		return id;
 	}
@@ -227,5 +233,21 @@ public class Configuracion {
 
 	public void setIdCuentaCostoVentas(Long idCuentaCostoVentas) {
 		this.idCuentaCostoVentas = idCuentaCostoVentas;
+	}
+
+	public String getColorPrimario() {
+		return colorPrimario;
+	}
+
+	public void setColorPrimario(String colorPrimario) {
+		this.colorPrimario = colorPrimario;
+	}
+
+	public String getColorSecundario() {
+		return colorSecundario;
+	}
+
+	public void setColorSecundario(String colorSecundario) {
+		this.colorSecundario = colorSecundario;
 	}
 }

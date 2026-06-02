@@ -155,17 +155,57 @@ public class AsientoContableService {
             throw new IllegalArgumentException("No se puede modificar un asiento contable ANULADO");
         }
 
-        // Copiar y validar detalles
+        // Copiar propiedades básicas
         asiento.setFecha(asientoDetails.getFecha());
         asiento.setGlosa(asientoDetails.getGlosa());
         asiento.setEstado(asientoDetails.getEstado());
         asiento.setOrigenDocumento(asientoDetails.getOrigenDocumento());
         asiento.setOrigenId(asientoDetails.getOrigenId());
 
-        asiento.getDetalles().clear();
-        if (asientoDetails.getDetalles() != null) {
-            for (DetalleAsiento det : asientoDetails.getDetalles()) {
-                asiento.getDetalles().add(det);
+        // Reconciliación de detalles (evita Detached entity passed to persist)
+        List<DetalleAsiento> actuales = asiento.getDetalles();
+        List<DetalleAsiento> nuevosDetalles = asientoDetails.getDetalles();
+
+        // 1. Eliminar los detalles actuales que ya no vienen en la nueva lista
+        actuales.removeIf(act -> nuevosDetalles == null || nuevosDetalles.stream().noneMatch(n -> n.getId() != null && n.getId().equals(act.getId())));
+
+        // 2. Insertar o actualizar los detalles recibidos
+        if (nuevosDetalles != null) {
+            for (DetalleAsiento detRecibido : nuevosDetalles) {
+                if (detRecibido.getId() != null) {
+                    // Buscar si ya existía en la colección gestionada
+                    DetalleAsiento detExistente = actuales.stream()
+                        .filter(act -> act.getId().equals(detRecibido.getId()))
+                        .findFirst()
+                        .orElse(null);
+
+                    if (detExistente != null) {
+                        // Actualizar campos del registro existente
+                        detExistente.setDebe(detRecibido.getDebe());
+                        detExistente.setHaber(detRecibido.getHaber());
+                        detExistente.setCuentaContable(detRecibido.getCuentaContable());
+                        detExistente.setCentroCosto(detRecibido.getCentroCosto());
+                    } else {
+                        // Si tiene un ID pero no existía en los detalles gestionados, lo tratamos como nuevo
+                        // ignorando el ID asignado para evitar el error de entidad detached
+                        DetalleAsiento detNuevo = new DetalleAsiento();
+                        detNuevo.setDebe(detRecibido.getDebe());
+                        detNuevo.setHaber(detRecibido.getHaber());
+                        detNuevo.setCuentaContable(detRecibido.getCuentaContable());
+                        detNuevo.setCentroCosto(detRecibido.getCentroCosto());
+                        detNuevo.setAsientoContable(asiento);
+                        actuales.add(detNuevo);
+                    }
+                } else {
+                    // Es un detalle completamente nuevo (sin ID)
+                    DetalleAsiento detNuevo = new DetalleAsiento();
+                    detNuevo.setDebe(detRecibido.getDebe());
+                    detNuevo.setHaber(detRecibido.getHaber());
+                    detNuevo.setCuentaContable(detRecibido.getCuentaContable());
+                    detNuevo.setCentroCosto(detRecibido.getCentroCosto());
+                    detNuevo.setAsientoContable(asiento);
+                    actuales.add(detNuevo);
+                }
             }
         }
 

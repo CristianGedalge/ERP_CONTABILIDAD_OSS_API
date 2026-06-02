@@ -17,6 +17,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.usuario.security.UserPrincipal;
 
+import org.springframework.web.bind.annotation.RequestParam;
+
 @RestController
 @RequestMapping("/api/configuraciones")
 public class ConfiguracionController {
@@ -28,8 +30,15 @@ public class ConfiguracionController {
 
 	@GetMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_CONFIG_READ')")
-	public ResponseEntity<Configuracion> get(@AuthenticationPrincipal UserPrincipal principal) {
+	public ResponseEntity<Configuracion> get(
+		@AuthenticationPrincipal UserPrincipal principal,
+		@RequestParam(required = false) Long idEmpresa
+	) {
 		Long empresaId = principal.getEmpresaId();
+		boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
+		if (isSuperAdmin && idEmpresa != null) {
+			empresaId = idEmpresa;
+		}
 		return configuracionService.findByEmpresa(empresaId)
 			.map(ResponseEntity::ok)
 			.orElseGet(() -> ResponseEntity.notFound().build());

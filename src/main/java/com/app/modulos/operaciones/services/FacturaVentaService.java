@@ -211,8 +211,8 @@ public class FacturaVentaService {
 
     private void generarAsientoAutomatico(FacturaVenta f, Configuracion config, BigDecimal costoInventario, Long idUsuario) {
         BigDecimal total = f.getTotal();
-        BigDecimal tasaIva = config.getIva() != null ? config.getIva() : new BigDecimal("0.13");
-        BigDecimal tasaIt = config.getIt() != null ? config.getIt() : new BigDecimal("0.03");
+        BigDecimal tasaIva = config.getIva() != null ? config.getIva().divide(new BigDecimal("100")) : new BigDecimal("0.13");
+        BigDecimal tasaIt = config.getIt() != null ? config.getIt().divide(new BigDecimal("100")) : new BigDecimal("0.03");
 
         BigDecimal ivaDebito = total.multiply(tasaIva);
         BigDecimal ingresoNeto = total.subtract(ivaDebito);

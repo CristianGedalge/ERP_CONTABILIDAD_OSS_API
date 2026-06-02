@@ -18,16 +18,16 @@ public class DetalleAsiento {
     private BigDecimal haber = BigDecimal.ZERO;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "asiento_contable_id", nullable = false)
+    @JoinColumn(name = "id_asiento", nullable = false)
     @JsonIgnore
     private AsientoContable asientoContable;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cuenta_contable_id", nullable = false)
+    @JoinColumn(name = "id_cuenta", nullable = false)
     private CuentaContable cuentaContable;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "centro_costo_id")
+    @JoinColumn(name = "id_centro_costo")
     private CentroCosto centroCosto;
 
     public Long getId() {
