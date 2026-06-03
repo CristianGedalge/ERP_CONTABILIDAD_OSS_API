@@ -4,6 +4,7 @@ import com.app.modulos.usuario.entities.Rol;
 import com.app.modulos.usuario.repositories.RoleRepository;
 import java.util.List;
 import java.util.Optional;
+import java.time.LocalDateTime;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -50,6 +51,7 @@ public class RoleService {
 	public Optional<Rol> disable(Long id) {
 		return roleRepository.findById(id).map(existing -> {
 			existing.setEstado(false);
+			existing.setFechaDelete(LocalDateTime.now());
 			return roleRepository.save(existing);
 		});
 	}

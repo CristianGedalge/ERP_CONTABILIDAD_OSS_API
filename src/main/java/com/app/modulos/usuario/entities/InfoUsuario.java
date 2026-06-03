@@ -9,6 +9,8 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import java.time.LocalDateTime;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name = "info_usuario")
@@ -33,6 +35,13 @@ public class InfoUsuario {
 	@JoinColumn(name = "id_usuario", unique = true)
 	@com.fasterxml.jackson.annotation.JsonProperty(access = com.fasterxml.jackson.annotation.JsonProperty.Access.WRITE_ONLY)
 	private Usuario usuario;
+
+	@CreationTimestamp
+	@Column(name = "fecha_create", updatable = false)
+	private LocalDateTime fechaCreate;
+
+	@Column(name = "fecha_delete")
+	private LocalDateTime fechaDelete;
 
 	public Long getId() {
 		return id;
@@ -80,5 +89,23 @@ public class InfoUsuario {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+
+
+
+	public LocalDateTime getFechaCreate() {
+		return fechaCreate;
+	}
+
+	public void setFechaCreate(LocalDateTime fechaCreate) {
+		this.fechaCreate = fechaCreate;
+	}
+
+	public LocalDateTime getFechaDelete() {
+		return fechaDelete;
+	}
+
+	public void setFechaDelete(LocalDateTime fechaDelete) {
+		this.fechaDelete = fechaDelete;
 	}
 }
