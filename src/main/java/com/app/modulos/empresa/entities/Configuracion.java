@@ -36,6 +36,8 @@ public class Configuracion {
 	@Column(name = "id_empresa")
 	private Long idEmpresa;
 
+
+
 	@OneToOne
 	@JoinColumn(name = "id_empresa", insertable = false, updatable = false)
 	@JsonIgnore
@@ -104,4 +106,6 @@ public class Configuracion {
 	public void setEmpresa(Empresa empresa) {
 		this.empresa = empresa;
 	}
+
+
 }

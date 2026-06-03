@@ -12,9 +12,12 @@ import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
+import jakarta.persistence.ManyToOne;
+import com.app.modulos.empresa.entities.Empresa;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
-
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name = "rol")
@@ -32,20 +35,28 @@ public class Rol {
 	@Column(name = "id_empresa")
 	private Long idEmpresa;
 
+	@ManyToOne
+	@JoinColumn(name = "id_empresa", insertable = false, updatable = false)
+	@JsonIgnore
+	private Empresa empresa;
+
 	@Column(name = "estado", nullable = false)
 	private Boolean estado = true;
 
 	@ManyToMany(fetch = FetchType.EAGER)
-	@JoinTable(
-		name = "rol_permiso",
-		joinColumns = @JoinColumn(name = "id_rol"),
-		inverseJoinColumns = @JoinColumn(name = "id_permiso")
-	)
+	@JoinTable(name = "rol_permiso", joinColumns = @JoinColumn(name = "id_rol"), inverseJoinColumns = @JoinColumn(name = "id_permiso"))
 	private Set<Permiso> permisos = new HashSet<>();
 
 	@OneToMany(mappedBy = "rol")
 	@JsonIgnore
 	private Set<Usuario> usuarios = new HashSet<>();
+
+	@CreationTimestamp
+	@Column(name = "fecha_create", updatable = false)
+	private LocalDateTime fechaCreate;
+
+	@Column(name = "fecha_delete")
+	private LocalDateTime fechaDelete;
 
 	public Long getId() {
 		return id;
@@ -101,5 +112,29 @@ public class Rol {
 
 	public void setUsuarios(Set<Usuario> usuarios) {
 		this.usuarios = usuarios;
+	}
+
+	public LocalDateTime getFechaCreate() {
+		return fechaCreate;
+	}
+
+	public void setFechaCreate(LocalDateTime fechaCreate) {
+		this.fechaCreate = fechaCreate;
+	}
+
+	public LocalDateTime getFechaDelete() {
+		return fechaDelete;
+	}
+
+	public void setFechaDelete(LocalDateTime fechaDelete) {
+		this.fechaDelete = fechaDelete;
+	}
+
+	public Empresa getEmpresa() {
+		return empresa;
+	}
+
+	public void setEmpresa(Empresa empresa) {
+		this.empresa = empresa;
 	}
 }

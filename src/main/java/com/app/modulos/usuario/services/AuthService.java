@@ -13,7 +13,7 @@ import com.app.modulos.usuario.repositories.UserRepository;
 import com.app.modulos.usuario.security.JwtService;
 import com.app.modulos.usuario.security.UserDetailsServiceImpl;
 import com.app.modulos.empresa.entities.Empresa;
-import com.app.modulos.empresa.repositories.EmpresaRepository;
+import com.app.modulos.empresa.services.EmpresaService;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -26,7 +26,7 @@ public class AuthService {
 	private final AuthenticationManager authenticationManager;
 	private final UserRepository userRepository;
 	private final RoleRepository roleRepository;
-	private final EmpresaRepository empresaRepository;
+	private final EmpresaService empresaService;
 	private final InfoUsuarioRepository infoUsuarioRepository;
 	private final PasswordEncoder passwordEncoder;
 	private final JwtService jwtService;
@@ -37,7 +37,7 @@ public class AuthService {
 		AuthenticationManager authenticationManager,
 		UserRepository userRepository,
 		RoleRepository roleRepository,
-		EmpresaRepository empresaRepository,
+		EmpresaService empresaService,
 		InfoUsuarioRepository infoUsuarioRepository,
 		PasswordEncoder passwordEncoder,
 		JwtService jwtService,
@@ -47,7 +47,7 @@ public class AuthService {
 		this.authenticationManager = authenticationManager;
 		this.userRepository = userRepository;
 		this.roleRepository = roleRepository;
-		this.empresaRepository = empresaRepository;
+		this.empresaService = empresaService;
 		this.infoUsuarioRepository = infoUsuarioRepository;
 		this.passwordEncoder = passwordEncoder;
 		this.jwtService = jwtService;
@@ -80,7 +80,7 @@ public class AuthService {
 		empresa.setDireccion(request.getEmpresaDireccion());
 		empresa.setTelefono(request.getEmpresaTelefono());
 		empresa.setCorreo(request.getEmpresaCorreo());
-		empresa = empresaRepository.save(empresa);
+		empresa = empresaService.save(empresa);
 
 		Rol rol = new Rol();
 		rol.setNombre("ADMIN");
