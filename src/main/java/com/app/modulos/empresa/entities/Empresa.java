@@ -11,8 +11,10 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name = "empresa")
@@ -20,6 +22,13 @@ public class Empresa {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
+
+	@CreationTimestamp
+	@Column(name = "fecha_create", updatable = false)
+	private LocalDateTime fechaCreate;
+
+	@Column(name = "fecha_delete")
+	private LocalDateTime fechaDelete;
 
 	@Column(name = "nombre", nullable = false, length = 150)
 	private String nombre;
@@ -139,5 +148,21 @@ public class Empresa {
 
 	public void setUsuarios(Set<Usuario> usuarios) {
 		this.usuarios = usuarios;
+	}
+
+	public LocalDateTime getFechaCreate() {
+		return fechaCreate;
+	}
+
+	public void setFechaCreate(LocalDateTime fechaCreate) {
+		this.fechaCreate = fechaCreate;
+	}
+
+	public LocalDateTime getFechaDelete() {
+		return fechaDelete;
+	}
+
+	public void setFechaDelete(LocalDateTime fechaDelete) {
+		this.fechaDelete = fechaDelete;
 	}
 }

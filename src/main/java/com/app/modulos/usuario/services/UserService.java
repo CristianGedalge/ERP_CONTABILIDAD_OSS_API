@@ -4,6 +4,7 @@ import com.app.modulos.usuario.entities.Usuario;
 import com.app.modulos.usuario.repositories.UserRepository;
 import java.util.List;
 import java.util.Optional;
+import java.time.LocalDateTime;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -64,6 +65,7 @@ public class UserService {
 	public Optional<Usuario> disable(Long id) {
 		return userRepository.findById(id).map(existing -> {
 			existing.setEstado(false);
+			existing.setFechaDelete(LocalDateTime.now());
 			return userRepository.save(existing);
 		});
 	}
