@@ -6,8 +6,9 @@ import com.app.modulos.usuario.entities.Usuario;
 import com.app.modulos.usuario.repositories.UserRepository;
 import com.app.modulos.empresa.entities.Configuracion;
 import com.app.modulos.empresa.repositories.ConfiguracionRepository;
-import com.app.modulos.odoo.services.OdooClientService;
+
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
@@ -17,18 +18,18 @@ import org.springframework.transaction.annotation.Transactional;
 public class EmpresaService {
 	private final EmpresaRepository empresaRepository;
 	private final UserRepository userRepository;
-	private final OdooClientService odooClientService;
+
 	private final ConfiguracionRepository configuracionRepository;
 
 	public EmpresaService(
 		EmpresaRepository empresaRepository, 
 		UserRepository userRepository,
-		OdooClientService odooClientService,
+
 		ConfiguracionRepository configuracionRepository
 	) {
 		this.empresaRepository = empresaRepository;
 		this.userRepository = userRepository;
-		this.odooClientService = odooClientService;
+
 		this.configuracionRepository = configuracionRepository;
 	}
 
@@ -42,50 +43,22 @@ public class EmpresaService {
 
 	@Transactional
 	public Empresa save(Empresa empresa) {
-		Empresa saved = empresaRepository.save(empresa);
 		try {
-			// Intentamos registrar la compañía en la instancia maestra de Odoo
-			int odooCompanyId = odooClientService.crearCompaniaConMaster(saved);
+			return  empresaRepository.save(empresa);
 			
-			// Creamos una fila de configuración por defecto para esta empresa/tenant
-			Configuracion config = new Configuracion();
-			config.setIdEmpresa(saved.getId());
-			config.setOdooUrl(odooClientService.getMasterUrl());
-			config.setOdooDb(odooClientService.getMasterDb());
-			config.setOdooUser(odooClientService.getMasterUser());
-			config.setOdooPassword(odooClientService.getMasterPassword());
-			config.setOdooCompanyId(odooCompanyId);
-			config.setIva(BigDecimal.valueOf(13)); // Bolivia: IVA estándar 13%
-			config.setIt(BigDecimal.valueOf(3));   // Bolivia: IT estándar 3%
-			config.setMoneda("BOB");
-			config.setTipoCambio(BigDecimal.valueOf(6.96));
-			config.setEstado(true);
-			
-			configuracionRepository.save(config);
 		} catch (Exception e) {
-			throw new RuntimeException("Error al registrar la empresa en Odoo, la transacción será revertida: " + e.getMessage(), e);
+			throw new RuntimeException("Error al registrar la empresa" + e.getMessage(), e);
 		}
-		return saved;
+
 	}
 
 	@Transactional
 	public Empresa saveConUsuario(Empresa empresa, String adminNombre, String adminEmail, String adminPassword) {
 		Empresa saved = empresaRepository.save(empresa);
 		try {
-			// Intentamos registrar la compañía en la instancia maestra de Odoo
-			int odooCompanyId = odooClientService.crearCompaniaConMaster(saved);
-			
-			// Intentamos crear el usuario administrador de esta compañía en Odoo
-			odooClientService.crearUsuarioConMaster(adminNombre, adminEmail, adminPassword, odooCompanyId);
-
 			// Creamos una fila de configuración por defecto para esta empresa/tenant
 			Configuracion config = new Configuracion();
 			config.setIdEmpresa(saved.getId());
-			config.setOdooUrl(odooClientService.getMasterUrl());
-			config.setOdooDb(odooClientService.getMasterDb());
-			config.setOdooUser(odooClientService.getMasterUser());
-			config.setOdooPassword(odooClientService.getMasterPassword());
-			config.setOdooCompanyId(odooCompanyId);
 			config.setIva(BigDecimal.valueOf(13)); // Bolivia: IVA estándar 13%
 			config.setIt(BigDecimal.valueOf(3));   // Bolivia: IT estándar 3%
 			config.setMoneda("BOB");
@@ -94,7 +67,7 @@ public class EmpresaService {
 			
 			configuracionRepository.save(config);
 		} catch (Exception e) {
-			throw new RuntimeException("Error al registrar la empresa/usuario en Odoo, la transacción será revertida: " + e.getMessage(), e);
+			throw new RuntimeException("Error al registrar la empresa/usuario, la transacción será revertida: " + e.getMessage(), e);
 		}
 		return saved;
 	}
@@ -124,6 +97,7 @@ public class EmpresaService {
 	public Optional<Empresa> disable(Long id) {
 		return empresaRepository.findById(id).map(existing -> {
 			existing.setEstado(false);
+			existing.setFechaDelete(LocalDateTime.now());
 			return empresaRepository.save(existing);
 		});
 	}

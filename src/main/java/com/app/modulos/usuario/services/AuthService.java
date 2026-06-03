@@ -80,12 +80,7 @@ public class AuthService {
 		empresa.setDireccion(request.getEmpresaDireccion());
 		empresa.setTelefono(request.getEmpresaTelefono());
 		empresa.setCorreo(request.getEmpresaCorreo());
-		empresa = empresaService.saveConUsuario(
-			empresa,
-			request.getInfoNombre(),
-			request.getUsuarioCorreo(),
-			request.getUsuarioPassword()
-		);
+		empresa = empresaService.save(empresa);
 
 		Rol rol = new Rol();
 		rol.setNombre("ADMIN");

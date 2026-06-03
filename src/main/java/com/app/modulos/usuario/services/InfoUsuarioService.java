@@ -4,6 +4,7 @@ import com.app.modulos.usuario.entities.InfoUsuario;
 import com.app.modulos.usuario.repositories.InfoUsuarioRepository;
 import java.util.List;
 import java.util.Optional;
+import java.time.LocalDateTime;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -69,8 +70,8 @@ public class InfoUsuarioService {
 
 	public Optional<InfoUsuario> delete(Long id) {
 		return infoUsuarioRepository.findById(id).map(existing -> {
-			infoUsuarioRepository.delete(existing);
-			return existing;
+			existing.setFechaDelete(LocalDateTime.now());
+			return infoUsuarioRepository.save(existing);
 		});
 	}
 }
