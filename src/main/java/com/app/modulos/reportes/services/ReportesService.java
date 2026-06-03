@@ -8,6 +8,7 @@ import com.app.modulos.operaciones.entities.CuentaPorCobrar;
 import com.app.modulos.operaciones.entities.CuentaPorPagar;
 import com.app.modulos.operaciones.entities.FacturaCompra;
 import com.app.modulos.operaciones.entities.FacturaVenta;
+import com.app.modulos.operaciones.entities.DetalleFacturaVenta;
 import com.app.modulos.reportes.dtos.*;
 
 import com.itextpdf.text.*;
@@ -250,17 +251,33 @@ public class ReportesService {
         // 2. Calcular KPIs
         BigDecimal totalFacturado = BigDecimal.ZERO;
         BigDecimal totalDescuentos = BigDecimal.ZERO;
+        BigDecimal totalCosto = BigDecimal.ZERO;
         int conteo = ventas.size();
 
         for (FacturaVenta v : ventas) {
             totalFacturado = totalFacturado.add(v.getTotal());
             totalDescuentos = totalDescuentos.add(v.getDescuento());
+            if (v.getDetalles() != null) {
+                for (DetalleFacturaVenta det : v.getDetalles()) {
+                    if (det.getProducto() != null) {
+                        BigDecimal costoItem = det.getCantidad().multiply(det.getProducto().getCostoUnitario());
+                        totalCosto = totalCosto.add(costoItem);
+                    }
+                }
+            }
+        }
+
+        BigDecimal rentabilidadVal = BigDecimal.ZERO;
+        if (totalFacturado.compareTo(BigDecimal.ZERO) > 0) {
+            rentabilidadVal = totalFacturado.subtract(totalCosto)
+                .multiply(new BigDecimal("100"))
+                .divide(totalFacturado, 2, java.math.RoundingMode.HALF_UP);
         }
 
         Map<String, Object> kpis = new HashMap<>();
         kpis.put("totalMonto", totalFacturado);
         kpis.put("descuentosTotal", totalDescuentos);
-        kpis.put("rentabilidadEst", "87.00%"); // Margen bruto neto por ley
+        kpis.put("rentabilidadEst", rentabilidadVal.setScale(2).toString() + "%");
         kpis.put("conteoRegistros", conteo);
 
         // 3. Generar tendencia (Ventas por Mes)
@@ -306,17 +323,26 @@ public class ReportesService {
 
         BigDecimal totalComprado = BigDecimal.ZERO;
         BigDecimal totalDescuentos = BigDecimal.ZERO;
+        BigDecimal totalSubtotal = BigDecimal.ZERO;
         int conteo = compras.size();
 
         for (FacturaCompra c : compras) {
             totalComprado = totalComprado.add(c.getTotal());
+            totalSubtotal = totalSubtotal.add(c.getSubtotal());
             totalDescuentos = totalDescuentos.add(c.getSubtotal().subtract(c.getTotal()));
+        }
+
+        BigDecimal ahorroDescuento = BigDecimal.ZERO;
+        if (totalSubtotal.compareTo(BigDecimal.ZERO) > 0) {
+            ahorroDescuento = totalDescuentos
+                .multiply(new BigDecimal("100"))
+                .divide(totalSubtotal, 2, java.math.RoundingMode.HALF_UP);
         }
 
         Map<String, Object> kpis = new HashMap<>();
         kpis.put("totalMonto", totalComprado);
         kpis.put("descuentosTotal", totalDescuentos);
-        kpis.put("rentabilidadEst", "100.00%");
+        kpis.put("rentabilidadEst", ahorroDescuento.setScale(2).toString() + "%");
         kpis.put("conteoRegistros", conteo);
 
         Map<String, BigDecimal> tendenciaMap = new TreeMap<>();
