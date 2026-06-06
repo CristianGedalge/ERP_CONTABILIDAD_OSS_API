@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.usuario.security.UserPrincipal;
 import org.springframework.http.HttpStatus;
+import com.app.modulos.config.RequiresFeature;
 
 @RestController
 @RequestMapping("/api/users")
@@ -35,6 +36,7 @@ public class UserController {
 
 	@GetMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_USER_READ')")
+	@RequiresFeature("empleados")
 	public ResponseEntity<List<Usuario>> list(@AuthenticationPrincipal UserPrincipal principal) {
 		if (principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
 			return ResponseEntity.ok(userService.findAll());
@@ -68,6 +70,7 @@ public class UserController {
 
 	@PostMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_USER_WRITE')")
+	@RequiresFeature("empleados")
 	public ResponseEntity<?> create(@RequestBody Usuario usuario, @AuthenticationPrincipal UserPrincipal principal) {
 		try {
 			boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
@@ -109,6 +112,7 @@ public class UserController {
 
 	@PutMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_USER_WRITE')")
+	@RequiresFeature("empleados")
 	public ResponseEntity<Usuario> update(
 		@PathVariable Long id, 
 		@RequestBody Usuario usuario,
@@ -132,6 +136,7 @@ public class UserController {
 
 	@DeleteMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_USER_WRITE')")
+	@RequiresFeature("empleados")
 	public ResponseEntity<Usuario> disable(@PathVariable Long id, @AuthenticationPrincipal UserPrincipal principal) {
 		return userService.findById(id).map(existing -> {
 			// Seguridad

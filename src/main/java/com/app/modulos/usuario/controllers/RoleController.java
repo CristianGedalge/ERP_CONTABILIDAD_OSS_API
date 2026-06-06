@@ -19,8 +19,11 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.usuario.security.UserPrincipal;
 import org.springframework.http.HttpStatus;
 
+import com.app.modulos.config.RequiresFeature;
+
 @RestController
 @RequestMapping("/api/roles")
+@RequiresFeature("roles-permisos")
 public class RoleController {
 	private final RoleService roleService;
 

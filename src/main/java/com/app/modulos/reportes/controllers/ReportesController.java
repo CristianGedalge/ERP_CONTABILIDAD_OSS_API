@@ -21,9 +21,12 @@ import java.time.LocalDate;
 import java.util.List;
 import java.util.Map;
 
+import com.app.modulos.config.RequiresFeature;
+
 @RestController
 @RequestMapping("/api/reportes")
 @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_OPERACIONES_READ') or hasAuthority('PERM_CONTABILIDAD_READ')")
+@RequiresFeature("reportes")
 public class ReportesController {
 
     private final ReportesService reportesService;

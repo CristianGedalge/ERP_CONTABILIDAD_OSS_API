@@ -8,10 +8,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import com.app.modulos.config.RequiresFeature;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/api/contabilidad/cuentas")
+@RequiresFeature("contabilidad")
 public class CuentaContableController {
     private final CuentaContableService cuentaService;
 

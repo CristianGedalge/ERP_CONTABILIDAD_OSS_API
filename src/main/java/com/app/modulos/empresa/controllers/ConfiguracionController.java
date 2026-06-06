@@ -19,8 +19,11 @@ import com.app.modulos.usuario.security.UserPrincipal;
 
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.app.modulos.config.RequiresFeature;
+
 @RestController
 @RequestMapping("/api/configuraciones")
+@RequiresFeature("configuraciones")
 public class ConfiguracionController {
 	private final ConfiguracionService configuracionService;
 

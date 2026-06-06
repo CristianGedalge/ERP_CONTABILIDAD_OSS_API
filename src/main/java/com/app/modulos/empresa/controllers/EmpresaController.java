@@ -16,8 +16,11 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.usuario.security.UserPrincipal;
 
+import com.app.modulos.config.RequiresFeature;
+
 @RestController
 @RequestMapping("/api/empresas")
+@RequiresFeature("mi-empresa")
 public class EmpresaController {
 	private final EmpresaService empresaService;
 

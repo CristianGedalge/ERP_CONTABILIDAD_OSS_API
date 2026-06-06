@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.usuario.security.UserPrincipal;
+import com.app.modulos.config.RequiresFeature;
 import org.springframework.http.HttpStatus;
 
 @RestController
@@ -29,6 +30,7 @@ public class InfoUsuarioController {
 
 	@GetMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_USER_READ')")
+	@RequiresFeature("empleados")
 	public ResponseEntity<List<InfoUsuario>> list(@AuthenticationPrincipal UserPrincipal principal) {
 		if (principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
 			return ResponseEntity.ok(infoUsuarioService.findAll());
@@ -87,6 +89,7 @@ public class InfoUsuarioController {
 
 	@PutMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN')")
+	@RequiresFeature("empleados")
 	public ResponseEntity<InfoUsuario> update(
 		@PathVariable Long id, 
 		@RequestBody InfoUsuario infoUsuario,
@@ -109,6 +112,7 @@ public class InfoUsuarioController {
 
 	@DeleteMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN')")
+	@RequiresFeature("empleados")
 	public ResponseEntity<InfoUsuario> delete(
 		@PathVariable Long id, 
 		@AuthenticationPrincipal UserPrincipal principal
