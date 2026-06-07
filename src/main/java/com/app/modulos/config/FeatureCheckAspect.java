@@ -3,13 +3,16 @@ package com.app.modulos.config;
 import com.app.modulos.saas.entities.Suscripcion;
 import com.app.modulos.saas.services.SuscripcionService;
 import com.app.modulos.usuario.security.UserPrincipal;
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.reflect.MethodSignature;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Component;
 import org.springframework.web.server.ResponseStatusException;
 import org.springframework.http.HttpStatus;
+import java.lang.reflect.Method;
 
 @Aspect
 @Component
@@ -20,8 +23,22 @@ public class FeatureCheckAspect {
         this.suscripcionService = suscripcionService;
     }
 
-    @Before("@within(requiresFeature) || @annotation(requiresFeature)")
-    public void checkFeature(RequiresFeature requiresFeature) {
+    @Before("@within(com.app.modulos.config.RequiresFeature) || @annotation(com.app.modulos.config.RequiresFeature)")
+    public void checkFeature(JoinPoint joinPoint) {
+        RequiresFeature requiresFeature = null;
+        if (joinPoint.getSignature() instanceof MethodSignature) {
+            MethodSignature signature = (MethodSignature) joinPoint.getSignature();
+            Method method = signature.getMethod();
+            requiresFeature = method.getAnnotation(RequiresFeature.class);
+        }
+        if (requiresFeature == null) {
+            requiresFeature = joinPoint.getTarget().getClass().getAnnotation(RequiresFeature.class);
+        }
+
+        if (requiresFeature == null) {
+            return;
+        }
+
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         if (authentication == null || !(authentication.getPrincipal() instanceof UserPrincipal)) {
             return;
