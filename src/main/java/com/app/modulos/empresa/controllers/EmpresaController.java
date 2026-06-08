@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.usuario.security.UserPrincipal;
-
+import com.app.modulos.config.Auditable;
 import com.app.modulos.config.RequiresFeature;
 
 @RestController
@@ -54,6 +54,7 @@ public class EmpresaController {
 
 	@PostMapping
 	@PreAuthorize("hasRole('SUPERADMIN')")
+	@Auditable(accion = "CREAR", modulo = "MI_EMPRESA")
 	public ResponseEntity<Empresa> create(
 		@RequestBody Empresa empresa,
 		@AuthenticationPrincipal UserPrincipal principal
@@ -64,6 +65,7 @@ public class EmpresaController {
 
 	@PutMapping("/{id}")
 	@PreAuthorize("hasRole('SUPERADMIN') or hasRole('ADMIN') or hasAuthority('PERM_EMPRESA_WRITE')")
+	@Auditable(accion = "EDITAR", modulo = "MI_EMPRESA")
 	public ResponseEntity<Empresa> update(
 		@PathVariable Long id, 
 		@RequestBody Empresa empresa,
@@ -83,6 +85,7 @@ public class EmpresaController {
 
 	@DeleteMapping("/{id}")
 	@PreAuthorize("hasRole('SUPERADMIN')")
+	@Auditable(accion = "ELIMINAR", modulo = "MI_EMPRESA")
 	public ResponseEntity<Empresa> disable(@PathVariable Long id) {
 		return empresaService.disable(id)
 			.map(ResponseEntity::ok)

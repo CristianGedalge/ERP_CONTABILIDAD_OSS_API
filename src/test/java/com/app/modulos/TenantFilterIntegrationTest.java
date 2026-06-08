@@ -5,6 +5,11 @@ import com.app.modulos.usuario.security.UserPrincipal;
 import com.app.modulos.inventario.entities.Producto;
 import com.app.modulos.inventario.entities.TipoProducto;
 import com.app.modulos.inventario.repositories.ProductoRepository;
+import com.app.modulos.inventario.repositories.MovimientoInventarioRepository;
+import com.app.modulos.operaciones.repositories.FacturaCompraRepository;
+import com.app.modulos.operaciones.repositories.FacturaVentaRepository;
+import com.app.modulos.operaciones.repositories.CuentaPorCobrarRepository;
+import com.app.modulos.operaciones.repositories.CuentaPorPagarRepository;
 import com.app.modulos.empresa.entities.Empresa;
 import com.app.modulos.empresa.repositories.EmpresaRepository;
 import org.junit.jupiter.api.BeforeEach;
@@ -29,6 +34,21 @@ public class TenantFilterIntegrationTest {
     private ProductoRepository productoRepository;
 
     @Autowired
+    private MovimientoInventarioRepository movimientoInventarioRepository;
+
+    @Autowired
+    private FacturaCompraRepository facturaCompraRepository;
+
+    @Autowired
+    private FacturaVentaRepository facturaVentaRepository;
+
+    @Autowired
+    private CuentaPorCobrarRepository cuentaPorCobrarRepository;
+
+    @Autowired
+    private CuentaPorPagarRepository cuentaPorPagarRepository;
+
+    @Autowired
     private EmpresaRepository empresaRepository;
 
     @Autowired
@@ -41,7 +61,12 @@ public class TenantFilterIntegrationTest {
 
     @BeforeEach
     public void setUp() {
-        // Limpiar la base de datos de productos de prueba
+        // Limpiar la base de datos de productos de prueba y operaciones
+        cuentaPorCobrarRepository.deleteAll();
+        cuentaPorPagarRepository.deleteAll();
+        facturaCompraRepository.deleteAll();
+        facturaVentaRepository.deleteAll();
+        movimientoInventarioRepository.deleteAll();
         productoRepository.deleteAll();
 
         // Registrar Empresa 1

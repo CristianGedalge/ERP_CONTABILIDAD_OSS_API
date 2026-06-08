@@ -20,6 +20,7 @@ import com.app.modulos.usuario.security.UserPrincipal;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.app.modulos.config.RequiresFeature;
+import com.app.modulos.config.Auditable;
 
 @RestController
 @RequestMapping("/api/configuraciones")
@@ -55,6 +56,7 @@ public class ConfiguracionController {
 
 	@PostMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_CONFIG_WRITE')")
+	@Auditable(accion = "CREAR", modulo = "CONFIGURACIONES")
 	public ResponseEntity<Configuracion> create(
 		@RequestBody Configuracion configuracion,
 		@AuthenticationPrincipal UserPrincipal principal
@@ -66,6 +68,7 @@ public class ConfiguracionController {
 
 	@PutMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_CONFIG_WRITE')")
+	@Auditable(accion = "EDITAR", modulo = "CONFIGURACIONES")
 	public ResponseEntity<Configuracion> update(
 		@AuthenticationPrincipal UserPrincipal principal, 
 		@RequestBody Configuracion configuracion

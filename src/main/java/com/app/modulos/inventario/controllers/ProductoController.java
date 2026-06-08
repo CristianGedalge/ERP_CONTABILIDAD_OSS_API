@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.config.RequiresFeature;
+import com.app.modulos.config.Auditable;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -60,6 +61,7 @@ public class ProductoController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_PRODUCTO_WRITE')")
+    @Auditable(accion = "CREAR", modulo = "INVENTARIO")
     public ResponseEntity<?> create(
         @RequestBody Producto producto, 
         @AuthenticationPrincipal UserPrincipal principal
@@ -86,6 +88,7 @@ public class ProductoController {
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_PRODUCTO_WRITE')")
+    @Auditable(accion = "EDITAR", modulo = "INVENTARIO")
     public ResponseEntity<Producto> update(
         @PathVariable Long id, 
         @RequestBody Producto producto,
@@ -106,6 +109,7 @@ public class ProductoController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_PRODUCTO_WRITE')")
+    @Auditable(accion = "ELIMINAR", modulo = "INVENTARIO")
     public ResponseEntity<Producto> disable(
         @PathVariable Long id, 
         @AuthenticationPrincipal UserPrincipal principal,

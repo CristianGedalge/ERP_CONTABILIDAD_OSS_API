@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.config.RequiresFeature;
+import com.app.modulos.config.Auditable;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -40,6 +41,7 @@ public class FacturaCompraController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_OPERACIONES_WRITE')")
+    @Auditable(accion = "CREAR", modulo = "COMPRAS")
     public ResponseEntity<?> registrar(
         @RequestBody FacturaCompra factura,
         @AuthenticationPrincipal UserPrincipal principal

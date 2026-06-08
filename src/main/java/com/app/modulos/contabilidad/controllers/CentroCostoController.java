@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.config.RequiresFeature;
+import com.app.modulos.config.Auditable;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -40,6 +41,7 @@ public class CentroCostoController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_CONTABILIDAD_WRITE')")
+    @Auditable(accion = "CREAR_CENTRO_COSTO", modulo = "CONTABILIDAD")
     public ResponseEntity<?> crear(
         @RequestBody CentroCosto cc,
         @AuthenticationPrincipal UserPrincipal principal
@@ -70,6 +72,7 @@ public class CentroCostoController {
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_CONTABILIDAD_WRITE')")
+    @Auditable(accion = "EDITAR_CENTRO_COSTO", modulo = "CONTABILIDAD")
     public ResponseEntity<?> actualizar(
         @PathVariable Long id,
         @RequestBody CentroCosto cc,
@@ -93,6 +96,7 @@ public class CentroCostoController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_CONTABILIDAD_WRITE')")
+    @Auditable(accion = "ELIMINAR_CENTRO_COSTO", modulo = "CONTABILIDAD")
     public ResponseEntity<?> eliminar(
         @PathVariable Long id,
         @AuthenticationPrincipal UserPrincipal principal

@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.config.RequiresFeature;
+import com.app.modulos.config.Auditable;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -40,6 +41,7 @@ public class FacturaVentaController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_OPERACIONES_WRITE')")
+    @Auditable(accion = "CREAR", modulo = "VENTAS")
     public ResponseEntity<?> registrar(
         @RequestBody FacturaVenta factura,
         @AuthenticationPrincipal UserPrincipal principal
@@ -71,6 +73,7 @@ public class FacturaVentaController {
 
     @PutMapping("/{id}/anular")
     @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_OPERACIONES_WRITE')")
+    @Auditable(accion = "ANULAR", modulo = "VENTAS")
     public ResponseEntity<?> anular(
         @PathVariable Long id,
         @AuthenticationPrincipal UserPrincipal principal

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
+import com.app.modulos.config.Auditable;
 
 @RestController
 @RequestMapping("/api/suscripciones")
@@ -57,6 +58,7 @@ public class SuscripcionController {
 
 	@PostMapping
 	@PreAuthorize("hasRole('ADMIN')")
+	@Auditable(accion = "CREAR", modulo = "SUSCRIPCION")
 	public ResponseEntity<?> subscribe(
 		@RequestBody Suscripcion body, 
 		@AuthenticationPrincipal com.app.modulos.usuario.security.UserPrincipal principal
@@ -91,6 +93,7 @@ public class SuscripcionController {
 
 	@DeleteMapping("/{id}")
 	@PreAuthorize("hasRole('SUPERADMIN')")
+	@Auditable(accion = "ELIMINAR", modulo = "SUSCRIPCION")
 	public ResponseEntity<Suscripcion> disable(@PathVariable Long id) {
 		return suscripcionService.disable(id)
 			.map(ResponseEntity::ok)

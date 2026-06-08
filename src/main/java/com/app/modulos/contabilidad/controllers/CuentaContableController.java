@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.config.RequiresFeature;
+import com.app.modulos.config.Auditable;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -40,6 +41,7 @@ public class CuentaContableController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_CONTABILIDAD_WRITE')")
+    @Auditable(accion = "CREAR", modulo = "CONTABILIDAD")
     public ResponseEntity<?> crear(
         @RequestBody CuentaContable cuenta,
         @AuthenticationPrincipal UserPrincipal principal
@@ -70,6 +72,7 @@ public class CuentaContableController {
 
     @PutMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_CONTABILIDAD_WRITE')")
+    @Auditable(accion = "EDITAR", modulo = "CONTABILIDAD")
     public ResponseEntity<?> actualizar(
         @PathVariable Long id,
         @RequestBody CuentaContable cuenta,
@@ -93,6 +96,7 @@ public class CuentaContableController {
 
     @DeleteMapping("/{id}")
     @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_CONTABILIDAD_WRITE')")
+    @Auditable(accion = "ELIMINAR", modulo = "CONTABILIDAD")
     public ResponseEntity<?> eliminar(
         @PathVariable Long id,
         @AuthenticationPrincipal UserPrincipal principal

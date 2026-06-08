@@ -42,6 +42,11 @@ public class DataInitializer implements CommandLineRunner {
 		requiredPermissions.put("PERM_REPORTES_WRITE", "Exportar reportes a Excel o PDF");
 		requiredPermissions.put("PERM_PANEL_CONTROL_READ", "Visualizar panel de control de branding");
 		requiredPermissions.put("PERM_PANEL_CONTROL_WRITE", "Modificar colores y logo en el panel de control");
+		requiredPermissions.put("PERM_AUDITORIA_READ", "Visualizar bitácora de auditoría");
+		requiredPermissions.put("PERM_AUDITORIA_WRITE", "Exportar o limpiar registros de bitácora");
+		requiredPermissions.put("PERM_BACKUP_READ", "Visualizar historial de copias de seguridad");
+		requiredPermissions.put("PERM_BACKUP_WRITE", "Crear y descargar copias de seguridad");
+
 
 		for (Map.Entry<String, String> entry : requiredPermissions.entrySet()) {
 			String name = entry.getKey();

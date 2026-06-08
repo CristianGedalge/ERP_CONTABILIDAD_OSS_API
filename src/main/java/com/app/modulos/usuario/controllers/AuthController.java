@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import com.app.modulos.config.Auditable;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -22,6 +23,7 @@ public class AuthController {
 	}
 
 	@PostMapping("/login")
+	@Auditable(accion = "LOGIN", modulo = "ACCESOS")
 	public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request) {
 		return ResponseEntity.ok(authService.login(request));
 	}
@@ -32,11 +34,13 @@ public class AuthController {
 	}
 
 	@PostMapping("/register-empresa")
+	@Auditable(accion = "REGISTRO_EMPRESA", modulo = "ACCESOS")
 	public ResponseEntity<?> registerEmpresa(@RequestBody RegisterEmpresaRequest request) {
 		return ResponseEntity.ok(authService.registerEmpresa(request));
 	}
 
 	@PostMapping("/logout")
+	@Auditable(accion = "LOGOUT", modulo = "ACCESOS")
 	public ResponseEntity<?> logout(@RequestHeader("Authorization") String token) {
 		try {
 			authService.logout(token);

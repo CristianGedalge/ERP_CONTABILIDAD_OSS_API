@@ -94,6 +94,6 @@ public class FeatureCheckAspect {
     }
 
     private boolean isCoreModule(String feature) {
-        return java.util.List.of("mi-empresa", "suscripcion", "panel-control", "configuraciones", "roles-permisos", "empleados").contains(feature);
+        return java.util.List.of("mi-empresa", "suscripcion", "panel-control", "configuraciones", "roles-permisos", "empleados", "auditoria").contains(feature);
     }
 }

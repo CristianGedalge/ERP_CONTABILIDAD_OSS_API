@@ -17,6 +17,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.usuario.security.UserPrincipal;
 import com.app.modulos.config.RequiresFeature;
+import com.app.modulos.config.Auditable;
 import org.springframework.http.HttpStatus;
 
 @RestController
@@ -67,6 +68,7 @@ public class InfoUsuarioController {
 
 	@PostMapping
 	@PreAuthorize("isAuthenticated()")
+	@Auditable(accion = "CREAR_INFO_PERFIL", modulo = "EMPLEADOS")
 	public ResponseEntity<InfoUsuario> create(
 		@RequestBody InfoUsuario infoUsuario,
 		@AuthenticationPrincipal UserPrincipal principal
@@ -78,6 +80,7 @@ public class InfoUsuarioController {
 
 	@PutMapping("/me")
 	@PreAuthorize("isAuthenticated()")
+	@Auditable(accion = "EDITAR_PERFIL_PROPIO", modulo = "EMPLEADOS")
 	public ResponseEntity<InfoUsuario> updateMe(
 		@RequestBody InfoUsuario infoUsuario,
 		@AuthenticationPrincipal UserPrincipal principal
@@ -90,6 +93,7 @@ public class InfoUsuarioController {
 	@PutMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN')")
 	@RequiresFeature("empleados")
+	@Auditable(accion = "EDITAR_PERFIL_EMPLEADO", modulo = "EMPLEADOS")
 	public ResponseEntity<InfoUsuario> update(
 		@PathVariable Long id, 
 		@RequestBody InfoUsuario infoUsuario,
@@ -113,6 +117,7 @@ public class InfoUsuarioController {
 	@DeleteMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN')")
 	@RequiresFeature("empleados")
+	@Auditable(accion = "ELIMINAR_PERFIL_EMPLEADO", modulo = "EMPLEADOS")
 	public ResponseEntity<InfoUsuario> delete(
 		@PathVariable Long id, 
 		@AuthenticationPrincipal UserPrincipal principal

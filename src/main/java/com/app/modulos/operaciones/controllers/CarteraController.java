@@ -14,6 +14,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 import com.app.modulos.config.RequiresFeature;
+import com.app.modulos.config.Auditable;
 import com.app.modulos.operaciones.entities.CuentaPorCobrar;
 
 @RestController
@@ -62,6 +63,7 @@ public class CarteraController {
 
     @PostMapping("/cuentas-cobrar/{id}/pagar")
     @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_OPERACIONES_WRITE')")
+    @Auditable(accion = "REGISTRAR_COBRO", modulo = "CARTERA")
     public ResponseEntity<?> registrarCobro(
         @PathVariable Long id,
         @RequestBody Map<String, BigDecimal> body,
@@ -91,6 +93,7 @@ public class CarteraController {
 
     @PostMapping("/cuentas-pagar/{id}/pagar")
     @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_OPERACIONES_WRITE')")
+    @Auditable(accion = "REGISTRAR_PAGO", modulo = "CARTERA")
     public ResponseEntity<?> registrarPago(
         @PathVariable Long id,
         @RequestBody Map<String, BigDecimal> body,

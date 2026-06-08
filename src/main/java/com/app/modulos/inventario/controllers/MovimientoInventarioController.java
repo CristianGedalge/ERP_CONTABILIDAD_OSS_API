@@ -10,6 +10,7 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import com.app.modulos.config.RequiresFeature;
+import com.app.modulos.config.Auditable;
 
 @RestController
 @RequestMapping("/api/inventario/movimientos")
@@ -58,6 +59,7 @@ public class MovimientoInventarioController {
 
     @PostMapping
     @PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_INVENTARIO_WRITE')")
+    @Auditable(accion = "REGISTRAR_MOVIMIENTO", modulo = "INVENTARIO")
     public ResponseEntity<?> registrar(
         @RequestBody MovimientoInventario movimiento,
         @AuthenticationPrincipal UserPrincipal principal

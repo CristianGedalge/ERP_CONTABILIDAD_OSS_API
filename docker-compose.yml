@@ -11,6 +11,8 @@ services:
       - "5432:5432"
     volumes:
       - db_data:/var/lib/postgresql/data
+      - ./backups:/backups
+
 
   app:
     build: .
@@ -26,6 +28,8 @@ services:
       - DB_PASSWORD=Abril2026+++
       - JWT_SECRET=Zm9yZ2V0LW5vdC10by11c2UtemUta2V5LXdpdGgtZW5vdWdoLWxlbmd0aC1pbi1iYXNlNjQ0NA==
       - JWT_EXPIRATION_MS=86400000
+    volumes:
+      - ./backups:/backups
 
 volumes:
   db_data:

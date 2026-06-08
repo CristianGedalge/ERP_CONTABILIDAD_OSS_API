@@ -20,6 +20,7 @@ import com.app.modulos.usuario.security.UserPrincipal;
 import org.springframework.http.HttpStatus;
 
 import com.app.modulos.config.RequiresFeature;
+import com.app.modulos.config.Auditable;
 
 @RestController
 @RequestMapping("/api/roles")
@@ -58,6 +59,7 @@ public class RoleController {
 
 	@PostMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_ROL_WRITE')")
+	@Auditable(accion = "CREAR", modulo = "ROLES_PERMISOS")
 	public ResponseEntity<Rol> create(@RequestBody Rol rol, @AuthenticationPrincipal UserPrincipal principal) {
 		boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
 		if (!isSuperAdmin) {
@@ -68,6 +70,7 @@ public class RoleController {
 
 	@PutMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_ROL_WRITE')")
+	@Auditable(accion = "EDITAR", modulo = "ROLES_PERMISOS")
 	public ResponseEntity<Rol> update(
 		@PathVariable Long id, 
 		@RequestBody Rol rol,
@@ -90,6 +93,7 @@ public class RoleController {
 
 	@DeleteMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_ROL_WRITE')")
+	@Auditable(accion = "ELIMINAR", modulo = "ROLES_PERMISOS")
 	public ResponseEntity<Rol> disable(@PathVariable Long id, @AuthenticationPrincipal UserPrincipal principal) {
 		return roleService.findById(id).map(existing -> {
 			// Seguridad

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.app.modulos.config.RequiresFeature;
+import com.app.modulos.config.Auditable;
 
 @RestController
 @RequestMapping("/api/permisos")
@@ -33,12 +34,14 @@ public class PermisoController {
 
 	@PostMapping
 	@PreAuthorize("hasRole('SUPERADMIN')")
+	@Auditable(accion = "CREAR", modulo = "ROLES_PERMISOS")
 	public ResponseEntity<Permiso> create(@RequestBody Permiso permiso) {
 		return ResponseEntity.ok(permisoService.save(permiso));
 	}
 
 	@PutMapping("/{id}")
 	@PreAuthorize("hasRole('SUPERADMIN')")
+	@Auditable(accion = "EDITAR", modulo = "ROLES_PERMISOS")
 	public ResponseEntity<Permiso> update(@PathVariable Long id, @RequestBody Permiso details) {
 		return ResponseEntity.ok(permisoService.update(id, details));
 	}
