@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.HashSet;
 import java.util.Set;
+import java.time.LocalDateTime;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -81,6 +82,7 @@ public class RoleService {
 				throw new IllegalStateException("No se puede eliminar o desactivar el rol porque hay usuarios activos asignados a él.");
 			}
 			existing.setEstado(false);
+			existing.setFechaDelete(LocalDateTime.now());
 			return roleRepository.save(existing);
 		});
 	}

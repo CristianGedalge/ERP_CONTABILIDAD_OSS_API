@@ -4,6 +4,7 @@ import com.app.modulos.empresa.entities.Empresa;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+//import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -11,6 +12,8 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
+import java.time.LocalDateTime;
+import org.hibernate.annotations.CreationTimestamp;
 
 @Entity
 @Table(name = "usuario")
@@ -40,13 +43,20 @@ public class Usuario {
 	@JsonIgnore
 	private Empresa empresa;
 
-	@ManyToOne
+	@ManyToOne	
 	@JoinColumn(name = "id_rol")
 	private Rol rol;
 
 	@OneToOne(mappedBy = "usuario")
 	@JsonIgnore
 	private InfoUsuario infoUsuario;
+
+	@CreationTimestamp
+	@Column(name = "fecha_create", updatable = false)
+	private LocalDateTime fechaCreate;
+
+	@Column(name = "fecha_delete")
+	private LocalDateTime fechaDelete;
 
 	public Long getId() {
 		return id;
@@ -119,5 +129,21 @@ public class Usuario {
 
 	public void setInfoUsuario(InfoUsuario infoUsuario) {
 		this.infoUsuario = infoUsuario;
+	}
+
+	public LocalDateTime getFechaCreate() {
+		return fechaCreate;
+	}
+
+	public void setFechaCreate(LocalDateTime fechaCreate) {
+		this.fechaCreate = fechaCreate;
+	}
+
+	public LocalDateTime getFechaDelete() {
+		return fechaDelete;
+	}
+
+	public void setFechaDelete(LocalDateTime fechaDelete) {
+		this.fechaDelete = fechaDelete;
 	}
 }

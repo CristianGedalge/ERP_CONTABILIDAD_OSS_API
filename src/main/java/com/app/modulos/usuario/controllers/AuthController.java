@@ -6,6 +6,8 @@ import com.app.modulos.usuario.dto.RegisterEmpresaRequest;
 import com.app.modulos.usuario.dto.RegisterRequest;
 import com.app.modulos.usuario.services.AuthService;
 import org.springframework.http.ResponseEntity;
+import org.springframework.http.HttpStatus;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -25,7 +27,11 @@ public class AuthController {
 	@PostMapping("/login")
 	@Auditable(accion = "LOGIN", modulo = "ACCESOS")
 	public ResponseEntity<AuthResponse> login(@RequestBody AuthRequest request) {
-		return ResponseEntity.ok(authService.login(request));
+		try {
+			return ResponseEntity.ok(authService.login(request));
+		} catch (AuthenticationException ex) {
+			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+		}
 	}
 
 	@PostMapping("/register")

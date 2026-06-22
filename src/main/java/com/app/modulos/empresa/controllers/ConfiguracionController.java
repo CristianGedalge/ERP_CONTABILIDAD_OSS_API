@@ -78,4 +78,5 @@ public class ConfiguracionController {
 			.map(ResponseEntity::ok)
 			.orElseGet(() -> ResponseEntity.notFound().build());
 	}
+
 }

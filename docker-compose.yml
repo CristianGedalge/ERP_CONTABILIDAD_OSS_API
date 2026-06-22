@@ -1,35 +1,11 @@
 services:
-  db:
-    image: postgres:16
-    container_name: postgres_db
-    restart: always
-    environment:
-      - POSTGRES_DB=erp_db
-      - POSTGRES_USER=erp
-      - POSTGRES_PASSWORD=Abril2026+++
-    ports:
-      - "5432:5432"
-    volumes:
-      - db_data:/var/lib/postgresql/data
-      - ./backups:/backups
-
-
   app:
     build: .
     container_name: spring_app
     ports:
       - "8080:8080"
-    depends_on:
-      - db
-    environment:
-      # NOTA: Aquí el host es 'db', no 'localhost'
-      - DB_URL=jdbc:postgresql://db:5432/erp_db
-      - DB_USERNAME=erp
-      - DB_PASSWORD=Abril2026+++
-      - JWT_SECRET=Zm9yZ2V0LW5vdC10by11c2UtemUta2V5LXdpdGgtZW5vdWdoLWxlbmd0aC1pbi1iYXNlNjQ0NA==
-      - JWT_EXPIRATION_MS=86400000
+    env_file:
+      - .env
+    restart: always
     volumes:
       - ./backups:/backups
-
-volumes:
-  db_data:

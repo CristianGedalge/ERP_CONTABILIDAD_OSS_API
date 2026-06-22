@@ -45,16 +45,17 @@ public class RoleController {
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_ROL_READ')")
 	public ResponseEntity<Rol> get(@PathVariable Long id, @AuthenticationPrincipal UserPrincipal principal) {
 		return roleService.findById(id)
-			.map(rol -> {
-				// Seguridad: Si no es SUPERADMIN, solo puede ver roles de SU empresa
-				if (!principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
-					if (!rol.getIdEmpresa().equals(principal.getEmpresaId())) {
-						return ResponseEntity.status(HttpStatus.FORBIDDEN).<Rol>build();
+				.map(rol -> {
+					// Seguridad: Si no es SUPERADMIN, solo puede ver roles de SU empresa
+					if (!principal.getAuthorities().stream()
+							.anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
+						if (!rol.getIdEmpresa().equals(principal.getEmpresaId())) {
+							return ResponseEntity.status(HttpStatus.FORBIDDEN).<Rol>build();
+						}
 					}
-				}
-				return ResponseEntity.ok(rol);
-			})
-			.orElseGet(() -> ResponseEntity.notFound().build());
+					return ResponseEntity.ok(rol);
+				})
+				.orElseGet(() -> ResponseEntity.notFound().build());
 	}
 
 	@PostMapping
@@ -72,10 +73,9 @@ public class RoleController {
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_ROL_WRITE')")
 	@Auditable(accion = "EDITAR", modulo = "ROLES_PERMISOS")
 	public ResponseEntity<Rol> update(
-		@PathVariable Long id, 
-		@RequestBody Rol rol,
-		@AuthenticationPrincipal UserPrincipal principal
-	) {
+			@PathVariable Long id,
+			@RequestBody Rol rol,
+			@AuthenticationPrincipal UserPrincipal principal) {
 		return roleService.findById(id).map(existing -> {
 			boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
 			// Seguridad
@@ -86,8 +86,8 @@ public class RoleController {
 				rol.setIdEmpresa(principal.getEmpresaId()); // Prevenir cambio de empresa por un ADMIN
 			}
 			return roleService.update(id, rol)
-				.map(ResponseEntity::ok)
-				.orElseGet(() -> ResponseEntity.notFound().build());
+					.map(ResponseEntity::ok)
+					.orElseGet(() -> ResponseEntity.notFound().build());
 		}).orElseGet(() -> ResponseEntity.notFound().build());
 	}
 
@@ -103,8 +103,8 @@ public class RoleController {
 				}
 			}
 			return roleService.disable(id)
-				.map(ResponseEntity::ok)
-				.orElseGet(() -> ResponseEntity.notFound().build());
+					.map(ResponseEntity::ok)
+					.orElseGet(() -> ResponseEntity.notFound().build());
 		}).orElseGet(() -> ResponseEntity.notFound().build());
 	}
 }
