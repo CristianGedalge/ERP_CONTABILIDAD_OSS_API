@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.usuario.security.UserPrincipal;
+import com.app.modulos.config.RequiresFeature;
+import com.app.modulos.config.Auditable;
 import org.springframework.http.HttpStatus;
 
 @RestController
@@ -29,6 +31,7 @@ public class InfoUsuarioController {
 
 	@GetMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_USER_READ')")
+	@RequiresFeature("empleados")
 	public ResponseEntity<List<InfoUsuario>> list(@AuthenticationPrincipal UserPrincipal principal) {
 		if (principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
 			return ResponseEntity.ok(infoUsuarioService.findAll());
@@ -65,6 +68,7 @@ public class InfoUsuarioController {
 
 	@PostMapping
 	@PreAuthorize("isAuthenticated()")
+	@Auditable(accion = "CREAR_INFO_PERFIL", modulo = "EMPLEADOS")
 	public ResponseEntity<InfoUsuario> create(
 		@RequestBody InfoUsuario infoUsuario,
 		@AuthenticationPrincipal UserPrincipal principal
@@ -76,6 +80,7 @@ public class InfoUsuarioController {
 
 	@PutMapping("/me")
 	@PreAuthorize("isAuthenticated()")
+	@Auditable(accion = "EDITAR_PERFIL_PROPIO", modulo = "EMPLEADOS")
 	public ResponseEntity<InfoUsuario> updateMe(
 		@RequestBody InfoUsuario infoUsuario,
 		@AuthenticationPrincipal UserPrincipal principal
@@ -87,6 +92,8 @@ public class InfoUsuarioController {
 
 	@PutMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN')")
+	@RequiresFeature("empleados")
+	@Auditable(accion = "EDITAR_PERFIL_EMPLEADO", modulo = "EMPLEADOS")
 	public ResponseEntity<InfoUsuario> update(
 		@PathVariable Long id, 
 		@RequestBody InfoUsuario infoUsuario,
@@ -108,9 +115,24 @@ public class InfoUsuarioController {
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<InfoUsuario> delete(@PathVariable Long id) {
-		return infoUsuarioService.delete(id)
-			.map(ResponseEntity::ok)
-			.orElseGet(() -> ResponseEntity.notFound().build());
+	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN')")
+	@RequiresFeature("empleados")
+	@Auditable(accion = "ELIMINAR_PERFIL_EMPLEADO", modulo = "EMPLEADOS")
+	public ResponseEntity<InfoUsuario> delete(
+		@PathVariable Long id, 
+		@AuthenticationPrincipal UserPrincipal principal
+	) {
+		return infoUsuarioService.findById(id).map(existing -> {
+			boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
+			boolean isAdminOfCompany = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_ADMIN")) 
+				&& existing.getUsuario() != null && existing.getUsuario().getIdEmpresa().equals(principal.getEmpresaId());
+
+			if (isSuperAdmin || isAdminOfCompany) {
+				return infoUsuarioService.delete(id)
+					.map(ResponseEntity::ok)
+					.orElseGet(() -> ResponseEntity.notFound().build());
+			}
+			return ResponseEntity.status(HttpStatus.FORBIDDEN).<InfoUsuario>build();
+		}).orElseGet(() -> ResponseEntity.notFound().build());
 	}
 }

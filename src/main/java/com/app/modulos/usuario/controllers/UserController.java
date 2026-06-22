@@ -21,6 +21,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.usuario.security.UserPrincipal;
 import org.springframework.http.HttpStatus;
+import com.app.modulos.config.RequiresFeature;
+import com.app.modulos.config.Auditable;
 
 @RestController
 @RequestMapping("/api/users")
@@ -35,6 +37,7 @@ public class UserController {
 
 	@GetMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_USER_READ')")
+	@RequiresFeature("empleados")
 	public ResponseEntity<List<Usuario>> list(@AuthenticationPrincipal UserPrincipal principal) {
 		if (principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
 			return ResponseEntity.ok(userService.findAll());
@@ -68,14 +71,22 @@ public class UserController {
 
 	@PostMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_USER_WRITE')")
+	@RequiresFeature("empleados")
+	@Auditable(accion = "CREAR", modulo = "EMPLEADOS")
 	public ResponseEntity<?> create(@RequestBody Usuario usuario, @AuthenticationPrincipal UserPrincipal principal) {
 		try {
-			Long empresaId = principal.getEmpresaId();
-			if (empresaId == null) {
-				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: No se detectó empresa en tu sesión.");
+			boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
+			if (isSuperAdmin) {
+				if (usuario.getIdEmpresa() == null) {
+					return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: Como SUPERADMIN, debes especificar el idEmpresa del usuario.");
+				}
+			} else {
+				Long empresaId = principal.getEmpresaId();
+				if (empresaId == null) {
+					return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Error: No se detectó empresa en tu sesión.");
+				}
+				usuario.setIdEmpresa(empresaId);
 			}
-			
-			usuario.setIdEmpresa(empresaId);
 			
 			// Si viene un rol, intentar cargarlo
 			if (usuario.getRol() != null && usuario.getRol().getId() != null) {
@@ -103,17 +114,22 @@ public class UserController {
 
 	@PutMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_USER_WRITE')")
+	@RequiresFeature("empleados")
+	@Auditable(accion = "EDITAR", modulo = "EMPLEADOS")
 	public ResponseEntity<Usuario> update(
 		@PathVariable Long id, 
 		@RequestBody Usuario usuario,
 		@AuthenticationPrincipal UserPrincipal principal
 	) {
 		return userService.findById(id).map(existing -> {
+			boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
 			// Seguridad
-			if (!principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
+			if (!isSuperAdmin) {
 				if (!existing.getIdEmpresa().equals(principal.getEmpresaId())) {
 					return ResponseEntity.status(HttpStatus.FORBIDDEN).<Usuario>build();
 				}
+				// Evitar que un ADMIN cambie a un usuario a otra empresa
+				usuario.setIdEmpresa(principal.getEmpresaId());
 			}
 			return userService.update(id, usuario)
 				.map(ResponseEntity::ok)
@@ -123,6 +139,8 @@ public class UserController {
 
 	@DeleteMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_USER_WRITE')")
+	@RequiresFeature("empleados")
+	@Auditable(accion = "ELIMINAR", modulo = "EMPLEADOS")
 	public ResponseEntity<Usuario> disable(@PathVariable Long id, @AuthenticationPrincipal UserPrincipal principal) {
 		return userService.findById(id).map(existing -> {
 			// Seguridad
