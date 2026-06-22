@@ -11,6 +11,7 @@ RUN mvn clean package -DskipTests
 
 # Etapa 2: Ejecución (Runtime)
 FROM eclipse-temurin:21-jre
+RUN apt-get update && apt-get install -y postgresql-client && rm -rf /var/lib/apt/lists/*
 WORKDIR /app
 # Copiar solo el archivo JAR generado desde la etapa de construcción
 COPY --from=build /app/target/*.jar app.jar

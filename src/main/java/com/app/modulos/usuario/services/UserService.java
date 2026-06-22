@@ -2,6 +2,7 @@ package com.app.modulos.usuario.services;
 
 import com.app.modulos.usuario.entities.Usuario;
 import com.app.modulos.usuario.repositories.UserRepository;
+import com.app.modulos.usuario.repositories.RoleRepository;
 import java.util.List;
 import java.util.Optional;
 import java.time.LocalDateTime;
@@ -11,10 +12,12 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserService {
 	private final UserRepository userRepository;
+	private final RoleRepository roleRepository;
 	private final PasswordEncoder passwordEncoder;
 
-	public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder) {
+	public UserService(UserRepository userRepository, RoleRepository roleRepository, PasswordEncoder passwordEncoder) {
 		this.userRepository = userRepository;
+		this.roleRepository = roleRepository;
 		this.passwordEncoder = passwordEncoder;
 	}
 
@@ -57,6 +60,9 @@ public class UserService {
 			}
 			if (input.getIdEmpresa() != null) {
 				existing.setIdEmpresa(input.getIdEmpresa());
+			}
+			if (input.getRol() != null && input.getRol().getId() != null) {
+				roleRepository.findById(input.getRol().getId()).ifPresent(existing::setRol);
 			}
 			return userRepository.save(existing);
 		});

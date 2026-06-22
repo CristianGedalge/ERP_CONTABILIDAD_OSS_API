@@ -9,5 +9,6 @@ public interface RoleRepository extends JpaRepository<Rol, Long> {
 	Optional<Rol> findByNombre(String nombre);
 	boolean existsByNombre(String nombre);
 	List<Rol> findByIdEmpresaAndEstadoTrueOrderByIdAsc(Long idEmpresa);
+	List<Rol> findByIdEmpresa(Long idEmpresa);
 	Optional<Rol> findByIdAndEstadoTrue(Long id);
 }

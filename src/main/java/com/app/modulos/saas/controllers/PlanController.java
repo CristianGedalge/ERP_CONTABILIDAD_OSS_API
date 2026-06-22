@@ -8,6 +8,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
+import com.app.modulos.config.Auditable;
 
 @RestController
 @RequestMapping("/api/planes")
@@ -37,12 +38,14 @@ public class PlanController {
 
 	@PostMapping
 	@PreAuthorize("hasRole('SUPERADMIN')")
+	@Auditable(accion = "CREAR", modulo = "SUSCRIPCION")
 	public ResponseEntity<Plan> create(@RequestBody Plan plan) {
 		return ResponseEntity.ok(planService.save(plan));
 	}
 
 	@PutMapping("/{id}")
 	@PreAuthorize("hasRole('SUPERADMIN')")
+	@Auditable(accion = "EDITAR", modulo = "SUSCRIPCION")
 	public ResponseEntity<Plan> update(@PathVariable Long id, @RequestBody Plan plan) {
 		return planService.update(id, plan)
 			.map(ResponseEntity::ok)
@@ -51,6 +54,7 @@ public class PlanController {
 
 	@PatchMapping("/{id}")
 	@PreAuthorize("hasRole('SUPERADMIN')")
+	@Auditable(accion = "CAMBIAR_ESTADO", modulo = "SUSCRIPCION")
 	public ResponseEntity<Plan> toggleStatus(@PathVariable Long id) {
 		return planService.toggleStatus(id)
 			.map(ResponseEntity::ok)
@@ -59,6 +63,7 @@ public class PlanController {
 
 	@DeleteMapping("/{id}")
 	@PreAuthorize("hasRole('SUPERADMIN')")
+	@Auditable(accion = "ELIMINAR", modulo = "SUSCRIPCION")
 	public ResponseEntity<Void> delete(@PathVariable Long id) {
 		planService.delete(id);
 		return ResponseEntity.noContent().build();

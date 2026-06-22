@@ -17,8 +17,14 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.usuario.security.UserPrincipal;
 
+import org.springframework.web.bind.annotation.RequestParam;
+
+import com.app.modulos.config.RequiresFeature;
+import com.app.modulos.config.Auditable;
+
 @RestController
 @RequestMapping("/api/configuraciones")
+@RequiresFeature("configuraciones")
 public class ConfiguracionController {
 	private final ConfiguracionService configuracionService;
 
@@ -28,8 +34,15 @@ public class ConfiguracionController {
 
 	@GetMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_CONFIG_READ')")
-	public ResponseEntity<Configuracion> get(@AuthenticationPrincipal UserPrincipal principal) {
+	public ResponseEntity<Configuracion> get(
+		@AuthenticationPrincipal UserPrincipal principal,
+		@RequestParam(required = false) Long idEmpresa
+	) {
 		Long empresaId = principal.getEmpresaId();
+		boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
+		if (isSuperAdmin && idEmpresa != null) {
+			empresaId = idEmpresa;
+		}
 		return configuracionService.findByEmpresa(empresaId)
 			.map(ResponseEntity::ok)
 			.orElseGet(() -> ResponseEntity.notFound().build());
@@ -43,6 +56,7 @@ public class ConfiguracionController {
 
 	@PostMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_CONFIG_WRITE')")
+	@Auditable(accion = "CREAR", modulo = "CONFIGURACIONES")
 	public ResponseEntity<Configuracion> create(
 		@RequestBody Configuracion configuracion,
 		@AuthenticationPrincipal UserPrincipal principal
@@ -54,6 +68,7 @@ public class ConfiguracionController {
 
 	@PutMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_CONFIG_WRITE')")
+	@Auditable(accion = "EDITAR", modulo = "CONFIGURACIONES")
 	public ResponseEntity<Configuracion> update(
 		@AuthenticationPrincipal UserPrincipal principal, 
 		@RequestBody Configuracion configuracion
