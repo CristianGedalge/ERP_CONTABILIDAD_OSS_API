@@ -24,7 +24,13 @@ public class UserPrincipal implements UserDetails {
 		if (rol != null) {
 			authorities.add(new SimpleGrantedAuthority("ROLE_" + rol.getNombre()));
 			for (Permiso permiso : rol.getPermisos()) {
-				authorities.add(new SimpleGrantedAuthority("PERM_" + permiso.getNombre()));
+				String authorityName = permiso.getNombre();
+				if (authorityName != null) {
+					if (!authorityName.startsWith("PERM_")) {
+						authorityName = "PERM_" + authorityName;
+					}
+					authorities.add(new SimpleGrantedAuthority(authorityName));
+				}
 			}
 		}
 		return authorities;

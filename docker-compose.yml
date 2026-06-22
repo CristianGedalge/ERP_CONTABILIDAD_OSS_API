@@ -5,5 +5,7 @@ services:
     ports:
       - "8080:8080"
     env_file:
-      - .env  # <--- Esto le dice a Docker: "Lee las variables de AWS de aquí"
+      - .env
     restart: always
+    volumes:
+      - ./backups:/backups

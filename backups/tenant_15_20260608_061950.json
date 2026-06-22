@@ -1,0 +1,4732 @@
+{
+  "empresa" : {
+    "id" : 15,
+    "nombre" : "Celulares Tapia",
+    "razonSocial" : "Tapia Mobile SRL",
+    "nit" : "98172635-0",
+    "direccion" : "Av. Las Américas Nro. 120",
+    "telefono" : "70012344",
+    "correo" : "mobile.Tapia@gmail.com",
+    "estado" : true,
+    "configuracion" : {
+      "id" : 5,
+      "iva" : 13.00,
+      "it" : 3.00,
+      "moneda" : "Dólares",
+      "tipoCambio" : 1.00,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "idCuentaCaja" : 8,
+      "idCuentaClientes" : 10,
+      "idCuentaProveedores" : 18,
+      "idCuentaVentas" : 28,
+      "idCuentaCompras" : 30,
+      "idCuentaIvaDebito" : 20,
+      "idCuentaIvaCredito" : 14,
+      "idCuentaItGasto" : 31,
+      "idCuentaItPasivo" : 21,
+      "idCuentaInventario" : 12,
+      "idCuentaCostoVentas" : 30,
+      "colorPrimario" : "#4F46E5",
+      "colorSecundario" : "#94A3B8"
+    }
+  },
+  "configuraciones" : [ {
+    "id" : 5,
+    "iva" : 13.00,
+    "it" : 3.00,
+    "moneda" : "Dólares",
+    "tipoCambio" : 1.00,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "idCuentaCaja" : 8,
+    "idCuentaClientes" : 10,
+    "idCuentaProveedores" : 18,
+    "idCuentaVentas" : 28,
+    "idCuentaCompras" : 30,
+    "idCuentaIvaDebito" : 20,
+    "idCuentaIvaCredito" : 14,
+    "idCuentaItGasto" : 31,
+    "idCuentaItPasivo" : 21,
+    "idCuentaInventario" : 12,
+    "idCuentaCostoVentas" : 30,
+    "colorPrimario" : "#4F46E5",
+    "colorSecundario" : "#94A3B8"
+  } ],
+  "suscripciones" : [ {
+    "id" : 10,
+    "plan" : {
+      "id" : 2,
+      "nombre" : "Profesional",
+      "descripcion" : "Ideal para empresas en crecimiento que necesitan gestión de inventarios y múltiples usuarios.",
+      "precio" : 99.99,
+      "duracionDias" : 30,
+      "estado" : true,
+      "fechaCreacion" : "2026-05-11T13:48:58.67309",
+      "fechaActualizacion" : "2026-06-01T18:40:55.747764",
+      "caracteristicas" : [ {
+        "id" : 158,
+        "clave" : "mi-empresa",
+        "valor" : "true"
+      }, {
+        "id" : 159,
+        "clave" : "suscripcion",
+        "valor" : "true"
+      }, {
+        "id" : 160,
+        "clave" : "panel-control",
+        "valor" : "true"
+      }, {
+        "id" : 161,
+        "clave" : "configuraciones",
+        "valor" : "true"
+      }, {
+        "id" : 162,
+        "clave" : "roles-permisos",
+        "valor" : "true"
+      }, {
+        "id" : 163,
+        "clave" : "empleados",
+        "valor" : "true"
+      }, {
+        "id" : 164,
+        "clave" : "contabilidad",
+        "valor" : "true"
+      }, {
+        "id" : 165,
+        "clave" : "inventario",
+        "valor" : "true"
+      }, {
+        "id" : 166,
+        "clave" : "ventas",
+        "valor" : "true"
+      }, {
+        "id" : 167,
+        "clave" : "compras",
+        "valor" : "true"
+      }, {
+        "id" : 168,
+        "clave" : "cartera",
+        "valor" : "true"
+      }, {
+        "id" : 169,
+        "clave" : "reportes",
+        "valor" : "false"
+      }, {
+        "id" : 170,
+        "clave" : "max_empleados",
+        "valor" : "10"
+      }, {
+        "id" : 171,
+        "clave" : "max_usuarios",
+        "valor" : "11"
+      } ]
+    },
+    "fechaInicio" : "2026-06-01",
+    "fechaFin" : "2026-07-01",
+    "estado" : false,
+    "monto" : 99.99,
+    "montoPagado" : 99.99,
+    "tipoRenovacion" : "MENSUAL",
+    "idEmpresa" : 15,
+    "empresa" : {
+      "id" : 15,
+      "nombre" : "Celulares Tapia",
+      "razonSocial" : "Tapia Mobile SRL",
+      "nit" : "98172635-0",
+      "direccion" : "Av. Las Américas Nro. 120",
+      "telefono" : "70012344",
+      "correo" : "mobile.Tapia@gmail.com",
+      "estado" : true,
+      "configuracion" : {
+        "id" : 5,
+        "iva" : 13.00,
+        "it" : 3.00,
+        "moneda" : "Dólares",
+        "tipoCambio" : 1.00,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "idCuentaCaja" : 8,
+        "idCuentaClientes" : 10,
+        "idCuentaProveedores" : 18,
+        "idCuentaVentas" : 28,
+        "idCuentaCompras" : 30,
+        "idCuentaIvaDebito" : 20,
+        "idCuentaIvaCredito" : 14,
+        "idCuentaItGasto" : 31,
+        "idCuentaItPasivo" : 21,
+        "idCuentaInventario" : 12,
+        "idCuentaCostoVentas" : 30,
+        "colorPrimario" : "#4F46E5",
+        "colorSecundario" : "#94A3B8"
+      }
+    }
+  }, {
+    "id" : 15,
+    "plan" : {
+      "id" : 3,
+      "nombre" : "Premium",
+      "descripcion" : "La solución completa para grandes corporaciones. Sin límites y con todas las funcionalidades activas.",
+      "precio" : 199.99,
+      "duracionDias" : 30,
+      "estado" : true,
+      "fechaCreacion" : "2026-05-11T13:51:17.259349",
+      "fechaActualizacion" : "2026-06-01T18:41:27.070856",
+      "caracteristicas" : [ {
+        "id" : 172,
+        "clave" : "mi-empresa",
+        "valor" : "true"
+      }, {
+        "id" : 173,
+        "clave" : "suscripcion",
+        "valor" : "true"
+      }, {
+        "id" : 174,
+        "clave" : "panel-control",
+        "valor" : "true"
+      }, {
+        "id" : 175,
+        "clave" : "configuraciones",
+        "valor" : "true"
+      }, {
+        "id" : 176,
+        "clave" : "roles-permisos",
+        "valor" : "true"
+      }, {
+        "id" : 177,
+        "clave" : "empleados",
+        "valor" : "true"
+      }, {
+        "id" : 178,
+        "clave" : "contabilidad",
+        "valor" : "true"
+      }, {
+        "id" : 179,
+        "clave" : "inventario",
+        "valor" : "true"
+      }, {
+        "id" : 180,
+        "clave" : "ventas",
+        "valor" : "true"
+      }, {
+        "id" : 181,
+        "clave" : "compras",
+        "valor" : "true"
+      }, {
+        "id" : 182,
+        "clave" : "cartera",
+        "valor" : "true"
+      }, {
+        "id" : 183,
+        "clave" : "reportes",
+        "valor" : "true"
+      }, {
+        "id" : 184,
+        "clave" : "max_empleados",
+        "valor" : "1000"
+      }, {
+        "id" : 185,
+        "clave" : "max_usuarios",
+        "valor" : "1001"
+      } ]
+    },
+    "fechaInicio" : "2026-06-01",
+    "fechaFin" : "2026-07-01",
+    "estado" : true,
+    "monto" : 199.99,
+    "montoPagado" : 199.99,
+    "tipoRenovacion" : "MENSUAL",
+    "idEmpresa" : 15,
+    "empresa" : {
+      "id" : 15,
+      "nombre" : "Celulares Tapia",
+      "razonSocial" : "Tapia Mobile SRL",
+      "nit" : "98172635-0",
+      "direccion" : "Av. Las Américas Nro. 120",
+      "telefono" : "70012344",
+      "correo" : "mobile.Tapia@gmail.com",
+      "estado" : true,
+      "configuracion" : {
+        "id" : 5,
+        "iva" : 13.00,
+        "it" : 3.00,
+        "moneda" : "Dólares",
+        "tipoCambio" : 1.00,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "idCuentaCaja" : 8,
+        "idCuentaClientes" : 10,
+        "idCuentaProveedores" : 18,
+        "idCuentaVentas" : 28,
+        "idCuentaCompras" : 30,
+        "idCuentaIvaDebito" : 20,
+        "idCuentaIvaCredito" : 14,
+        "idCuentaItGasto" : 31,
+        "idCuentaItPasivo" : 21,
+        "idCuentaInventario" : 12,
+        "idCuentaCostoVentas" : 30,
+        "colorPrimario" : "#4F46E5",
+        "colorSecundario" : "#94A3B8"
+      }
+    }
+  } ],
+  "roles" : [ {
+    "id" : 14,
+    "nombre" : "ADMIN",
+    "descripcion" : "Administrador",
+    "idEmpresa" : 15,
+    "estado" : true,
+    "permisos" : [ {
+      "id" : 14,
+      "nombre" : "PERM_OPERACIONES_READ",
+      "descripcion" : "Visualizar facturas de venta, compra y cartera"
+    }, {
+      "id" : 11,
+      "nombre" : "PERM_PRODUCTO_WRITE",
+      "descripcion" : "Crear y editar productos"
+    }, {
+      "id" : 13,
+      "nombre" : "PERM_PRODUCTO_READ",
+      "descripcion" : "Visualizar catálogo de productos"
+    }, {
+      "id" : 15,
+      "nombre" : "PERM_USER_READ",
+      "descripcion" : "Visualizar empleados y colaboradores"
+    }, {
+      "id" : 7,
+      "nombre" : "PERM_ROL_WRITE",
+      "descripcion" : "Crear y editar roles de acceso"
+    }, {
+      "id" : 10,
+      "nombre" : "PERM_INVENTARIO_READ",
+      "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+    }, {
+      "id" : 21,
+      "nombre" : "PERM_OPERACIONES_WRITE",
+      "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+    }, {
+      "id" : 19,
+      "nombre" : "PERM_INVENTARIO_WRITE",
+      "descripcion" : "Registrar ingresos y salidas de inventario"
+    }, {
+      "id" : 22,
+      "nombre" : "PERM_CONFIG_READ",
+      "descripcion" : "Visualizar configuraciones globales"
+    }, {
+      "id" : 18,
+      "nombre" : "PERM_CONFIG_WRITE",
+      "descripcion" : "Modificar configuraciones globales"
+    }, {
+      "id" : 9,
+      "nombre" : "PERM_CONTABILIDAD_WRITE",
+      "descripcion" : "Crear asientos contables y configurar periodos"
+    }, {
+      "id" : 20,
+      "nombre" : "PERM_ROL_READ",
+      "descripcion" : "Visualizar roles y permisos"
+    }, {
+      "id" : 12,
+      "nombre" : "PERM_CONTABILIDAD_READ",
+      "descripcion" : "Visualizar plan de cuentas y reportes contables"
+    }, {
+      "id" : 17,
+      "nombre" : "PERM_USER_WRITE",
+      "descripcion" : "Crear, editar y dar de baja empleados"
+    } ]
+  }, {
+    "id" : 16,
+    "nombre" : "contador",
+    "descripcion" : "encargado de las finanzas",
+    "idEmpresa" : 15,
+    "estado" : true,
+    "permisos" : [ {
+      "id" : 14,
+      "nombre" : "PERM_OPERACIONES_READ",
+      "descripcion" : "Visualizar facturas de venta, compra y cartera"
+    }, {
+      "id" : 11,
+      "nombre" : "PERM_PRODUCTO_WRITE",
+      "descripcion" : "Crear y editar productos"
+    }, {
+      "id" : 13,
+      "nombre" : "PERM_PRODUCTO_READ",
+      "descripcion" : "Visualizar catálogo de productos"
+    }, {
+      "id" : 10,
+      "nombre" : "PERM_INVENTARIO_READ",
+      "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+    }, {
+      "id" : 21,
+      "nombre" : "PERM_OPERACIONES_WRITE",
+      "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+    }, {
+      "id" : 19,
+      "nombre" : "PERM_INVENTARIO_WRITE",
+      "descripcion" : "Registrar ingresos y salidas de inventario"
+    }, {
+      "id" : 25,
+      "nombre" : "PERM_REPORTES_WRITE",
+      "descripcion" : "Exportar reportes a Excel o PDF"
+    }, {
+      "id" : 24,
+      "nombre" : "PERM_REPORTES_READ",
+      "descripcion" : "Visualizar reportes generales del sistema"
+    }, {
+      "id" : 9,
+      "nombre" : "PERM_CONTABILIDAD_WRITE",
+      "descripcion" : "Crear asientos contables y configurar periodos"
+    }, {
+      "id" : 16,
+      "nombre" : "PERM_EMPRESA_READ",
+      "descripcion" : "Visualizar datos generales de la empresa"
+    }, {
+      "id" : 12,
+      "nombre" : "PERM_CONTABILIDAD_READ",
+      "descripcion" : "Visualizar plan de cuentas y reportes contables"
+    } ]
+  } ],
+  "usuarios" : [ {
+    "id" : 40,
+    "username" : "Fernando",
+    "correo" : "fernando@correo.com",
+    "password" : "$2a$10$W4bxNzCEfiUS/5RPZ/z.EuWp9TYEqkod8YpM4nUjE288TwyRFD5ku",
+    "estado" : true,
+    "idEmpresa" : 15,
+    "rol" : {
+      "id" : 14,
+      "nombre" : "ADMIN",
+      "descripcion" : "Administrador",
+      "idEmpresa" : 15,
+      "estado" : true,
+      "permisos" : [ {
+        "id" : 14,
+        "nombre" : "PERM_OPERACIONES_READ",
+        "descripcion" : "Visualizar facturas de venta, compra y cartera"
+      }, {
+        "id" : 11,
+        "nombre" : "PERM_PRODUCTO_WRITE",
+        "descripcion" : "Crear y editar productos"
+      }, {
+        "id" : 13,
+        "nombre" : "PERM_PRODUCTO_READ",
+        "descripcion" : "Visualizar catálogo de productos"
+      }, {
+        "id" : 15,
+        "nombre" : "PERM_USER_READ",
+        "descripcion" : "Visualizar empleados y colaboradores"
+      }, {
+        "id" : 7,
+        "nombre" : "PERM_ROL_WRITE",
+        "descripcion" : "Crear y editar roles de acceso"
+      }, {
+        "id" : 10,
+        "nombre" : "PERM_INVENTARIO_READ",
+        "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+      }, {
+        "id" : 21,
+        "nombre" : "PERM_OPERACIONES_WRITE",
+        "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+      }, {
+        "id" : 19,
+        "nombre" : "PERM_INVENTARIO_WRITE",
+        "descripcion" : "Registrar ingresos y salidas de inventario"
+      }, {
+        "id" : 22,
+        "nombre" : "PERM_CONFIG_READ",
+        "descripcion" : "Visualizar configuraciones globales"
+      }, {
+        "id" : 18,
+        "nombre" : "PERM_CONFIG_WRITE",
+        "descripcion" : "Modificar configuraciones globales"
+      }, {
+        "id" : 9,
+        "nombre" : "PERM_CONTABILIDAD_WRITE",
+        "descripcion" : "Crear asientos contables y configurar periodos"
+      }, {
+        "id" : 20,
+        "nombre" : "PERM_ROL_READ",
+        "descripcion" : "Visualizar roles y permisos"
+      }, {
+        "id" : 12,
+        "nombre" : "PERM_CONTABILIDAD_READ",
+        "descripcion" : "Visualizar plan de cuentas y reportes contables"
+      }, {
+        "id" : 17,
+        "nombre" : "PERM_USER_WRITE",
+        "descripcion" : "Crear, editar y dar de baja empleados"
+      } ]
+    }
+  }, {
+    "id" : 51,
+    "username" : "javier",
+    "correo" : "javier@correo.com",
+    "password" : "$2a$10$IpXHCuXmR.MJ5hXIkRWVC.K..HruQXhFdWKinNFBk1h9zKdj55ds6",
+    "estado" : true,
+    "idEmpresa" : 15,
+    "rol" : {
+      "id" : 16,
+      "nombre" : "contador",
+      "descripcion" : "encargado de las finanzas",
+      "idEmpresa" : 15,
+      "estado" : true,
+      "permisos" : [ {
+        "id" : 14,
+        "nombre" : "PERM_OPERACIONES_READ",
+        "descripcion" : "Visualizar facturas de venta, compra y cartera"
+      }, {
+        "id" : 11,
+        "nombre" : "PERM_PRODUCTO_WRITE",
+        "descripcion" : "Crear y editar productos"
+      }, {
+        "id" : 13,
+        "nombre" : "PERM_PRODUCTO_READ",
+        "descripcion" : "Visualizar catálogo de productos"
+      }, {
+        "id" : 10,
+        "nombre" : "PERM_INVENTARIO_READ",
+        "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+      }, {
+        "id" : 21,
+        "nombre" : "PERM_OPERACIONES_WRITE",
+        "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+      }, {
+        "id" : 19,
+        "nombre" : "PERM_INVENTARIO_WRITE",
+        "descripcion" : "Registrar ingresos y salidas de inventario"
+      }, {
+        "id" : 25,
+        "nombre" : "PERM_REPORTES_WRITE",
+        "descripcion" : "Exportar reportes a Excel o PDF"
+      }, {
+        "id" : 24,
+        "nombre" : "PERM_REPORTES_READ",
+        "descripcion" : "Visualizar reportes generales del sistema"
+      }, {
+        "id" : 9,
+        "nombre" : "PERM_CONTABILIDAD_WRITE",
+        "descripcion" : "Crear asientos contables y configurar periodos"
+      }, {
+        "id" : 16,
+        "nombre" : "PERM_EMPRESA_READ",
+        "descripcion" : "Visualizar datos generales de la empresa"
+      }, {
+        "id" : 12,
+        "nombre" : "PERM_CONTABILIDAD_READ",
+        "descripcion" : "Visualizar plan de cuentas y reportes contables"
+      } ]
+    }
+  } ],
+  "infoUsuarios" : [ {
+    "id" : 16,
+    "nombre" : "Fernando Tapia",
+    "ci" : "98172635",
+    "cargo" : "Administrador",
+    "telefono" : "70012347",
+    "usuario" : {
+      "id" : 40,
+      "username" : "Fernando",
+      "correo" : "fernando@correo.com",
+      "password" : "$2a$10$W4bxNzCEfiUS/5RPZ/z.EuWp9TYEqkod8YpM4nUjE288TwyRFD5ku",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "rol" : {
+        "id" : 14,
+        "nombre" : "ADMIN",
+        "descripcion" : "Administrador",
+        "idEmpresa" : 15,
+        "estado" : true,
+        "permisos" : [ {
+          "id" : 14,
+          "nombre" : "PERM_OPERACIONES_READ",
+          "descripcion" : "Visualizar facturas de venta, compra y cartera"
+        }, {
+          "id" : 11,
+          "nombre" : "PERM_PRODUCTO_WRITE",
+          "descripcion" : "Crear y editar productos"
+        }, {
+          "id" : 13,
+          "nombre" : "PERM_PRODUCTO_READ",
+          "descripcion" : "Visualizar catálogo de productos"
+        }, {
+          "id" : 15,
+          "nombre" : "PERM_USER_READ",
+          "descripcion" : "Visualizar empleados y colaboradores"
+        }, {
+          "id" : 7,
+          "nombre" : "PERM_ROL_WRITE",
+          "descripcion" : "Crear y editar roles de acceso"
+        }, {
+          "id" : 10,
+          "nombre" : "PERM_INVENTARIO_READ",
+          "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+        }, {
+          "id" : 21,
+          "nombre" : "PERM_OPERACIONES_WRITE",
+          "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+        }, {
+          "id" : 19,
+          "nombre" : "PERM_INVENTARIO_WRITE",
+          "descripcion" : "Registrar ingresos y salidas de inventario"
+        }, {
+          "id" : 22,
+          "nombre" : "PERM_CONFIG_READ",
+          "descripcion" : "Visualizar configuraciones globales"
+        }, {
+          "id" : 18,
+          "nombre" : "PERM_CONFIG_WRITE",
+          "descripcion" : "Modificar configuraciones globales"
+        }, {
+          "id" : 9,
+          "nombre" : "PERM_CONTABILIDAD_WRITE",
+          "descripcion" : "Crear asientos contables y configurar periodos"
+        }, {
+          "id" : 20,
+          "nombre" : "PERM_ROL_READ",
+          "descripcion" : "Visualizar roles y permisos"
+        }, {
+          "id" : 12,
+          "nombre" : "PERM_CONTABILIDAD_READ",
+          "descripcion" : "Visualizar plan de cuentas y reportes contables"
+        }, {
+          "id" : 17,
+          "nombre" : "PERM_USER_WRITE",
+          "descripcion" : "Crear, editar y dar de baja empleados"
+        } ]
+      }
+    }
+  } ],
+  "productos" : [ {
+    "id" : 15,
+    "codigo" : "Cel-S45",
+    "nombre" : "Tablet",
+    "descripcion" : "nuevo",
+    "tipo" : "PRODUCTO",
+    "precioVenta" : 100.00,
+    "costoUnitario" : 0.00,
+    "stockActual" : 0.00,
+    "unidadMedida" : "Pza",
+    "estado" : false,
+    "idEmpresa" : 15,
+    "fechaCreacion" : "2026-05-30T05:18:54.334045",
+    "fechaActualizacion" : "2026-05-30T05:20:21.622588"
+  }, {
+    "id" : 13,
+    "codigo" : "CEL-S24",
+    "nombre" : "Samsung Galaxy S24",
+    "descripcion" : "Celular de alta gama, pantala amolled, memora ram de 8 Gb",
+    "tipo" : "PRODUCTO",
+    "precioVenta" : 800.00,
+    "costoUnitario" : 600.00,
+    "stockActual" : 1.00,
+    "unidadMedida" : "Pza ",
+    "estado" : true,
+    "idEmpresa" : 15,
+    "fechaCreacion" : "2026-05-30T05:15:07.151407",
+    "fechaActualizacion" : "2026-06-01T12:12:30.871271"
+  }, {
+    "id" : 14,
+    "codigo" : "CEL-I15",
+    "nombre" : "Iphone 15 Pro",
+    "descripcion" : "Sistema operativo de Apple, memoria Ram 16 Gb",
+    "tipo" : "PRODUCTO",
+    "precioVenta" : 1100.00,
+    "costoUnitario" : 600.00,
+    "stockActual" : 6.00,
+    "unidadMedida" : "Pza",
+    "estado" : true,
+    "idEmpresa" : 15,
+    "fechaCreacion" : "2026-05-30T05:16:33.782744",
+    "fechaActualizacion" : "2026-06-07T23:46:43.156079"
+  } ],
+  "movimientosInventario" : [ {
+    "id" : 6,
+    "fecha" : "2026-06-01T10:41:49.281708",
+    "tipo" : "ENTRADA",
+    "cantidad" : 10.00,
+    "costoUnitario" : 600.00,
+    "documentoOrigen" : "FACTURA_COMPRA",
+    "origenId" : 5,
+    "producto" : {
+      "id" : 14,
+      "codigo" : "CEL-I15",
+      "nombre" : "Iphone 15 Pro",
+      "descripcion" : "Sistema operativo de Apple, memoria Ram 16 Gb",
+      "tipo" : "PRODUCTO",
+      "precioVenta" : 1100.00,
+      "costoUnitario" : 600.00,
+      "stockActual" : 6.00,
+      "unidadMedida" : "Pza",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "fechaCreacion" : "2026-05-30T05:16:33.782744",
+      "fechaActualizacion" : "2026-06-07T23:46:43.156079"
+    },
+    "idEmpresa" : 15
+  }, {
+    "id" : 7,
+    "fecha" : "2026-06-01T10:46:19.135333",
+    "tipo" : "ENTRADA",
+    "cantidad" : 5.00,
+    "costoUnitario" : 600.00,
+    "documentoOrigen" : "FACTURA_COMPRA",
+    "origenId" : 6,
+    "producto" : {
+      "id" : 13,
+      "codigo" : "CEL-S24",
+      "nombre" : "Samsung Galaxy S24",
+      "descripcion" : "Celular de alta gama, pantala amolled, memora ram de 8 Gb",
+      "tipo" : "PRODUCTO",
+      "precioVenta" : 800.00,
+      "costoUnitario" : 600.00,
+      "stockActual" : 1.00,
+      "unidadMedida" : "Pza ",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "fechaCreacion" : "2026-05-30T05:15:07.151407",
+      "fechaActualizacion" : "2026-06-01T12:12:30.871271"
+    },
+    "idEmpresa" : 15
+  }, {
+    "id" : 8,
+    "fecha" : "2026-06-01T12:03:06.67156",
+    "tipo" : "SALIDA",
+    "cantidad" : 5.00,
+    "costoUnitario" : 600.00,
+    "documentoOrigen" : "FACTURA_VENTA",
+    "origenId" : 1,
+    "producto" : {
+      "id" : 13,
+      "codigo" : "CEL-S24",
+      "nombre" : "Samsung Galaxy S24",
+      "descripcion" : "Celular de alta gama, pantala amolled, memora ram de 8 Gb",
+      "tipo" : "PRODUCTO",
+      "precioVenta" : 800.00,
+      "costoUnitario" : 600.00,
+      "stockActual" : 1.00,
+      "unidadMedida" : "Pza ",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "fechaCreacion" : "2026-05-30T05:15:07.151407",
+      "fechaActualizacion" : "2026-06-01T12:12:30.871271"
+    },
+    "idEmpresa" : 15
+  }, {
+    "id" : 9,
+    "fecha" : "2026-06-01T12:05:07.60664",
+    "tipo" : "SALIDA",
+    "cantidad" : 2.00,
+    "costoUnitario" : 600.00,
+    "documentoOrigen" : "FACTURA_VENTA",
+    "origenId" : 2,
+    "producto" : {
+      "id" : 14,
+      "codigo" : "CEL-I15",
+      "nombre" : "Iphone 15 Pro",
+      "descripcion" : "Sistema operativo de Apple, memoria Ram 16 Gb",
+      "tipo" : "PRODUCTO",
+      "precioVenta" : 1100.00,
+      "costoUnitario" : 600.00,
+      "stockActual" : 6.00,
+      "unidadMedida" : "Pza",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "fechaCreacion" : "2026-05-30T05:16:33.782744",
+      "fechaActualizacion" : "2026-06-07T23:46:43.156079"
+    },
+    "idEmpresa" : 15
+  }, {
+    "id" : 10,
+    "fecha" : "2026-06-01T12:11:41.883523",
+    "tipo" : "ENTRADA",
+    "cantidad" : 5.00,
+    "costoUnitario" : 600.00,
+    "documentoOrigen" : "ANULACION_FACTURA_VENTA",
+    "origenId" : 1,
+    "producto" : {
+      "id" : 13,
+      "codigo" : "CEL-S24",
+      "nombre" : "Samsung Galaxy S24",
+      "descripcion" : "Celular de alta gama, pantala amolled, memora ram de 8 Gb",
+      "tipo" : "PRODUCTO",
+      "precioVenta" : 800.00,
+      "costoUnitario" : 600.00,
+      "stockActual" : 1.00,
+      "unidadMedida" : "Pza ",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "fechaCreacion" : "2026-05-30T05:15:07.151407",
+      "fechaActualizacion" : "2026-06-01T12:12:30.871271"
+    },
+    "idEmpresa" : 15
+  }, {
+    "id" : 11,
+    "fecha" : "2026-06-01T12:12:30.848734",
+    "tipo" : "SALIDA",
+    "cantidad" : 4.00,
+    "costoUnitario" : 600.00,
+    "documentoOrigen" : "FACTURA_VENTA",
+    "origenId" : 3,
+    "producto" : {
+      "id" : 13,
+      "codigo" : "CEL-S24",
+      "nombre" : "Samsung Galaxy S24",
+      "descripcion" : "Celular de alta gama, pantala amolled, memora ram de 8 Gb",
+      "tipo" : "PRODUCTO",
+      "precioVenta" : 800.00,
+      "costoUnitario" : 600.00,
+      "stockActual" : 1.00,
+      "unidadMedida" : "Pza ",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "fechaCreacion" : "2026-05-30T05:15:07.151407",
+      "fechaActualizacion" : "2026-06-01T12:12:30.871271"
+    },
+    "idEmpresa" : 15
+  }, {
+    "id" : 12,
+    "fecha" : "2026-06-07T23:46:43.062658",
+    "tipo" : "SALIDA",
+    "cantidad" : 2.00,
+    "costoUnitario" : 600.00,
+    "documentoOrigen" : "FACTURA_VENTA",
+    "origenId" : 4,
+    "producto" : {
+      "id" : 14,
+      "codigo" : "CEL-I15",
+      "nombre" : "Iphone 15 Pro",
+      "descripcion" : "Sistema operativo de Apple, memoria Ram 16 Gb",
+      "tipo" : "PRODUCTO",
+      "precioVenta" : 1100.00,
+      "costoUnitario" : 600.00,
+      "stockActual" : 6.00,
+      "unidadMedida" : "Pza",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "fechaCreacion" : "2026-05-30T05:16:33.782744",
+      "fechaActualizacion" : "2026-06-07T23:46:43.156079"
+    },
+    "idEmpresa" : 15
+  } ],
+  "cuentasContables" : [ {
+    "id" : 6,
+    "codigo" : "1.1",
+    "nombre" : "Activo Corriente",
+    "tipo" : "ACTIVO",
+    "nivel" : 2,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 5,
+      "codigo" : "1",
+      "nombre" : "Activo",
+      "tipo" : "ACTIVO",
+      "nivel" : 1,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : null
+    }
+  }, {
+    "id" : 7,
+    "codigo" : "1.1.1",
+    "nombre" : "Caja y Bancos",
+    "tipo" : "ACTIVO",
+    "nivel" : 3,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 6,
+      "codigo" : "1.1",
+      "nombre" : "Activo Corriente",
+      "tipo" : "ACTIVO",
+      "nivel" : 2,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 5,
+        "codigo" : "1",
+        "nombre" : "Activo",
+        "tipo" : "ACTIVO",
+        "nivel" : 1,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : null
+      }
+    }
+  }, {
+    "id" : 8,
+    "codigo" : "1.1.1.01",
+    "nombre" : "Caja General",
+    "tipo" : "ACTIVO",
+    "nivel" : 4,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 7,
+      "codigo" : "1.1.1",
+      "nombre" : "Caja y Bancos",
+      "tipo" : "ACTIVO",
+      "nivel" : 3,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 6,
+        "codigo" : "1.1",
+        "nombre" : "Activo Corriente",
+        "tipo" : "ACTIVO",
+        "nivel" : 2,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 5,
+          "codigo" : "1",
+          "nombre" : "Activo",
+          "tipo" : "ACTIVO",
+          "nivel" : 1,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : null
+        }
+      }
+    }
+  }, {
+    "id" : 9,
+    "codigo" : "1.1.2",
+    "nombre" : "Cuentas por Cobrar",
+    "tipo" : "ACTIVO",
+    "nivel" : 3,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 6,
+      "codigo" : "1.1",
+      "nombre" : "Activo Corriente",
+      "tipo" : "ACTIVO",
+      "nivel" : 2,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 5,
+        "codigo" : "1",
+        "nombre" : "Activo",
+        "tipo" : "ACTIVO",
+        "nivel" : 1,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : null
+      }
+    }
+  }, {
+    "id" : 10,
+    "codigo" : "1.1.2.01",
+    "nombre" : "Clientes",
+    "tipo" : "ACTIVO",
+    "nivel" : 4,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 9,
+      "codigo" : "1.1.2",
+      "nombre" : "Cuentas por Cobrar",
+      "tipo" : "ACTIVO",
+      "nivel" : 3,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 6,
+        "codigo" : "1.1",
+        "nombre" : "Activo Corriente",
+        "tipo" : "ACTIVO",
+        "nivel" : 2,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 5,
+          "codigo" : "1",
+          "nombre" : "Activo",
+          "tipo" : "ACTIVO",
+          "nivel" : 1,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : null
+        }
+      }
+    }
+  }, {
+    "id" : 11,
+    "codigo" : "1.1.3",
+    "nombre" : "Bienes de Cambio",
+    "tipo" : "ACTIVO",
+    "nivel" : 3,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 6,
+      "codigo" : "1.1",
+      "nombre" : "Activo Corriente",
+      "tipo" : "ACTIVO",
+      "nivel" : 2,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 5,
+        "codigo" : "1",
+        "nombre" : "Activo",
+        "tipo" : "ACTIVO",
+        "nivel" : 1,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : null
+      }
+    }
+  }, {
+    "id" : 12,
+    "codigo" : "1.1.3.01",
+    "nombre" : "Inventario de Mercaderías",
+    "tipo" : "ACTIVO",
+    "nivel" : 4,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 11,
+      "codigo" : "1.1.3",
+      "nombre" : "Bienes de Cambio",
+      "tipo" : "ACTIVO",
+      "nivel" : 3,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 6,
+        "codigo" : "1.1",
+        "nombre" : "Activo Corriente",
+        "tipo" : "ACTIVO",
+        "nivel" : 2,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 5,
+          "codigo" : "1",
+          "nombre" : "Activo",
+          "tipo" : "ACTIVO",
+          "nivel" : 1,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : null
+        }
+      }
+    }
+  }, {
+    "id" : 13,
+    "codigo" : "1.1.4",
+    "nombre" : "Impuestos a Favor",
+    "tipo" : "ACTIVO",
+    "nivel" : 3,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 6,
+      "codigo" : "1.1",
+      "nombre" : "Activo Corriente",
+      "tipo" : "ACTIVO",
+      "nivel" : 2,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 5,
+        "codigo" : "1",
+        "nombre" : "Activo",
+        "tipo" : "ACTIVO",
+        "nivel" : 1,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : null
+      }
+    }
+  }, {
+    "id" : 14,
+    "codigo" : "1.1.4.01",
+    "nombre" : "Crédito Fiscal IVA",
+    "tipo" : "ACTIVO",
+    "nivel" : 4,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 13,
+      "codigo" : "1.1.4",
+      "nombre" : "Impuestos a Favor",
+      "tipo" : "ACTIVO",
+      "nivel" : 3,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 6,
+        "codigo" : "1.1",
+        "nombre" : "Activo Corriente",
+        "tipo" : "ACTIVO",
+        "nivel" : 2,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 5,
+          "codigo" : "1",
+          "nombre" : "Activo",
+          "tipo" : "ACTIVO",
+          "nivel" : 1,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : null
+        }
+      }
+    }
+  }, {
+    "id" : 15,
+    "codigo" : "2",
+    "nombre" : "Pasivo",
+    "tipo" : "PASIVO",
+    "nivel" : 1,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : null
+  }, {
+    "id" : 16,
+    "codigo" : "2.1",
+    "nombre" : "Pasivo Corriente",
+    "tipo" : "PASIVO",
+    "nivel" : 2,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 15,
+      "codigo" : "2",
+      "nombre" : "Pasivo",
+      "tipo" : "PASIVO",
+      "nivel" : 1,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : null
+    }
+  }, {
+    "id" : 17,
+    "codigo" : "2.1.1",
+    "nombre" : "Obligaciones Comerciales\t",
+    "tipo" : "PASIVO",
+    "nivel" : 3,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 16,
+      "codigo" : "2.1",
+      "nombre" : "Pasivo Corriente",
+      "tipo" : "PASIVO",
+      "nivel" : 2,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 15,
+        "codigo" : "2",
+        "nombre" : "Pasivo",
+        "tipo" : "PASIVO",
+        "nivel" : 1,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : null
+      }
+    }
+  }, {
+    "id" : 18,
+    "codigo" : "2.1.1.01",
+    "nombre" : "Proveedores por Pagar\t",
+    "tipo" : "PASIVO",
+    "nivel" : 4,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 17,
+      "codigo" : "2.1.1",
+      "nombre" : "Obligaciones Comerciales\t",
+      "tipo" : "PASIVO",
+      "nivel" : 3,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 16,
+        "codigo" : "2.1",
+        "nombre" : "Pasivo Corriente",
+        "tipo" : "PASIVO",
+        "nivel" : 2,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 15,
+          "codigo" : "2",
+          "nombre" : "Pasivo",
+          "tipo" : "PASIVO",
+          "nivel" : 1,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : null
+        }
+      }
+    }
+  }, {
+    "id" : 19,
+    "codigo" : "2.1.3",
+    "nombre" : "Impuestos por Pagar\t",
+    "tipo" : "PASIVO",
+    "nivel" : 3,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 16,
+      "codigo" : "2.1",
+      "nombre" : "Pasivo Corriente",
+      "tipo" : "PASIVO",
+      "nivel" : 2,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 15,
+        "codigo" : "2",
+        "nombre" : "Pasivo",
+        "tipo" : "PASIVO",
+        "nivel" : 1,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : null
+      }
+    }
+  }, {
+    "id" : 20,
+    "codigo" : "2.1.3.01",
+    "nombre" : "Débito Fiscal IVA\t",
+    "tipo" : "PASIVO",
+    "nivel" : 4,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 19,
+      "codigo" : "2.1.3",
+      "nombre" : "Impuestos por Pagar\t",
+      "tipo" : "PASIVO",
+      "nivel" : 3,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 16,
+        "codigo" : "2.1",
+        "nombre" : "Pasivo Corriente",
+        "tipo" : "PASIVO",
+        "nivel" : 2,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 15,
+          "codigo" : "2",
+          "nombre" : "Pasivo",
+          "tipo" : "PASIVO",
+          "nivel" : 1,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : null
+        }
+      }
+    }
+  }, {
+    "id" : 21,
+    "codigo" : "2.1.3.02",
+    "nombre" : "IT por Pagar\t",
+    "tipo" : "PASIVO",
+    "nivel" : 4,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 19,
+      "codigo" : "2.1.3",
+      "nombre" : "Impuestos por Pagar\t",
+      "tipo" : "PASIVO",
+      "nivel" : 3,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 16,
+        "codigo" : "2.1",
+        "nombre" : "Pasivo Corriente",
+        "tipo" : "PASIVO",
+        "nivel" : 2,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 15,
+          "codigo" : "2",
+          "nombre" : "Pasivo",
+          "tipo" : "PASIVO",
+          "nivel" : 1,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : null
+        }
+      }
+    }
+  }, {
+    "id" : 22,
+    "codigo" : "3",
+    "nombre" : "Patrimonio",
+    "tipo" : "PATRIMONIO",
+    "nivel" : 1,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : null
+  }, {
+    "id" : 23,
+    "codigo" : "3.1",
+    "nombre" : "Capital Social\t",
+    "tipo" : "PATRIMONIO",
+    "nivel" : 2,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 22,
+      "codigo" : "3",
+      "nombre" : "Patrimonio",
+      "tipo" : "PATRIMONIO",
+      "nivel" : 1,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : null
+    }
+  }, {
+    "id" : 24,
+    "codigo" : "3.1.1.01",
+    "nombre" : "Capital Fernando Tapia\t",
+    "tipo" : "PATRIMONIO",
+    "nivel" : 3,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 23,
+      "codigo" : "3.1",
+      "nombre" : "Capital Social\t",
+      "tipo" : "PATRIMONIO",
+      "nivel" : 2,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 22,
+        "codigo" : "3",
+        "nombre" : "Patrimonio",
+        "tipo" : "PATRIMONIO",
+        "nivel" : 1,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : null
+      }
+    }
+  }, {
+    "id" : 25,
+    "codigo" : "4",
+    "nombre" : "Ingreso",
+    "tipo" : "INGRESO",
+    "nivel" : 1,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : null
+  }, {
+    "id" : 26,
+    "codigo" : "5",
+    "nombre" : "Egreso",
+    "tipo" : "GASTO",
+    "nivel" : 1,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : null
+  }, {
+    "id" : 27,
+    "codigo" : "4.1",
+    "nombre" : "Ingresos Operativos\t",
+    "tipo" : "INGRESO",
+    "nivel" : 2,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 25,
+      "codigo" : "4",
+      "nombre" : "Ingreso",
+      "tipo" : "INGRESO",
+      "nivel" : 1,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : null
+    }
+  }, {
+    "id" : 28,
+    "codigo" : "4.1.1.01",
+    "nombre" : "Ventas Celulares\t",
+    "tipo" : "INGRESO",
+    "nivel" : 3,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 27,
+      "codigo" : "4.1",
+      "nombre" : "Ingresos Operativos\t",
+      "tipo" : "INGRESO",
+      "nivel" : 2,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 25,
+        "codigo" : "4",
+        "nombre" : "Ingreso",
+        "tipo" : "INGRESO",
+        "nivel" : 1,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : null
+      }
+    }
+  }, {
+    "id" : 29,
+    "codigo" : "5.1",
+    "nombre" : "Costos y Gastos\t",
+    "tipo" : "GASTO",
+    "nivel" : 2,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 26,
+      "codigo" : "5",
+      "nombre" : "Egreso",
+      "tipo" : "GASTO",
+      "nivel" : 1,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : null
+    }
+  }, {
+    "id" : 30,
+    "codigo" : "5.1.1.01",
+    "nombre" : "Costo de Ventas\t",
+    "tipo" : "GASTO",
+    "nivel" : 3,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 29,
+      "codigo" : "5.1",
+      "nombre" : "Costos y Gastos\t",
+      "tipo" : "GASTO",
+      "nivel" : 2,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 26,
+        "codigo" : "5",
+        "nombre" : "Egreso",
+        "tipo" : "GASTO",
+        "nivel" : 1,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : null
+      }
+    }
+  }, {
+    "id" : 31,
+    "codigo" : "5.1.2.01",
+    "nombre" : "Impuesto a las Transacciones (Gasto)\t",
+    "tipo" : "GASTO",
+    "nivel" : 3,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : {
+      "id" : 29,
+      "codigo" : "5.1",
+      "nombre" : "Costos y Gastos\t",
+      "tipo" : "GASTO",
+      "nivel" : 2,
+      "estado" : true,
+      "idEmpresa" : 15,
+      "cuentaPadre" : {
+        "id" : 26,
+        "codigo" : "5",
+        "nombre" : "Egreso",
+        "tipo" : "GASTO",
+        "nivel" : 1,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : null
+      }
+    }
+  }, {
+    "id" : 5,
+    "codigo" : "1",
+    "nombre" : "Activo",
+    "tipo" : "ACTIVO",
+    "nivel" : 1,
+    "estado" : true,
+    "idEmpresa" : 15,
+    "cuentaPadre" : null
+  } ],
+  "centrosCosto" : [ {
+    "id" : 1,
+    "codigo" : "CC-MKT",
+    "nombre" : "Marketing y Publicidad",
+    "descripcion" : "Presupuestos actualizados de publicidad.",
+    "estado" : true,
+    "idEmpresa" : 15
+  } ],
+  "periodosContables" : [ {
+    "id" : 3,
+    "fechaInicio" : "2026-05-01",
+    "fechaFin" : "2026-05-31",
+    "estado" : "CERRADO",
+    "idEmpresa" : 15
+  }, {
+    "id" : 4,
+    "fechaInicio" : "2026-06-01",
+    "fechaFin" : "2026-06-30",
+    "estado" : "ABIERTO",
+    "idEmpresa" : 15
+  } ],
+  "asientosContables" : [ {
+    "id" : 9,
+    "nroAsiento" : null,
+    "fecha" : "2026-05-01",
+    "glosa" : "Registro de aporte de capital inicial - Administrador Fernando Tapia",
+    "estado" : "ANULADO",
+    "origenDocumento" : null,
+    "origenId" : null,
+    "idEmpresa" : 15,
+    "periodoContable" : {
+      "id" : 3,
+      "fechaInicio" : "2026-05-01",
+      "fechaFin" : "2026-05-31",
+      "estado" : "CERRADO",
+      "idEmpresa" : 15
+    },
+    "usuario" : {
+      "id" : 40,
+      "username" : "Fernando",
+      "correo" : "fernando@correo.com",
+      "password" : "$2a$10$W4bxNzCEfiUS/5RPZ/z.EuWp9TYEqkod8YpM4nUjE288TwyRFD5ku",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "rol" : {
+        "id" : 14,
+        "nombre" : "ADMIN",
+        "descripcion" : "Administrador",
+        "idEmpresa" : 15,
+        "estado" : true,
+        "permisos" : [ {
+          "id" : 14,
+          "nombre" : "PERM_OPERACIONES_READ",
+          "descripcion" : "Visualizar facturas de venta, compra y cartera"
+        }, {
+          "id" : 11,
+          "nombre" : "PERM_PRODUCTO_WRITE",
+          "descripcion" : "Crear y editar productos"
+        }, {
+          "id" : 13,
+          "nombre" : "PERM_PRODUCTO_READ",
+          "descripcion" : "Visualizar catálogo de productos"
+        }, {
+          "id" : 15,
+          "nombre" : "PERM_USER_READ",
+          "descripcion" : "Visualizar empleados y colaboradores"
+        }, {
+          "id" : 7,
+          "nombre" : "PERM_ROL_WRITE",
+          "descripcion" : "Crear y editar roles de acceso"
+        }, {
+          "id" : 10,
+          "nombre" : "PERM_INVENTARIO_READ",
+          "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+        }, {
+          "id" : 21,
+          "nombre" : "PERM_OPERACIONES_WRITE",
+          "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+        }, {
+          "id" : 19,
+          "nombre" : "PERM_INVENTARIO_WRITE",
+          "descripcion" : "Registrar ingresos y salidas de inventario"
+        }, {
+          "id" : 22,
+          "nombre" : "PERM_CONFIG_READ",
+          "descripcion" : "Visualizar configuraciones globales"
+        }, {
+          "id" : 18,
+          "nombre" : "PERM_CONFIG_WRITE",
+          "descripcion" : "Modificar configuraciones globales"
+        }, {
+          "id" : 9,
+          "nombre" : "PERM_CONTABILIDAD_WRITE",
+          "descripcion" : "Crear asientos contables y configurar periodos"
+        }, {
+          "id" : 20,
+          "nombre" : "PERM_ROL_READ",
+          "descripcion" : "Visualizar roles y permisos"
+        }, {
+          "id" : 12,
+          "nombre" : "PERM_CONTABILIDAD_READ",
+          "descripcion" : "Visualizar plan de cuentas y reportes contables"
+        }, {
+          "id" : 17,
+          "nombre" : "PERM_USER_WRITE",
+          "descripcion" : "Crear, editar y dar de baja empleados"
+        } ]
+      }
+    },
+    "detalles" : [ {
+      "id" : 1,
+      "debe" : 10000.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 8,
+        "codigo" : "1.1.1.01",
+        "nombre" : "Caja General",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 7,
+          "codigo" : "1.1.1",
+          "nombre" : "Caja y Bancos",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 2,
+      "debe" : 0.00,
+      "haber" : 10000.00,
+      "cuentaContable" : {
+        "id" : 24,
+        "codigo" : "3.1.1.01",
+        "nombre" : "Capital Fernando Tapia\t",
+        "tipo" : "PATRIMONIO",
+        "nivel" : 3,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 23,
+          "codigo" : "3.1",
+          "nombre" : "Capital Social\t",
+          "tipo" : "PATRIMONIO",
+          "nivel" : 2,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 22,
+            "codigo" : "3",
+            "nombre" : "Patrimonio",
+            "tipo" : "PATRIMONIO",
+            "nivel" : 1,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : null
+          }
+        }
+      },
+      "centroCosto" : null
+    } ]
+  }, {
+    "id" : 11,
+    "nroAsiento" : null,
+    "fecha" : "2026-05-15",
+    "glosa" : "pago de alquiler",
+    "estado" : "ANULADO",
+    "origenDocumento" : null,
+    "origenId" : null,
+    "idEmpresa" : 15,
+    "periodoContable" : {
+      "id" : 3,
+      "fechaInicio" : "2026-05-01",
+      "fechaFin" : "2026-05-31",
+      "estado" : "CERRADO",
+      "idEmpresa" : 15
+    },
+    "usuario" : {
+      "id" : 40,
+      "username" : "Fernando",
+      "correo" : "fernando@correo.com",
+      "password" : "$2a$10$W4bxNzCEfiUS/5RPZ/z.EuWp9TYEqkod8YpM4nUjE288TwyRFD5ku",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "rol" : {
+        "id" : 14,
+        "nombre" : "ADMIN",
+        "descripcion" : "Administrador",
+        "idEmpresa" : 15,
+        "estado" : true,
+        "permisos" : [ {
+          "id" : 14,
+          "nombre" : "PERM_OPERACIONES_READ",
+          "descripcion" : "Visualizar facturas de venta, compra y cartera"
+        }, {
+          "id" : 11,
+          "nombre" : "PERM_PRODUCTO_WRITE",
+          "descripcion" : "Crear y editar productos"
+        }, {
+          "id" : 13,
+          "nombre" : "PERM_PRODUCTO_READ",
+          "descripcion" : "Visualizar catálogo de productos"
+        }, {
+          "id" : 15,
+          "nombre" : "PERM_USER_READ",
+          "descripcion" : "Visualizar empleados y colaboradores"
+        }, {
+          "id" : 7,
+          "nombre" : "PERM_ROL_WRITE",
+          "descripcion" : "Crear y editar roles de acceso"
+        }, {
+          "id" : 10,
+          "nombre" : "PERM_INVENTARIO_READ",
+          "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+        }, {
+          "id" : 21,
+          "nombre" : "PERM_OPERACIONES_WRITE",
+          "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+        }, {
+          "id" : 19,
+          "nombre" : "PERM_INVENTARIO_WRITE",
+          "descripcion" : "Registrar ingresos y salidas de inventario"
+        }, {
+          "id" : 22,
+          "nombre" : "PERM_CONFIG_READ",
+          "descripcion" : "Visualizar configuraciones globales"
+        }, {
+          "id" : 18,
+          "nombre" : "PERM_CONFIG_WRITE",
+          "descripcion" : "Modificar configuraciones globales"
+        }, {
+          "id" : 9,
+          "nombre" : "PERM_CONTABILIDAD_WRITE",
+          "descripcion" : "Crear asientos contables y configurar periodos"
+        }, {
+          "id" : 20,
+          "nombre" : "PERM_ROL_READ",
+          "descripcion" : "Visualizar roles y permisos"
+        }, {
+          "id" : 12,
+          "nombre" : "PERM_CONTABILIDAD_READ",
+          "descripcion" : "Visualizar plan de cuentas y reportes contables"
+        }, {
+          "id" : 17,
+          "nombre" : "PERM_USER_WRITE",
+          "descripcion" : "Crear, editar y dar de baja empleados"
+        } ]
+      }
+    },
+    "detalles" : [ {
+      "id" : 5,
+      "debe" : 1100.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 8,
+        "codigo" : "1.1.1.01",
+        "nombre" : "Caja General",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 7,
+          "codigo" : "1.1.1",
+          "nombre" : "Caja y Bancos",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 6,
+      "debe" : 0.00,
+      "haber" : 1100.00,
+      "cuentaContable" : {
+        "id" : 24,
+        "codigo" : "3.1.1.01",
+        "nombre" : "Capital Fernando Tapia\t",
+        "tipo" : "PATRIMONIO",
+        "nivel" : 3,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 23,
+          "codigo" : "3.1",
+          "nombre" : "Capital Social\t",
+          "tipo" : "PATRIMONIO",
+          "nivel" : 2,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 22,
+            "codigo" : "3",
+            "nombre" : "Patrimonio",
+            "tipo" : "PATRIMONIO",
+            "nivel" : 1,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : null
+          }
+        }
+      },
+      "centroCosto" : null
+    } ]
+  }, {
+    "id" : 10,
+    "nroAsiento" : "AS-2026-05-0001",
+    "fecha" : "2026-05-02",
+    "glosa" : "Registro de aporte de capital inicial - Administrador Fernando Tapia",
+    "estado" : "APROBADO",
+    "origenDocumento" : null,
+    "origenId" : null,
+    "idEmpresa" : 15,
+    "periodoContable" : {
+      "id" : 3,
+      "fechaInicio" : "2026-05-01",
+      "fechaFin" : "2026-05-31",
+      "estado" : "CERRADO",
+      "idEmpresa" : 15
+    },
+    "usuario" : {
+      "id" : 40,
+      "username" : "Fernando",
+      "correo" : "fernando@correo.com",
+      "password" : "$2a$10$W4bxNzCEfiUS/5RPZ/z.EuWp9TYEqkod8YpM4nUjE288TwyRFD5ku",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "rol" : {
+        "id" : 14,
+        "nombre" : "ADMIN",
+        "descripcion" : "Administrador",
+        "idEmpresa" : 15,
+        "estado" : true,
+        "permisos" : [ {
+          "id" : 14,
+          "nombre" : "PERM_OPERACIONES_READ",
+          "descripcion" : "Visualizar facturas de venta, compra y cartera"
+        }, {
+          "id" : 11,
+          "nombre" : "PERM_PRODUCTO_WRITE",
+          "descripcion" : "Crear y editar productos"
+        }, {
+          "id" : 13,
+          "nombre" : "PERM_PRODUCTO_READ",
+          "descripcion" : "Visualizar catálogo de productos"
+        }, {
+          "id" : 15,
+          "nombre" : "PERM_USER_READ",
+          "descripcion" : "Visualizar empleados y colaboradores"
+        }, {
+          "id" : 7,
+          "nombre" : "PERM_ROL_WRITE",
+          "descripcion" : "Crear y editar roles de acceso"
+        }, {
+          "id" : 10,
+          "nombre" : "PERM_INVENTARIO_READ",
+          "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+        }, {
+          "id" : 21,
+          "nombre" : "PERM_OPERACIONES_WRITE",
+          "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+        }, {
+          "id" : 19,
+          "nombre" : "PERM_INVENTARIO_WRITE",
+          "descripcion" : "Registrar ingresos y salidas de inventario"
+        }, {
+          "id" : 22,
+          "nombre" : "PERM_CONFIG_READ",
+          "descripcion" : "Visualizar configuraciones globales"
+        }, {
+          "id" : 18,
+          "nombre" : "PERM_CONFIG_WRITE",
+          "descripcion" : "Modificar configuraciones globales"
+        }, {
+          "id" : 9,
+          "nombre" : "PERM_CONTABILIDAD_WRITE",
+          "descripcion" : "Crear asientos contables y configurar periodos"
+        }, {
+          "id" : 20,
+          "nombre" : "PERM_ROL_READ",
+          "descripcion" : "Visualizar roles y permisos"
+        }, {
+          "id" : 12,
+          "nombre" : "PERM_CONTABILIDAD_READ",
+          "descripcion" : "Visualizar plan de cuentas y reportes contables"
+        }, {
+          "id" : 17,
+          "nombre" : "PERM_USER_WRITE",
+          "descripcion" : "Crear, editar y dar de baja empleados"
+        } ]
+      }
+    },
+    "detalles" : [ {
+      "id" : 3,
+      "debe" : 10000.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 8,
+        "codigo" : "1.1.1.01",
+        "nombre" : "Caja General",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 7,
+          "codigo" : "1.1.1",
+          "nombre" : "Caja y Bancos",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 4,
+      "debe" : 0.00,
+      "haber" : 10000.00,
+      "cuentaContable" : {
+        "id" : 24,
+        "codigo" : "3.1.1.01",
+        "nombre" : "Capital Fernando Tapia\t",
+        "tipo" : "PATRIMONIO",
+        "nivel" : 3,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 23,
+          "codigo" : "3.1",
+          "nombre" : "Capital Social\t",
+          "tipo" : "PATRIMONIO",
+          "nivel" : 2,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 22,
+            "codigo" : "3",
+            "nombre" : "Patrimonio",
+            "tipo" : "PATRIMONIO",
+            "nivel" : 1,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : null
+          }
+        }
+      },
+      "centroCosto" : null
+    } ]
+  }, {
+    "id" : 12,
+    "nroAsiento" : "AS-2026-06-0001",
+    "fecha" : "2026-06-01",
+    "glosa" : "Registro de compra autom. - Factura Nro: FC-2026-0001",
+    "estado" : "APROBADO",
+    "origenDocumento" : "FACTURA_COMPRA",
+    "origenId" : 5,
+    "idEmpresa" : 15,
+    "periodoContable" : {
+      "id" : 4,
+      "fechaInicio" : "2026-06-01",
+      "fechaFin" : "2026-06-30",
+      "estado" : "ABIERTO",
+      "idEmpresa" : 15
+    },
+    "usuario" : {
+      "id" : 40,
+      "username" : "Fernando",
+      "correo" : "fernando@correo.com",
+      "password" : "$2a$10$W4bxNzCEfiUS/5RPZ/z.EuWp9TYEqkod8YpM4nUjE288TwyRFD5ku",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "rol" : {
+        "id" : 14,
+        "nombre" : "ADMIN",
+        "descripcion" : "Administrador",
+        "idEmpresa" : 15,
+        "estado" : true,
+        "permisos" : [ {
+          "id" : 14,
+          "nombre" : "PERM_OPERACIONES_READ",
+          "descripcion" : "Visualizar facturas de venta, compra y cartera"
+        }, {
+          "id" : 11,
+          "nombre" : "PERM_PRODUCTO_WRITE",
+          "descripcion" : "Crear y editar productos"
+        }, {
+          "id" : 13,
+          "nombre" : "PERM_PRODUCTO_READ",
+          "descripcion" : "Visualizar catálogo de productos"
+        }, {
+          "id" : 15,
+          "nombre" : "PERM_USER_READ",
+          "descripcion" : "Visualizar empleados y colaboradores"
+        }, {
+          "id" : 7,
+          "nombre" : "PERM_ROL_WRITE",
+          "descripcion" : "Crear y editar roles de acceso"
+        }, {
+          "id" : 10,
+          "nombre" : "PERM_INVENTARIO_READ",
+          "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+        }, {
+          "id" : 21,
+          "nombre" : "PERM_OPERACIONES_WRITE",
+          "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+        }, {
+          "id" : 19,
+          "nombre" : "PERM_INVENTARIO_WRITE",
+          "descripcion" : "Registrar ingresos y salidas de inventario"
+        }, {
+          "id" : 22,
+          "nombre" : "PERM_CONFIG_READ",
+          "descripcion" : "Visualizar configuraciones globales"
+        }, {
+          "id" : 18,
+          "nombre" : "PERM_CONFIG_WRITE",
+          "descripcion" : "Modificar configuraciones globales"
+        }, {
+          "id" : 9,
+          "nombre" : "PERM_CONTABILIDAD_WRITE",
+          "descripcion" : "Crear asientos contables y configurar periodos"
+        }, {
+          "id" : 20,
+          "nombre" : "PERM_ROL_READ",
+          "descripcion" : "Visualizar roles y permisos"
+        }, {
+          "id" : 12,
+          "nombre" : "PERM_CONTABILIDAD_READ",
+          "descripcion" : "Visualizar plan de cuentas y reportes contables"
+        }, {
+          "id" : 17,
+          "nombre" : "PERM_USER_WRITE",
+          "descripcion" : "Crear, editar y dar de baja empleados"
+        } ]
+      }
+    },
+    "detalles" : [ {
+      "id" : 7,
+      "debe" : 5220.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 12,
+        "codigo" : "1.1.3.01",
+        "nombre" : "Inventario de Mercaderías",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 11,
+          "codigo" : "1.1.3",
+          "nombre" : "Bienes de Cambio",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 8,
+      "debe" : 780.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 14,
+        "codigo" : "1.1.4.01",
+        "nombre" : "Crédito Fiscal IVA",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 13,
+          "codigo" : "1.1.4",
+          "nombre" : "Impuestos a Favor",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 9,
+      "debe" : 0.00,
+      "haber" : 6000.00,
+      "cuentaContable" : {
+        "id" : 8,
+        "codigo" : "1.1.1.01",
+        "nombre" : "Caja General",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 7,
+          "codigo" : "1.1.1",
+          "nombre" : "Caja y Bancos",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    } ]
+  }, {
+    "id" : 13,
+    "nroAsiento" : "AS-2026-06-0002",
+    "fecha" : "2026-06-01",
+    "glosa" : "Registro de compra autom. - Factura Nro: FC-2026-0002",
+    "estado" : "APROBADO",
+    "origenDocumento" : "FACTURA_COMPRA",
+    "origenId" : 6,
+    "idEmpresa" : 15,
+    "periodoContable" : {
+      "id" : 4,
+      "fechaInicio" : "2026-06-01",
+      "fechaFin" : "2026-06-30",
+      "estado" : "ABIERTO",
+      "idEmpresa" : 15
+    },
+    "usuario" : {
+      "id" : 40,
+      "username" : "Fernando",
+      "correo" : "fernando@correo.com",
+      "password" : "$2a$10$W4bxNzCEfiUS/5RPZ/z.EuWp9TYEqkod8YpM4nUjE288TwyRFD5ku",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "rol" : {
+        "id" : 14,
+        "nombre" : "ADMIN",
+        "descripcion" : "Administrador",
+        "idEmpresa" : 15,
+        "estado" : true,
+        "permisos" : [ {
+          "id" : 14,
+          "nombre" : "PERM_OPERACIONES_READ",
+          "descripcion" : "Visualizar facturas de venta, compra y cartera"
+        }, {
+          "id" : 11,
+          "nombre" : "PERM_PRODUCTO_WRITE",
+          "descripcion" : "Crear y editar productos"
+        }, {
+          "id" : 13,
+          "nombre" : "PERM_PRODUCTO_READ",
+          "descripcion" : "Visualizar catálogo de productos"
+        }, {
+          "id" : 15,
+          "nombre" : "PERM_USER_READ",
+          "descripcion" : "Visualizar empleados y colaboradores"
+        }, {
+          "id" : 7,
+          "nombre" : "PERM_ROL_WRITE",
+          "descripcion" : "Crear y editar roles de acceso"
+        }, {
+          "id" : 10,
+          "nombre" : "PERM_INVENTARIO_READ",
+          "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+        }, {
+          "id" : 21,
+          "nombre" : "PERM_OPERACIONES_WRITE",
+          "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+        }, {
+          "id" : 19,
+          "nombre" : "PERM_INVENTARIO_WRITE",
+          "descripcion" : "Registrar ingresos y salidas de inventario"
+        }, {
+          "id" : 22,
+          "nombre" : "PERM_CONFIG_READ",
+          "descripcion" : "Visualizar configuraciones globales"
+        }, {
+          "id" : 18,
+          "nombre" : "PERM_CONFIG_WRITE",
+          "descripcion" : "Modificar configuraciones globales"
+        }, {
+          "id" : 9,
+          "nombre" : "PERM_CONTABILIDAD_WRITE",
+          "descripcion" : "Crear asientos contables y configurar periodos"
+        }, {
+          "id" : 20,
+          "nombre" : "PERM_ROL_READ",
+          "descripcion" : "Visualizar roles y permisos"
+        }, {
+          "id" : 12,
+          "nombre" : "PERM_CONTABILIDAD_READ",
+          "descripcion" : "Visualizar plan de cuentas y reportes contables"
+        }, {
+          "id" : 17,
+          "nombre" : "PERM_USER_WRITE",
+          "descripcion" : "Crear, editar y dar de baja empleados"
+        } ]
+      }
+    },
+    "detalles" : [ {
+      "id" : 10,
+      "debe" : 2610.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 12,
+        "codigo" : "1.1.3.01",
+        "nombre" : "Inventario de Mercaderías",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 11,
+          "codigo" : "1.1.3",
+          "nombre" : "Bienes de Cambio",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 11,
+      "debe" : 390.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 14,
+        "codigo" : "1.1.4.01",
+        "nombre" : "Crédito Fiscal IVA",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 13,
+          "codigo" : "1.1.4",
+          "nombre" : "Impuestos a Favor",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 12,
+      "debe" : 0.00,
+      "haber" : 3000.00,
+      "cuentaContable" : {
+        "id" : 18,
+        "codigo" : "2.1.1.01",
+        "nombre" : "Proveedores por Pagar\t",
+        "tipo" : "PASIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 17,
+          "codigo" : "2.1.1",
+          "nombre" : "Obligaciones Comerciales\t",
+          "tipo" : "PASIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 16,
+            "codigo" : "2.1",
+            "nombre" : "Pasivo Corriente",
+            "tipo" : "PASIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 15,
+              "codigo" : "2",
+              "nombre" : "Pasivo",
+              "tipo" : "PASIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    } ]
+  }, {
+    "id" : 15,
+    "nroAsiento" : "AS-2026-06-0004",
+    "fecha" : "2026-06-01",
+    "glosa" : "Registro de venta autom. - Factura Nro: FV-2026-000002",
+    "estado" : "APROBADO",
+    "origenDocumento" : "FACTURA_VENTA",
+    "origenId" : 2,
+    "idEmpresa" : 15,
+    "periodoContable" : {
+      "id" : 4,
+      "fechaInicio" : "2026-06-01",
+      "fechaFin" : "2026-06-30",
+      "estado" : "ABIERTO",
+      "idEmpresa" : 15
+    },
+    "usuario" : {
+      "id" : 40,
+      "username" : "Fernando",
+      "correo" : "fernando@correo.com",
+      "password" : "$2a$10$W4bxNzCEfiUS/5RPZ/z.EuWp9TYEqkod8YpM4nUjE288TwyRFD5ku",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "rol" : {
+        "id" : 14,
+        "nombre" : "ADMIN",
+        "descripcion" : "Administrador",
+        "idEmpresa" : 15,
+        "estado" : true,
+        "permisos" : [ {
+          "id" : 14,
+          "nombre" : "PERM_OPERACIONES_READ",
+          "descripcion" : "Visualizar facturas de venta, compra y cartera"
+        }, {
+          "id" : 11,
+          "nombre" : "PERM_PRODUCTO_WRITE",
+          "descripcion" : "Crear y editar productos"
+        }, {
+          "id" : 13,
+          "nombre" : "PERM_PRODUCTO_READ",
+          "descripcion" : "Visualizar catálogo de productos"
+        }, {
+          "id" : 15,
+          "nombre" : "PERM_USER_READ",
+          "descripcion" : "Visualizar empleados y colaboradores"
+        }, {
+          "id" : 7,
+          "nombre" : "PERM_ROL_WRITE",
+          "descripcion" : "Crear y editar roles de acceso"
+        }, {
+          "id" : 10,
+          "nombre" : "PERM_INVENTARIO_READ",
+          "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+        }, {
+          "id" : 21,
+          "nombre" : "PERM_OPERACIONES_WRITE",
+          "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+        }, {
+          "id" : 19,
+          "nombre" : "PERM_INVENTARIO_WRITE",
+          "descripcion" : "Registrar ingresos y salidas de inventario"
+        }, {
+          "id" : 22,
+          "nombre" : "PERM_CONFIG_READ",
+          "descripcion" : "Visualizar configuraciones globales"
+        }, {
+          "id" : 18,
+          "nombre" : "PERM_CONFIG_WRITE",
+          "descripcion" : "Modificar configuraciones globales"
+        }, {
+          "id" : 9,
+          "nombre" : "PERM_CONTABILIDAD_WRITE",
+          "descripcion" : "Crear asientos contables y configurar periodos"
+        }, {
+          "id" : 20,
+          "nombre" : "PERM_ROL_READ",
+          "descripcion" : "Visualizar roles y permisos"
+        }, {
+          "id" : 12,
+          "nombre" : "PERM_CONTABILIDAD_READ",
+          "descripcion" : "Visualizar plan de cuentas y reportes contables"
+        }, {
+          "id" : 17,
+          "nombre" : "PERM_USER_WRITE",
+          "descripcion" : "Crear, editar y dar de baja empleados"
+        } ]
+      }
+    },
+    "detalles" : [ {
+      "id" : 20,
+      "debe" : 2200.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 10,
+        "codigo" : "1.1.2.01",
+        "nombre" : "Clientes",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 9,
+          "codigo" : "1.1.2",
+          "nombre" : "Cuentas por Cobrar",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 21,
+      "debe" : 66.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 31,
+        "codigo" : "5.1.2.01",
+        "nombre" : "Impuesto a las Transacciones (Gasto)\t",
+        "tipo" : "GASTO",
+        "nivel" : 3,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 29,
+          "codigo" : "5.1",
+          "nombre" : "Costos y Gastos\t",
+          "tipo" : "GASTO",
+          "nivel" : 2,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 26,
+            "codigo" : "5",
+            "nombre" : "Egreso",
+            "tipo" : "GASTO",
+            "nivel" : 1,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : null
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 22,
+      "debe" : 1200.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 30,
+        "codigo" : "5.1.1.01",
+        "nombre" : "Costo de Ventas\t",
+        "tipo" : "GASTO",
+        "nivel" : 3,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 29,
+          "codigo" : "5.1",
+          "nombre" : "Costos y Gastos\t",
+          "tipo" : "GASTO",
+          "nivel" : 2,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 26,
+            "codigo" : "5",
+            "nombre" : "Egreso",
+            "tipo" : "GASTO",
+            "nivel" : 1,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : null
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 23,
+      "debe" : 0.00,
+      "haber" : 1914.00,
+      "cuentaContable" : {
+        "id" : 28,
+        "codigo" : "4.1.1.01",
+        "nombre" : "Ventas Celulares\t",
+        "tipo" : "INGRESO",
+        "nivel" : 3,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 27,
+          "codigo" : "4.1",
+          "nombre" : "Ingresos Operativos\t",
+          "tipo" : "INGRESO",
+          "nivel" : 2,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 25,
+            "codigo" : "4",
+            "nombre" : "Ingreso",
+            "tipo" : "INGRESO",
+            "nivel" : 1,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : null
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 24,
+      "debe" : 0.00,
+      "haber" : 286.00,
+      "cuentaContable" : {
+        "id" : 20,
+        "codigo" : "2.1.3.01",
+        "nombre" : "Débito Fiscal IVA\t",
+        "tipo" : "PASIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 19,
+          "codigo" : "2.1.3",
+          "nombre" : "Impuestos por Pagar\t",
+          "tipo" : "PASIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 16,
+            "codigo" : "2.1",
+            "nombre" : "Pasivo Corriente",
+            "tipo" : "PASIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 15,
+              "codigo" : "2",
+              "nombre" : "Pasivo",
+              "tipo" : "PASIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 25,
+      "debe" : 0.00,
+      "haber" : 66.00,
+      "cuentaContable" : {
+        "id" : 21,
+        "codigo" : "2.1.3.02",
+        "nombre" : "IT por Pagar\t",
+        "tipo" : "PASIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 19,
+          "codigo" : "2.1.3",
+          "nombre" : "Impuestos por Pagar\t",
+          "tipo" : "PASIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 16,
+            "codigo" : "2.1",
+            "nombre" : "Pasivo Corriente",
+            "tipo" : "PASIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 15,
+              "codigo" : "2",
+              "nombre" : "Pasivo",
+              "tipo" : "PASIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 26,
+      "debe" : 0.00,
+      "haber" : 1200.00,
+      "cuentaContable" : {
+        "id" : 12,
+        "codigo" : "1.1.3.01",
+        "nombre" : "Inventario de Mercaderías",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 11,
+          "codigo" : "1.1.3",
+          "nombre" : "Bienes de Cambio",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    } ]
+  }, {
+    "id" : 16,
+    "nroAsiento" : "AS-2026-06-0005",
+    "fecha" : "2026-06-01",
+    "glosa" : "Cobro parcial/total - Factura de Venta Nro: FV-2026-000002",
+    "estado" : "APROBADO",
+    "origenDocumento" : "COBRO_CPC",
+    "origenId" : 1,
+    "idEmpresa" : 15,
+    "periodoContable" : {
+      "id" : 4,
+      "fechaInicio" : "2026-06-01",
+      "fechaFin" : "2026-06-30",
+      "estado" : "ABIERTO",
+      "idEmpresa" : 15
+    },
+    "usuario" : {
+      "id" : 40,
+      "username" : "Fernando",
+      "correo" : "fernando@correo.com",
+      "password" : "$2a$10$W4bxNzCEfiUS/5RPZ/z.EuWp9TYEqkod8YpM4nUjE288TwyRFD5ku",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "rol" : {
+        "id" : 14,
+        "nombre" : "ADMIN",
+        "descripcion" : "Administrador",
+        "idEmpresa" : 15,
+        "estado" : true,
+        "permisos" : [ {
+          "id" : 14,
+          "nombre" : "PERM_OPERACIONES_READ",
+          "descripcion" : "Visualizar facturas de venta, compra y cartera"
+        }, {
+          "id" : 11,
+          "nombre" : "PERM_PRODUCTO_WRITE",
+          "descripcion" : "Crear y editar productos"
+        }, {
+          "id" : 13,
+          "nombre" : "PERM_PRODUCTO_READ",
+          "descripcion" : "Visualizar catálogo de productos"
+        }, {
+          "id" : 15,
+          "nombre" : "PERM_USER_READ",
+          "descripcion" : "Visualizar empleados y colaboradores"
+        }, {
+          "id" : 7,
+          "nombre" : "PERM_ROL_WRITE",
+          "descripcion" : "Crear y editar roles de acceso"
+        }, {
+          "id" : 10,
+          "nombre" : "PERM_INVENTARIO_READ",
+          "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+        }, {
+          "id" : 21,
+          "nombre" : "PERM_OPERACIONES_WRITE",
+          "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+        }, {
+          "id" : 19,
+          "nombre" : "PERM_INVENTARIO_WRITE",
+          "descripcion" : "Registrar ingresos y salidas de inventario"
+        }, {
+          "id" : 22,
+          "nombre" : "PERM_CONFIG_READ",
+          "descripcion" : "Visualizar configuraciones globales"
+        }, {
+          "id" : 18,
+          "nombre" : "PERM_CONFIG_WRITE",
+          "descripcion" : "Modificar configuraciones globales"
+        }, {
+          "id" : 9,
+          "nombre" : "PERM_CONTABILIDAD_WRITE",
+          "descripcion" : "Crear asientos contables y configurar periodos"
+        }, {
+          "id" : 20,
+          "nombre" : "PERM_ROL_READ",
+          "descripcion" : "Visualizar roles y permisos"
+        }, {
+          "id" : 12,
+          "nombre" : "PERM_CONTABILIDAD_READ",
+          "descripcion" : "Visualizar plan de cuentas y reportes contables"
+        }, {
+          "id" : 17,
+          "nombre" : "PERM_USER_WRITE",
+          "descripcion" : "Crear, editar y dar de baja empleados"
+        } ]
+      }
+    },
+    "detalles" : [ {
+      "id" : 27,
+      "debe" : 1200.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 8,
+        "codigo" : "1.1.1.01",
+        "nombre" : "Caja General",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 7,
+          "codigo" : "1.1.1",
+          "nombre" : "Caja y Bancos",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 28,
+      "debe" : 0.00,
+      "haber" : 1200.00,
+      "cuentaContable" : {
+        "id" : 10,
+        "codigo" : "1.1.2.01",
+        "nombre" : "Clientes",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 9,
+          "codigo" : "1.1.2",
+          "nombre" : "Cuentas por Cobrar",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    } ]
+  }, {
+    "id" : 17,
+    "nroAsiento" : "AS-2026-06-0006",
+    "fecha" : "2026-06-01",
+    "glosa" : "Pago parcial/total - Factura de Compra Nro: FC-2026-0002",
+    "estado" : "APROBADO",
+    "origenDocumento" : "PAGO_CPP",
+    "origenId" : 1,
+    "idEmpresa" : 15,
+    "periodoContable" : {
+      "id" : 4,
+      "fechaInicio" : "2026-06-01",
+      "fechaFin" : "2026-06-30",
+      "estado" : "ABIERTO",
+      "idEmpresa" : 15
+    },
+    "usuario" : {
+      "id" : 40,
+      "username" : "Fernando",
+      "correo" : "fernando@correo.com",
+      "password" : "$2a$10$W4bxNzCEfiUS/5RPZ/z.EuWp9TYEqkod8YpM4nUjE288TwyRFD5ku",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "rol" : {
+        "id" : 14,
+        "nombre" : "ADMIN",
+        "descripcion" : "Administrador",
+        "idEmpresa" : 15,
+        "estado" : true,
+        "permisos" : [ {
+          "id" : 14,
+          "nombre" : "PERM_OPERACIONES_READ",
+          "descripcion" : "Visualizar facturas de venta, compra y cartera"
+        }, {
+          "id" : 11,
+          "nombre" : "PERM_PRODUCTO_WRITE",
+          "descripcion" : "Crear y editar productos"
+        }, {
+          "id" : 13,
+          "nombre" : "PERM_PRODUCTO_READ",
+          "descripcion" : "Visualizar catálogo de productos"
+        }, {
+          "id" : 15,
+          "nombre" : "PERM_USER_READ",
+          "descripcion" : "Visualizar empleados y colaboradores"
+        }, {
+          "id" : 7,
+          "nombre" : "PERM_ROL_WRITE",
+          "descripcion" : "Crear y editar roles de acceso"
+        }, {
+          "id" : 10,
+          "nombre" : "PERM_INVENTARIO_READ",
+          "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+        }, {
+          "id" : 21,
+          "nombre" : "PERM_OPERACIONES_WRITE",
+          "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+        }, {
+          "id" : 19,
+          "nombre" : "PERM_INVENTARIO_WRITE",
+          "descripcion" : "Registrar ingresos y salidas de inventario"
+        }, {
+          "id" : 22,
+          "nombre" : "PERM_CONFIG_READ",
+          "descripcion" : "Visualizar configuraciones globales"
+        }, {
+          "id" : 18,
+          "nombre" : "PERM_CONFIG_WRITE",
+          "descripcion" : "Modificar configuraciones globales"
+        }, {
+          "id" : 9,
+          "nombre" : "PERM_CONTABILIDAD_WRITE",
+          "descripcion" : "Crear asientos contables y configurar periodos"
+        }, {
+          "id" : 20,
+          "nombre" : "PERM_ROL_READ",
+          "descripcion" : "Visualizar roles y permisos"
+        }, {
+          "id" : 12,
+          "nombre" : "PERM_CONTABILIDAD_READ",
+          "descripcion" : "Visualizar plan de cuentas y reportes contables"
+        }, {
+          "id" : 17,
+          "nombre" : "PERM_USER_WRITE",
+          "descripcion" : "Crear, editar y dar de baja empleados"
+        } ]
+      }
+    },
+    "detalles" : [ {
+      "id" : 29,
+      "debe" : 2000.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 18,
+        "codigo" : "2.1.1.01",
+        "nombre" : "Proveedores por Pagar\t",
+        "tipo" : "PASIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 17,
+          "codigo" : "2.1.1",
+          "nombre" : "Obligaciones Comerciales\t",
+          "tipo" : "PASIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 16,
+            "codigo" : "2.1",
+            "nombre" : "Pasivo Corriente",
+            "tipo" : "PASIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 15,
+              "codigo" : "2",
+              "nombre" : "Pasivo",
+              "tipo" : "PASIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 30,
+      "debe" : 0.00,
+      "haber" : 2000.00,
+      "cuentaContable" : {
+        "id" : 8,
+        "codigo" : "1.1.1.01",
+        "nombre" : "Caja General",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 7,
+          "codigo" : "1.1.1",
+          "nombre" : "Caja y Bancos",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    } ]
+  }, {
+    "id" : 14,
+    "nroAsiento" : "AS-2026-06-0003",
+    "fecha" : "2026-06-01",
+    "glosa" : "Registro de venta autom. - Factura Nro: FV-2026-000001",
+    "estado" : "ANULADO",
+    "origenDocumento" : "FACTURA_VENTA",
+    "origenId" : 1,
+    "idEmpresa" : 15,
+    "periodoContable" : {
+      "id" : 4,
+      "fechaInicio" : "2026-06-01",
+      "fechaFin" : "2026-06-30",
+      "estado" : "ABIERTO",
+      "idEmpresa" : 15
+    },
+    "usuario" : {
+      "id" : 40,
+      "username" : "Fernando",
+      "correo" : "fernando@correo.com",
+      "password" : "$2a$10$W4bxNzCEfiUS/5RPZ/z.EuWp9TYEqkod8YpM4nUjE288TwyRFD5ku",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "rol" : {
+        "id" : 14,
+        "nombre" : "ADMIN",
+        "descripcion" : "Administrador",
+        "idEmpresa" : 15,
+        "estado" : true,
+        "permisos" : [ {
+          "id" : 14,
+          "nombre" : "PERM_OPERACIONES_READ",
+          "descripcion" : "Visualizar facturas de venta, compra y cartera"
+        }, {
+          "id" : 11,
+          "nombre" : "PERM_PRODUCTO_WRITE",
+          "descripcion" : "Crear y editar productos"
+        }, {
+          "id" : 13,
+          "nombre" : "PERM_PRODUCTO_READ",
+          "descripcion" : "Visualizar catálogo de productos"
+        }, {
+          "id" : 15,
+          "nombre" : "PERM_USER_READ",
+          "descripcion" : "Visualizar empleados y colaboradores"
+        }, {
+          "id" : 7,
+          "nombre" : "PERM_ROL_WRITE",
+          "descripcion" : "Crear y editar roles de acceso"
+        }, {
+          "id" : 10,
+          "nombre" : "PERM_INVENTARIO_READ",
+          "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+        }, {
+          "id" : 21,
+          "nombre" : "PERM_OPERACIONES_WRITE",
+          "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+        }, {
+          "id" : 19,
+          "nombre" : "PERM_INVENTARIO_WRITE",
+          "descripcion" : "Registrar ingresos y salidas de inventario"
+        }, {
+          "id" : 22,
+          "nombre" : "PERM_CONFIG_READ",
+          "descripcion" : "Visualizar configuraciones globales"
+        }, {
+          "id" : 18,
+          "nombre" : "PERM_CONFIG_WRITE",
+          "descripcion" : "Modificar configuraciones globales"
+        }, {
+          "id" : 9,
+          "nombre" : "PERM_CONTABILIDAD_WRITE",
+          "descripcion" : "Crear asientos contables y configurar periodos"
+        }, {
+          "id" : 20,
+          "nombre" : "PERM_ROL_READ",
+          "descripcion" : "Visualizar roles y permisos"
+        }, {
+          "id" : 12,
+          "nombre" : "PERM_CONTABILIDAD_READ",
+          "descripcion" : "Visualizar plan de cuentas y reportes contables"
+        }, {
+          "id" : 17,
+          "nombre" : "PERM_USER_WRITE",
+          "descripcion" : "Crear, editar y dar de baja empleados"
+        } ]
+      }
+    },
+    "detalles" : [ {
+      "id" : 13,
+      "debe" : 4000.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 8,
+        "codigo" : "1.1.1.01",
+        "nombre" : "Caja General",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 7,
+          "codigo" : "1.1.1",
+          "nombre" : "Caja y Bancos",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 14,
+      "debe" : 120.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 31,
+        "codigo" : "5.1.2.01",
+        "nombre" : "Impuesto a las Transacciones (Gasto)\t",
+        "tipo" : "GASTO",
+        "nivel" : 3,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 29,
+          "codigo" : "5.1",
+          "nombre" : "Costos y Gastos\t",
+          "tipo" : "GASTO",
+          "nivel" : 2,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 26,
+            "codigo" : "5",
+            "nombre" : "Egreso",
+            "tipo" : "GASTO",
+            "nivel" : 1,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : null
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 15,
+      "debe" : 3000.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 30,
+        "codigo" : "5.1.1.01",
+        "nombre" : "Costo de Ventas\t",
+        "tipo" : "GASTO",
+        "nivel" : 3,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 29,
+          "codigo" : "5.1",
+          "nombre" : "Costos y Gastos\t",
+          "tipo" : "GASTO",
+          "nivel" : 2,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 26,
+            "codigo" : "5",
+            "nombre" : "Egreso",
+            "tipo" : "GASTO",
+            "nivel" : 1,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : null
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 16,
+      "debe" : 0.00,
+      "haber" : 3480.00,
+      "cuentaContable" : {
+        "id" : 28,
+        "codigo" : "4.1.1.01",
+        "nombre" : "Ventas Celulares\t",
+        "tipo" : "INGRESO",
+        "nivel" : 3,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 27,
+          "codigo" : "4.1",
+          "nombre" : "Ingresos Operativos\t",
+          "tipo" : "INGRESO",
+          "nivel" : 2,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 25,
+            "codigo" : "4",
+            "nombre" : "Ingreso",
+            "tipo" : "INGRESO",
+            "nivel" : 1,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : null
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 17,
+      "debe" : 0.00,
+      "haber" : 520.00,
+      "cuentaContable" : {
+        "id" : 20,
+        "codigo" : "2.1.3.01",
+        "nombre" : "Débito Fiscal IVA\t",
+        "tipo" : "PASIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 19,
+          "codigo" : "2.1.3",
+          "nombre" : "Impuestos por Pagar\t",
+          "tipo" : "PASIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 16,
+            "codigo" : "2.1",
+            "nombre" : "Pasivo Corriente",
+            "tipo" : "PASIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 15,
+              "codigo" : "2",
+              "nombre" : "Pasivo",
+              "tipo" : "PASIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 18,
+      "debe" : 0.00,
+      "haber" : 120.00,
+      "cuentaContable" : {
+        "id" : 21,
+        "codigo" : "2.1.3.02",
+        "nombre" : "IT por Pagar\t",
+        "tipo" : "PASIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 19,
+          "codigo" : "2.1.3",
+          "nombre" : "Impuestos por Pagar\t",
+          "tipo" : "PASIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 16,
+            "codigo" : "2.1",
+            "nombre" : "Pasivo Corriente",
+            "tipo" : "PASIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 15,
+              "codigo" : "2",
+              "nombre" : "Pasivo",
+              "tipo" : "PASIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 19,
+      "debe" : 0.00,
+      "haber" : 3000.00,
+      "cuentaContable" : {
+        "id" : 12,
+        "codigo" : "1.1.3.01",
+        "nombre" : "Inventario de Mercaderías",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 11,
+          "codigo" : "1.1.3",
+          "nombre" : "Bienes de Cambio",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    } ]
+  }, {
+    "id" : 18,
+    "nroAsiento" : "AS-2026-06-0007",
+    "fecha" : "2026-06-01",
+    "glosa" : "Registro de venta autom. - Factura Nro: FV-2026-000003",
+    "estado" : "APROBADO",
+    "origenDocumento" : "FACTURA_VENTA",
+    "origenId" : 3,
+    "idEmpresa" : 15,
+    "periodoContable" : {
+      "id" : 4,
+      "fechaInicio" : "2026-06-01",
+      "fechaFin" : "2026-06-30",
+      "estado" : "ABIERTO",
+      "idEmpresa" : 15
+    },
+    "usuario" : {
+      "id" : 40,
+      "username" : "Fernando",
+      "correo" : "fernando@correo.com",
+      "password" : "$2a$10$W4bxNzCEfiUS/5RPZ/z.EuWp9TYEqkod8YpM4nUjE288TwyRFD5ku",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "rol" : {
+        "id" : 14,
+        "nombre" : "ADMIN",
+        "descripcion" : "Administrador",
+        "idEmpresa" : 15,
+        "estado" : true,
+        "permisos" : [ {
+          "id" : 14,
+          "nombre" : "PERM_OPERACIONES_READ",
+          "descripcion" : "Visualizar facturas de venta, compra y cartera"
+        }, {
+          "id" : 11,
+          "nombre" : "PERM_PRODUCTO_WRITE",
+          "descripcion" : "Crear y editar productos"
+        }, {
+          "id" : 13,
+          "nombre" : "PERM_PRODUCTO_READ",
+          "descripcion" : "Visualizar catálogo de productos"
+        }, {
+          "id" : 15,
+          "nombre" : "PERM_USER_READ",
+          "descripcion" : "Visualizar empleados y colaboradores"
+        }, {
+          "id" : 7,
+          "nombre" : "PERM_ROL_WRITE",
+          "descripcion" : "Crear y editar roles de acceso"
+        }, {
+          "id" : 10,
+          "nombre" : "PERM_INVENTARIO_READ",
+          "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+        }, {
+          "id" : 21,
+          "nombre" : "PERM_OPERACIONES_WRITE",
+          "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+        }, {
+          "id" : 19,
+          "nombre" : "PERM_INVENTARIO_WRITE",
+          "descripcion" : "Registrar ingresos y salidas de inventario"
+        }, {
+          "id" : 22,
+          "nombre" : "PERM_CONFIG_READ",
+          "descripcion" : "Visualizar configuraciones globales"
+        }, {
+          "id" : 18,
+          "nombre" : "PERM_CONFIG_WRITE",
+          "descripcion" : "Modificar configuraciones globales"
+        }, {
+          "id" : 9,
+          "nombre" : "PERM_CONTABILIDAD_WRITE",
+          "descripcion" : "Crear asientos contables y configurar periodos"
+        }, {
+          "id" : 20,
+          "nombre" : "PERM_ROL_READ",
+          "descripcion" : "Visualizar roles y permisos"
+        }, {
+          "id" : 12,
+          "nombre" : "PERM_CONTABILIDAD_READ",
+          "descripcion" : "Visualizar plan de cuentas y reportes contables"
+        }, {
+          "id" : 17,
+          "nombre" : "PERM_USER_WRITE",
+          "descripcion" : "Crear, editar y dar de baja empleados"
+        } ]
+      }
+    },
+    "detalles" : [ {
+      "id" : 31,
+      "debe" : 3200.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 8,
+        "codigo" : "1.1.1.01",
+        "nombre" : "Caja General",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 7,
+          "codigo" : "1.1.1",
+          "nombre" : "Caja y Bancos",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 32,
+      "debe" : 96.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 31,
+        "codigo" : "5.1.2.01",
+        "nombre" : "Impuesto a las Transacciones (Gasto)\t",
+        "tipo" : "GASTO",
+        "nivel" : 3,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 29,
+          "codigo" : "5.1",
+          "nombre" : "Costos y Gastos\t",
+          "tipo" : "GASTO",
+          "nivel" : 2,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 26,
+            "codigo" : "5",
+            "nombre" : "Egreso",
+            "tipo" : "GASTO",
+            "nivel" : 1,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : null
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 33,
+      "debe" : 2400.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 30,
+        "codigo" : "5.1.1.01",
+        "nombre" : "Costo de Ventas\t",
+        "tipo" : "GASTO",
+        "nivel" : 3,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 29,
+          "codigo" : "5.1",
+          "nombre" : "Costos y Gastos\t",
+          "tipo" : "GASTO",
+          "nivel" : 2,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 26,
+            "codigo" : "5",
+            "nombre" : "Egreso",
+            "tipo" : "GASTO",
+            "nivel" : 1,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : null
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 34,
+      "debe" : 0.00,
+      "haber" : 2784.00,
+      "cuentaContable" : {
+        "id" : 28,
+        "codigo" : "4.1.1.01",
+        "nombre" : "Ventas Celulares\t",
+        "tipo" : "INGRESO",
+        "nivel" : 3,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 27,
+          "codigo" : "4.1",
+          "nombre" : "Ingresos Operativos\t",
+          "tipo" : "INGRESO",
+          "nivel" : 2,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 25,
+            "codigo" : "4",
+            "nombre" : "Ingreso",
+            "tipo" : "INGRESO",
+            "nivel" : 1,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : null
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 35,
+      "debe" : 0.00,
+      "haber" : 416.00,
+      "cuentaContable" : {
+        "id" : 20,
+        "codigo" : "2.1.3.01",
+        "nombre" : "Débito Fiscal IVA\t",
+        "tipo" : "PASIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 19,
+          "codigo" : "2.1.3",
+          "nombre" : "Impuestos por Pagar\t",
+          "tipo" : "PASIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 16,
+            "codigo" : "2.1",
+            "nombre" : "Pasivo Corriente",
+            "tipo" : "PASIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 15,
+              "codigo" : "2",
+              "nombre" : "Pasivo",
+              "tipo" : "PASIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 36,
+      "debe" : 0.00,
+      "haber" : 96.00,
+      "cuentaContable" : {
+        "id" : 21,
+        "codigo" : "2.1.3.02",
+        "nombre" : "IT por Pagar\t",
+        "tipo" : "PASIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 19,
+          "codigo" : "2.1.3",
+          "nombre" : "Impuestos por Pagar\t",
+          "tipo" : "PASIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 16,
+            "codigo" : "2.1",
+            "nombre" : "Pasivo Corriente",
+            "tipo" : "PASIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 15,
+              "codigo" : "2",
+              "nombre" : "Pasivo",
+              "tipo" : "PASIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 37,
+      "debe" : 0.00,
+      "haber" : 2400.00,
+      "cuentaContable" : {
+        "id" : 12,
+        "codigo" : "1.1.3.01",
+        "nombre" : "Inventario de Mercaderías",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 11,
+          "codigo" : "1.1.3",
+          "nombre" : "Bienes de Cambio",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    } ]
+  }, {
+    "id" : 19,
+    "nroAsiento" : "AS-2026-06-0008",
+    "fecha" : "2026-06-07",
+    "glosa" : "Registro de venta autom. - Factura Nro: FV-2026-000004",
+    "estado" : "APROBADO",
+    "origenDocumento" : "FACTURA_VENTA",
+    "origenId" : 4,
+    "idEmpresa" : 15,
+    "periodoContable" : {
+      "id" : 4,
+      "fechaInicio" : "2026-06-01",
+      "fechaFin" : "2026-06-30",
+      "estado" : "ABIERTO",
+      "idEmpresa" : 15
+    },
+    "usuario" : {
+      "id" : 51,
+      "username" : "javier",
+      "correo" : "javier@correo.com",
+      "password" : "$2a$10$IpXHCuXmR.MJ5hXIkRWVC.K..HruQXhFdWKinNFBk1h9zKdj55ds6",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "rol" : {
+        "id" : 16,
+        "nombre" : "contador",
+        "descripcion" : "encargado de las finanzas",
+        "idEmpresa" : 15,
+        "estado" : true,
+        "permisos" : [ {
+          "id" : 14,
+          "nombre" : "PERM_OPERACIONES_READ",
+          "descripcion" : "Visualizar facturas de venta, compra y cartera"
+        }, {
+          "id" : 11,
+          "nombre" : "PERM_PRODUCTO_WRITE",
+          "descripcion" : "Crear y editar productos"
+        }, {
+          "id" : 13,
+          "nombre" : "PERM_PRODUCTO_READ",
+          "descripcion" : "Visualizar catálogo de productos"
+        }, {
+          "id" : 10,
+          "nombre" : "PERM_INVENTARIO_READ",
+          "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+        }, {
+          "id" : 21,
+          "nombre" : "PERM_OPERACIONES_WRITE",
+          "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+        }, {
+          "id" : 19,
+          "nombre" : "PERM_INVENTARIO_WRITE",
+          "descripcion" : "Registrar ingresos y salidas de inventario"
+        }, {
+          "id" : 25,
+          "nombre" : "PERM_REPORTES_WRITE",
+          "descripcion" : "Exportar reportes a Excel o PDF"
+        }, {
+          "id" : 24,
+          "nombre" : "PERM_REPORTES_READ",
+          "descripcion" : "Visualizar reportes generales del sistema"
+        }, {
+          "id" : 9,
+          "nombre" : "PERM_CONTABILIDAD_WRITE",
+          "descripcion" : "Crear asientos contables y configurar periodos"
+        }, {
+          "id" : 16,
+          "nombre" : "PERM_EMPRESA_READ",
+          "descripcion" : "Visualizar datos generales de la empresa"
+        }, {
+          "id" : 12,
+          "nombre" : "PERM_CONTABILIDAD_READ",
+          "descripcion" : "Visualizar plan de cuentas y reportes contables"
+        } ]
+      }
+    },
+    "detalles" : [ {
+      "id" : 38,
+      "debe" : 2200.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 8,
+        "codigo" : "1.1.1.01",
+        "nombre" : "Caja General",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 7,
+          "codigo" : "1.1.1",
+          "nombre" : "Caja y Bancos",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 39,
+      "debe" : 66.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 31,
+        "codigo" : "5.1.2.01",
+        "nombre" : "Impuesto a las Transacciones (Gasto)\t",
+        "tipo" : "GASTO",
+        "nivel" : 3,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 29,
+          "codigo" : "5.1",
+          "nombre" : "Costos y Gastos\t",
+          "tipo" : "GASTO",
+          "nivel" : 2,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 26,
+            "codigo" : "5",
+            "nombre" : "Egreso",
+            "tipo" : "GASTO",
+            "nivel" : 1,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : null
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 40,
+      "debe" : 1200.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 30,
+        "codigo" : "5.1.1.01",
+        "nombre" : "Costo de Ventas\t",
+        "tipo" : "GASTO",
+        "nivel" : 3,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 29,
+          "codigo" : "5.1",
+          "nombre" : "Costos y Gastos\t",
+          "tipo" : "GASTO",
+          "nivel" : 2,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 26,
+            "codigo" : "5",
+            "nombre" : "Egreso",
+            "tipo" : "GASTO",
+            "nivel" : 1,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : null
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 41,
+      "debe" : 0.00,
+      "haber" : 1914.00,
+      "cuentaContable" : {
+        "id" : 28,
+        "codigo" : "4.1.1.01",
+        "nombre" : "Ventas Celulares\t",
+        "tipo" : "INGRESO",
+        "nivel" : 3,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 27,
+          "codigo" : "4.1",
+          "nombre" : "Ingresos Operativos\t",
+          "tipo" : "INGRESO",
+          "nivel" : 2,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 25,
+            "codigo" : "4",
+            "nombre" : "Ingreso",
+            "tipo" : "INGRESO",
+            "nivel" : 1,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : null
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 42,
+      "debe" : 0.00,
+      "haber" : 286.00,
+      "cuentaContable" : {
+        "id" : 20,
+        "codigo" : "2.1.3.01",
+        "nombre" : "Débito Fiscal IVA\t",
+        "tipo" : "PASIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 19,
+          "codigo" : "2.1.3",
+          "nombre" : "Impuestos por Pagar\t",
+          "tipo" : "PASIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 16,
+            "codigo" : "2.1",
+            "nombre" : "Pasivo Corriente",
+            "tipo" : "PASIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 15,
+              "codigo" : "2",
+              "nombre" : "Pasivo",
+              "tipo" : "PASIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 43,
+      "debe" : 0.00,
+      "haber" : 66.00,
+      "cuentaContable" : {
+        "id" : 21,
+        "codigo" : "2.1.3.02",
+        "nombre" : "IT por Pagar\t",
+        "tipo" : "PASIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 19,
+          "codigo" : "2.1.3",
+          "nombre" : "Impuestos por Pagar\t",
+          "tipo" : "PASIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 16,
+            "codigo" : "2.1",
+            "nombre" : "Pasivo Corriente",
+            "tipo" : "PASIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 15,
+              "codigo" : "2",
+              "nombre" : "Pasivo",
+              "tipo" : "PASIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 44,
+      "debe" : 0.00,
+      "haber" : 1200.00,
+      "cuentaContable" : {
+        "id" : 12,
+        "codigo" : "1.1.3.01",
+        "nombre" : "Inventario de Mercaderías",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 11,
+          "codigo" : "1.1.3",
+          "nombre" : "Bienes de Cambio",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    } ]
+  }, {
+    "id" : 20,
+    "nroAsiento" : "AS-2026-06-0009",
+    "fecha" : "2026-06-07",
+    "glosa" : "Pago parcial/total - Factura de Compra Nro: FC-2026-0002",
+    "estado" : "APROBADO",
+    "origenDocumento" : "PAGO_CPP",
+    "origenId" : 1,
+    "idEmpresa" : 15,
+    "periodoContable" : {
+      "id" : 4,
+      "fechaInicio" : "2026-06-01",
+      "fechaFin" : "2026-06-30",
+      "estado" : "ABIERTO",
+      "idEmpresa" : 15
+    },
+    "usuario" : {
+      "id" : 51,
+      "username" : "javier",
+      "correo" : "javier@correo.com",
+      "password" : "$2a$10$IpXHCuXmR.MJ5hXIkRWVC.K..HruQXhFdWKinNFBk1h9zKdj55ds6",
+      "estado" : true,
+      "idEmpresa" : 15,
+      "rol" : {
+        "id" : 16,
+        "nombre" : "contador",
+        "descripcion" : "encargado de las finanzas",
+        "idEmpresa" : 15,
+        "estado" : true,
+        "permisos" : [ {
+          "id" : 14,
+          "nombre" : "PERM_OPERACIONES_READ",
+          "descripcion" : "Visualizar facturas de venta, compra y cartera"
+        }, {
+          "id" : 11,
+          "nombre" : "PERM_PRODUCTO_WRITE",
+          "descripcion" : "Crear y editar productos"
+        }, {
+          "id" : 13,
+          "nombre" : "PERM_PRODUCTO_READ",
+          "descripcion" : "Visualizar catálogo de productos"
+        }, {
+          "id" : 10,
+          "nombre" : "PERM_INVENTARIO_READ",
+          "descripcion" : "Visualizar movimientos de inventario (Kardex)"
+        }, {
+          "id" : 21,
+          "nombre" : "PERM_OPERACIONES_WRITE",
+          "descripcion" : "Registrar y anular facturas de venta, compra y cobros"
+        }, {
+          "id" : 19,
+          "nombre" : "PERM_INVENTARIO_WRITE",
+          "descripcion" : "Registrar ingresos y salidas de inventario"
+        }, {
+          "id" : 25,
+          "nombre" : "PERM_REPORTES_WRITE",
+          "descripcion" : "Exportar reportes a Excel o PDF"
+        }, {
+          "id" : 24,
+          "nombre" : "PERM_REPORTES_READ",
+          "descripcion" : "Visualizar reportes generales del sistema"
+        }, {
+          "id" : 9,
+          "nombre" : "PERM_CONTABILIDAD_WRITE",
+          "descripcion" : "Crear asientos contables y configurar periodos"
+        }, {
+          "id" : 16,
+          "nombre" : "PERM_EMPRESA_READ",
+          "descripcion" : "Visualizar datos generales de la empresa"
+        }, {
+          "id" : 12,
+          "nombre" : "PERM_CONTABILIDAD_READ",
+          "descripcion" : "Visualizar plan de cuentas y reportes contables"
+        } ]
+      }
+    },
+    "detalles" : [ {
+      "id" : 45,
+      "debe" : 500.00,
+      "haber" : 0.00,
+      "cuentaContable" : {
+        "id" : 18,
+        "codigo" : "2.1.1.01",
+        "nombre" : "Proveedores por Pagar\t",
+        "tipo" : "PASIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 17,
+          "codigo" : "2.1.1",
+          "nombre" : "Obligaciones Comerciales\t",
+          "tipo" : "PASIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 16,
+            "codigo" : "2.1",
+            "nombre" : "Pasivo Corriente",
+            "tipo" : "PASIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 15,
+              "codigo" : "2",
+              "nombre" : "Pasivo",
+              "tipo" : "PASIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    }, {
+      "id" : 46,
+      "debe" : 0.00,
+      "haber" : 500.00,
+      "cuentaContable" : {
+        "id" : 8,
+        "codigo" : "1.1.1.01",
+        "nombre" : "Caja General",
+        "tipo" : "ACTIVO",
+        "nivel" : 4,
+        "estado" : true,
+        "idEmpresa" : 15,
+        "cuentaPadre" : {
+          "id" : 7,
+          "codigo" : "1.1.1",
+          "nombre" : "Caja y Bancos",
+          "tipo" : "ACTIVO",
+          "nivel" : 3,
+          "estado" : true,
+          "idEmpresa" : 15,
+          "cuentaPadre" : {
+            "id" : 6,
+            "codigo" : "1.1",
+            "nombre" : "Activo Corriente",
+            "tipo" : "ACTIVO",
+            "nivel" : 2,
+            "estado" : true,
+            "idEmpresa" : 15,
+            "cuentaPadre" : {
+              "id" : 5,
+              "codigo" : "1",
+              "nombre" : "Activo",
+              "tipo" : "ACTIVO",
+              "nivel" : 1,
+              "estado" : true,
+              "idEmpresa" : 15,
+              "cuentaPadre" : null
+            }
+          }
+        }
+      },
+      "centroCosto" : null
+    } ]
+  } ],
+  "facturasVenta" : [ {
+    "id" : 2,
+    "nroFactura" : "FV-2026-000002",
+    "fecha" : "2026-06-01",
+    "clienteNombre" : "Carol Rojas",
+    "clienteNit" : "3829104-1",
+    "subtotal" : 2200.00,
+    "descuento" : 0.00,
+    "total" : 2200.00,
+    "esCredito" : true,
+    "estado" : "EMITIDA",
+    "idEmpresa" : 15,
+    "detalles" : [ {
+      "id" : 2,
+      "cantidad" : 2.00,
+      "precioUnitario" : 1100.00,
+      "subtotal" : 2200.00,
+      "producto" : {
+        "id" : 14,
+        "codigo" : "CEL-I15",
+        "nombre" : "Iphone 15 Pro",
+        "descripcion" : "Sistema operativo de Apple, memoria Ram 16 Gb",
+        "tipo" : "PRODUCTO",
+        "precioVenta" : 1100.00,
+        "costoUnitario" : 600.00,
+        "stockActual" : 6.00,
+        "unidadMedida" : "Pza",
+        "estado" : true,
+        "idEmpresa" : 15,
+        "fechaCreacion" : "2026-05-30T05:16:33.782744",
+        "fechaActualizacion" : "2026-06-07T23:46:43.156079"
+      }
+    } ]
+  }, {
+    "id" : 1,
+    "nroFactura" : "FV-2026-000001",
+    "fecha" : "2026-06-01",
+    "clienteNombre" : "María Lopez",
+    "clienteNit" : "4920493-2",
+    "subtotal" : 4000.00,
+    "descuento" : 0.00,
+    "total" : 4000.00,
+    "esCredito" : false,
+    "estado" : "ANULADA",
+    "idEmpresa" : 15,
+    "detalles" : [ {
+      "id" : 1,
+      "cantidad" : 5.00,
+      "precioUnitario" : 800.00,
+      "subtotal" : 4000.00,
+      "producto" : {
+        "id" : 13,
+        "codigo" : "CEL-S24",
+        "nombre" : "Samsung Galaxy S24",
+        "descripcion" : "Celular de alta gama, pantala amolled, memora ram de 8 Gb",
+        "tipo" : "PRODUCTO",
+        "precioVenta" : 800.00,
+        "costoUnitario" : 600.00,
+        "stockActual" : 1.00,
+        "unidadMedida" : "Pza ",
+        "estado" : true,
+        "idEmpresa" : 15,
+        "fechaCreacion" : "2026-05-30T05:15:07.151407",
+        "fechaActualizacion" : "2026-06-01T12:12:30.871271"
+      }
+    } ]
+  }, {
+    "id" : 3,
+    "nroFactura" : "FV-2026-000003",
+    "fecha" : "2026-06-01",
+    "clienteNombre" : "María Lopez",
+    "clienteNit" : "3829104-2",
+    "subtotal" : 3200.00,
+    "descuento" : 0.00,
+    "total" : 3200.00,
+    "esCredito" : false,
+    "estado" : "EMITIDA",
+    "idEmpresa" : 15,
+    "detalles" : [ {
+      "id" : 3,
+      "cantidad" : 4.00,
+      "precioUnitario" : 800.00,
+      "subtotal" : 3200.00,
+      "producto" : {
+        "id" : 13,
+        "codigo" : "CEL-S24",
+        "nombre" : "Samsung Galaxy S24",
+        "descripcion" : "Celular de alta gama, pantala amolled, memora ram de 8 Gb",
+        "tipo" : "PRODUCTO",
+        "precioVenta" : 800.00,
+        "costoUnitario" : 600.00,
+        "stockActual" : 1.00,
+        "unidadMedida" : "Pza ",
+        "estado" : true,
+        "idEmpresa" : 15,
+        "fechaCreacion" : "2026-05-30T05:15:07.151407",
+        "fechaActualizacion" : "2026-06-01T12:12:30.871271"
+      }
+    } ]
+  }, {
+    "id" : 4,
+    "nroFactura" : "FV-2026-000004",
+    "fecha" : "2026-06-07",
+    "clienteNombre" : "Fabian Loza",
+    "clienteNit" : "4925293-3",
+    "subtotal" : 2200.00,
+    "descuento" : 0.00,
+    "total" : 2200.00,
+    "esCredito" : false,
+    "estado" : "EMITIDA",
+    "idEmpresa" : 15,
+    "detalles" : [ {
+      "id" : 4,
+      "cantidad" : 2.00,
+      "precioUnitario" : 1100.00,
+      "subtotal" : 2200.00,
+      "producto" : {
+        "id" : 14,
+        "codigo" : "CEL-I15",
+        "nombre" : "Iphone 15 Pro",
+        "descripcion" : "Sistema operativo de Apple, memoria Ram 16 Gb",
+        "tipo" : "PRODUCTO",
+        "precioVenta" : 1100.00,
+        "costoUnitario" : 600.00,
+        "stockActual" : 6.00,
+        "unidadMedida" : "Pza",
+        "estado" : true,
+        "idEmpresa" : 15,
+        "fechaCreacion" : "2026-05-30T05:16:33.782744",
+        "fechaActualizacion" : "2026-06-07T23:46:43.156079"
+      }
+    } ]
+  } ],
+  "facturasCompra" : [ {
+    "id" : 5,
+    "nroFactura" : "FC-2026-0001",
+    "fecha" : "2026-06-01",
+    "proveedorNombre" : "Distribuidora Celular S.A.",
+    "proveedorNit" : "83746200-1",
+    "subtotal" : 6000.00,
+    "total" : 6000.00,
+    "esCredito" : false,
+    "estado" : "REGISTRADA",
+    "idEmpresa" : 15,
+    "detalles" : [ {
+      "id" : 5,
+      "cantidad" : 10.00,
+      "costoUnitario" : 600.00,
+      "subtotal" : 6000.00,
+      "producto" : {
+        "id" : 14,
+        "codigo" : "CEL-I15",
+        "nombre" : "Iphone 15 Pro",
+        "descripcion" : "Sistema operativo de Apple, memoria Ram 16 Gb",
+        "tipo" : "PRODUCTO",
+        "precioVenta" : 1100.00,
+        "costoUnitario" : 600.00,
+        "stockActual" : 6.00,
+        "unidadMedida" : "Pza",
+        "estado" : true,
+        "idEmpresa" : 15,
+        "fechaCreacion" : "2026-05-30T05:16:33.782744",
+        "fechaActualizacion" : "2026-06-07T23:46:43.156079"
+      }
+    } ]
+  }, {
+    "id" : 6,
+    "nroFactura" : "FC-2026-0002",
+    "fecha" : "2026-06-01",
+    "proveedorNombre" : "Apple Store Bolivia",
+    "proveedorNit" : "10293847-5",
+    "subtotal" : 3000.00,
+    "total" : 3000.00,
+    "esCredito" : true,
+    "estado" : "REGISTRADA",
+    "idEmpresa" : 15,
+    "detalles" : [ {
+      "id" : 6,
+      "cantidad" : 5.00,
+      "costoUnitario" : 600.00,
+      "subtotal" : 3000.00,
+      "producto" : {
+        "id" : 13,
+        "codigo" : "CEL-S24",
+        "nombre" : "Samsung Galaxy S24",
+        "descripcion" : "Celular de alta gama, pantala amolled, memora ram de 8 Gb",
+        "tipo" : "PRODUCTO",
+        "precioVenta" : 800.00,
+        "costoUnitario" : 600.00,
+        "stockActual" : 1.00,
+        "unidadMedida" : "Pza ",
+        "estado" : true,
+        "idEmpresa" : 15,
+        "fechaCreacion" : "2026-05-30T05:15:07.151407",
+        "fechaActualizacion" : "2026-06-01T12:12:30.871271"
+      }
+    } ]
+  } ],
+  "cuentasPorCobrar" : [ {
+    "id" : 1,
+    "montoTotal" : 2200.00,
+    "saldo" : 1000.00,
+    "fechaVencimiento" : "2026-07-01",
+    "estado" : "PENDIENTE",
+    "idEmpresa" : 15,
+    "facturaVenta" : {
+      "id" : 2,
+      "nroFactura" : "FV-2026-000002",
+      "fecha" : "2026-06-01",
+      "clienteNombre" : "Carol Rojas",
+      "clienteNit" : "3829104-1",
+      "subtotal" : 2200.00,
+      "descuento" : 0.00,
+      "total" : 2200.00,
+      "esCredito" : true,
+      "estado" : "EMITIDA",
+      "idEmpresa" : 15,
+      "detalles" : [ {
+        "id" : 2,
+        "cantidad" : 2.00,
+        "precioUnitario" : 1100.00,
+        "subtotal" : 2200.00,
+        "producto" : {
+          "id" : 14,
+          "codigo" : "CEL-I15",
+          "nombre" : "Iphone 15 Pro",
+          "descripcion" : "Sistema operativo de Apple, memoria Ram 16 Gb",
+          "tipo" : "PRODUCTO",
+          "precioVenta" : 1100.00,
+          "costoUnitario" : 600.00,
+          "stockActual" : 6.00,
+          "unidadMedida" : "Pza",
+          "estado" : true,
+          "idEmpresa" : 15,
+          "fechaCreacion" : "2026-05-30T05:16:33.782744",
+          "fechaActualizacion" : "2026-06-07T23:46:43.156079"
+        }
+      } ]
+    }
+  } ],
+  "cuentasPorPagar" : [ {
+    "id" : 1,
+    "montoTotal" : 3000.00,
+    "saldo" : 500.00,
+    "fechaVencimiento" : "2026-07-01",
+    "estado" : "PENDIENTE",
+    "idEmpresa" : 15,
+    "facturaCompra" : {
+      "id" : 6,
+      "nroFactura" : "FC-2026-0002",
+      "fecha" : "2026-06-01",
+      "proveedorNombre" : "Apple Store Bolivia",
+      "proveedorNit" : "10293847-5",
+      "subtotal" : 3000.00,
+      "total" : 3000.00,
+      "esCredito" : true,
+      "estado" : "REGISTRADA",
+      "idEmpresa" : 15,
+      "detalles" : [ {
+        "id" : 6,
+        "cantidad" : 5.00,
+        "costoUnitario" : 600.00,
+        "subtotal" : 3000.00,
+        "producto" : {
+          "id" : 13,
+          "codigo" : "CEL-S24",
+          "nombre" : "Samsung Galaxy S24",
+          "descripcion" : "Celular de alta gama, pantala amolled, memora ram de 8 Gb",
+          "tipo" : "PRODUCTO",
+          "precioVenta" : 800.00,
+          "costoUnitario" : 600.00,
+          "stockActual" : 1.00,
+          "unidadMedida" : "Pza ",
+          "estado" : true,
+          "idEmpresa" : 15,
+          "fechaCreacion" : "2026-05-30T05:15:07.151407",
+          "fechaActualizacion" : "2026-06-01T12:12:30.871271"
+        }
+      } ]
+    }
+  } ],
+  "auditLogs" : [ {
+    "id" : 49,
+    "empresaId" : 15,
+    "usuarioId" : 40,
+    "usuarioNombre" : "fernando@correo.com",
+    "modulo" : "ACCESOS",
+    "accion" : "LOGOUT",
+    "entidadAfectada" : null,
+    "entidadId" : null,
+    "descripcion" : "Acción LOGOUT ejecutada en el módulo ACCESOS (AuthController.logout)",
+    "ipAddress" : "172.18.0.1",
+    "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 OPR/131.0.0.0",
+    "fechaHora" : "2026-06-08T06:07:12.830366",
+    "valoresAnteriores" : null,
+    "valoresNuevos" : null,
+    "resultado" : "EXITO",
+    "detallesError" : null
+  }, {
+    "id" : 48,
+    "empresaId" : 15,
+    "usuarioId" : 40,
+    "usuarioNombre" : "fernando@correo.com",
+    "modulo" : "EMPLEADOS",
+    "accion" : "EDITAR_PERFIL_PROPIO",
+    "entidadAfectada" : null,
+    "entidadId" : null,
+    "descripcion" : "Acción EDITAR_PERFIL_PROPIO ejecutada en el módulo EMPLEADOS (InfoUsuarioController.updateMe)",
+    "ipAddress" : "172.18.0.1",
+    "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 OPR/131.0.0.0",
+    "fechaHora" : "2026-06-08T06:06:49.538398",
+    "valoresAnteriores" : null,
+    "valoresNuevos" : null,
+    "resultado" : "EXITO",
+    "detallesError" : null
+  }, {
+    "id" : 47,
+    "empresaId" : 15,
+    "usuarioId" : 40,
+    "usuarioNombre" : "fernando@correo.com",
+    "modulo" : "ACCESOS",
+    "accion" : "LOGIN",
+    "entidadAfectada" : null,
+    "entidadId" : null,
+    "descripcion" : "Acción LOGIN ejecutada en el módulo ACCESOS (AuthController.login)",
+    "ipAddress" : "172.18.0.1",
+    "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 OPR/131.0.0.0",
+    "fechaHora" : "2026-06-08T06:06:02.468947",
+    "valoresAnteriores" : null,
+    "valoresNuevos" : null,
+    "resultado" : "EXITO",
+    "detallesError" : null
+  }, {
+    "id" : 43,
+    "empresaId" : 15,
+    "usuarioId" : 40,
+    "usuarioNombre" : "fernando@correo.com",
+    "modulo" : "ACCESOS",
+    "accion" : "LOGOUT",
+    "entidadAfectada" : null,
+    "entidadId" : null,
+    "descripcion" : "Acción LOGOUT ejecutada en el módulo ACCESOS (AuthController.logout)",
+    "ipAddress" : "172.18.0.1",
+    "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 OPR/131.0.0.0",
+    "fechaHora" : "2026-06-08T05:50:07.613293",
+    "valoresAnteriores" : null,
+    "valoresNuevos" : null,
+    "resultado" : "EXITO",
+    "detallesError" : null
+  }, {
+    "id" : 42,
+    "empresaId" : 15,
+    "usuarioId" : 40,
+    "usuarioNombre" : "fernando@correo.com",
+    "modulo" : "ACCESOS",
+    "accion" : "LOGIN",
+    "entidadAfectada" : null,
+    "entidadId" : null,
+    "descripcion" : "Acción LOGIN ejecutada en el módulo ACCESOS (AuthController.login)",
+    "ipAddress" : "172.18.0.1",
+    "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 OPR/131.0.0.0",
+    "fechaHora" : "2026-06-08T05:34:27.587782",
+    "valoresAnteriores" : null,
+    "valoresNuevos" : null,
+    "resultado" : "EXITO",
+    "detallesError" : null
+  }, {
+    "id" : 40,
+    "empresaId" : 15,
+    "usuarioId" : 40,
+    "usuarioNombre" : "fernando@correo.com",
+    "modulo" : "ACCESOS",
+    "accion" : "LOGIN",
+    "entidadAfectada" : null,
+    "entidadId" : null,
+    "descripcion" : "Acción LOGIN ejecutada en el módulo ACCESOS (AuthController.login)",
+    "ipAddress" : "172.18.0.1",
+    "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 OPR/131.0.0.0",
+    "fechaHora" : "2026-06-08T05:21:25.017192",
+    "valoresAnteriores" : null,
+    "valoresNuevos" : null,
+    "resultado" : "EXITO",
+    "detallesError" : null
+  }, {
+    "id" : 39,
+    "empresaId" : 15,
+    "usuarioId" : 40,
+    "usuarioNombre" : "fernando@correo.com",
+    "modulo" : "ACCESOS",
+    "accion" : "LOGIN",
+    "entidadAfectada" : null,
+    "entidadId" : null,
+    "descripcion" : "Acción LOGIN ejecutada en el módulo ACCESOS (AuthController.login)",
+    "ipAddress" : "172.18.0.1",
+    "userAgent" : "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/147.0.0.0 Safari/537.36 OPR/131.0.0.0",
+    "fechaHora" : "2026-06-08T05:20:57.074536",
+    "valoresAnteriores" : null,
+    "valoresNuevos" : null,
+    "resultado" : "EXITO",
+    "detallesError" : null
+  } ]
+}

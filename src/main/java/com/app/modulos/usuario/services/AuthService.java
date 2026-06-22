@@ -111,36 +111,7 @@ public class AuthService {
 
 	@Transactional
 	public AuthResponse register(RegisterRequest request) {
-		if (userRepository.existsByUsername(request.getUsername())) {
-			throw new IllegalArgumentException("Username ya existe");
-		}
-		if (userRepository.existsByCorreo(request.getCorreo())) {
-			throw new IllegalArgumentException("Correo ya existe");
-		}
-
-		Usuario usuario = new Usuario();
-		usuario.setUsername(request.getUsername());
-		usuario.setCorreo(request.getCorreo());
-		usuario.setPassword(passwordEncoder.encode(request.getPassword()));
-		if (request.getRolId() != null) {
-			Rol rol = roleRepository.findById(request.getRolId())
-				.orElseThrow(() -> new IllegalArgumentException("Rol no encontrado"));
-			usuario.setRol(rol);
-			usuario.setIdEmpresa(rol.getIdEmpresa());
-		}
-		usuario = userRepository.save(usuario);
-
-		InfoUsuario infoUsuario = new InfoUsuario();
-		infoUsuario.setNombre(request.getNombre());
-		infoUsuario.setCi(request.getCi());
-		infoUsuario.setCargo(request.getCargo());
-		infoUsuario.setTelefono(request.getTelefono());
-		infoUsuario.setUsuario(usuario);
-		infoUsuarioRepository.save(infoUsuario);
-
-		UserDetails userDetails = userDetailsService.loadUserByCorreo(usuario.getCorreo());
-		String token = jwtService.generateToken(userDetails);
-		return new AuthResponse(token);
+		throw new UnsupportedOperationException("El registro público de usuarios individuales está deshabilitado. Los usuarios deben ser creados por el administrador de su empresa.");
 	}
 
 	@Transactional

@@ -1,0 +1,1099 @@
+{
+  "empresa" : {
+    "id" : 8,
+    "nombre" : "Zapatos Moda",
+    "razonSocial" : "Zapateria Boliviana",
+    "nit" : "123548981",
+    "direccion" : "Calle Bolivar",
+    "telefono" : "3251462",
+    "correo" : "zapatosbolivia@gmail.com",
+    "estado" : true,
+    "configuracion" : {
+      "id" : 4,
+      "iva" : 13.00,
+      "it" : 3.00,
+      "moneda" : "Dólares",
+      "tipoCambio" : 6.96,
+      "estado" : true,
+      "idEmpresa" : 8,
+      "idCuentaCaja" : 2,
+      "idCuentaClientes" : 3,
+      "idCuentaProveedores" : 2,
+      "idCuentaVentas" : 2,
+      "idCuentaCompras" : 3,
+      "idCuentaIvaDebito" : 2,
+      "idCuentaIvaCredito" : 2,
+      "idCuentaItGasto" : 4,
+      "idCuentaItPasivo" : 4,
+      "idCuentaInventario" : 4,
+      "idCuentaCostoVentas" : 4,
+      "colorPrimario" : "#e56048",
+      "colorSecundario" : "#ffffff"
+    }
+  },
+  "configuraciones" : [ {
+    "id" : 4,
+    "iva" : 13.00,
+    "it" : 3.00,
+    "moneda" : "Dólares",
+    "tipoCambio" : 6.96,
+    "estado" : true,
+    "idEmpresa" : 8,
+    "idCuentaCaja" : 2,
+    "idCuentaClientes" : 3,
+    "idCuentaProveedores" : 2,
+    "idCuentaVentas" : 2,
+    "idCuentaCompras" : 3,
+    "idCuentaIvaDebito" : 2,
+    "idCuentaIvaCredito" : 2,
+    "idCuentaItGasto" : 4,
+    "idCuentaItPasivo" : 4,
+    "idCuentaInventario" : 4,
+    "idCuentaCostoVentas" : 4,
+    "colorPrimario" : "#e56048",
+    "colorSecundario" : "#ffffff"
+  } ],
+  "suscripciones" : [ {
+    "id" : 11,
+    "plan" : {
+      "id" : 1,
+      "nombre" : "Free",
+      "descripcion" : "Ideal para pequeñas empresas. Incluye 5 usuarios y soporte por email.",
+      "precio" : 0.00,
+      "duracionDias" : 30,
+      "estado" : true,
+      "fechaCreacion" : "2026-05-11T13:42:36.097042",
+      "fechaActualizacion" : "2026-06-01T18:40:23.967816",
+      "caracteristicas" : [ {
+        "id" : 144,
+        "clave" : "mi-empresa",
+        "valor" : "true"
+      }, {
+        "id" : 145,
+        "clave" : "suscripcion",
+        "valor" : "true"
+      }, {
+        "id" : 146,
+        "clave" : "panel-control",
+        "valor" : "false"
+      }, {
+        "id" : 147,
+        "clave" : "configuraciones",
+        "valor" : "true"
+      }, {
+        "id" : 148,
+        "clave" : "roles-permisos",
+        "valor" : "false"
+      }, {
+        "id" : 149,
+        "clave" : "empleados",
+        "valor" : "true"
+      }, {
+        "id" : 150,
+        "clave" : "contabilidad",
+        "valor" : "false"
+      }, {
+        "id" : 151,
+        "clave" : "inventario",
+        "valor" : "true"
+      }, {
+        "id" : 152,
+        "clave" : "ventas",
+        "valor" : "true"
+      }, {
+        "id" : 153,
+        "clave" : "compras",
+        "valor" : "true"
+      }, {
+        "id" : 154,
+        "clave" : "cartera",
+        "valor" : "false"
+      }, {
+        "id" : 155,
+        "clave" : "reportes",
+        "valor" : "false"
+      }, {
+        "id" : 156,
+        "clave" : "max_empleados",
+        "valor" : "1"
+      }, {
+        "id" : 157,
+        "clave" : "max_usuarios",
+        "valor" : "2"
+      } ]
+    },
+    "fechaInicio" : "2026-06-01",
+    "fechaFin" : "2026-07-01",
+    "estado" : false,
+    "monto" : 0.00,
+    "montoPagado" : 0.00,
+    "tipoRenovacion" : "MENSUAL",
+    "idEmpresa" : 8,
+    "empresa" : {
+      "id" : 8,
+      "nombre" : "Zapatos Moda",
+      "razonSocial" : "Zapateria Boliviana",
+      "nit" : "123548981",
+      "direccion" : "Calle Bolivar",
+      "telefono" : "3251462",
+      "correo" : "zapatosbolivia@gmail.com",
+      "estado" : true,
+      "configuracion" : {
+        "id" : 4,
+        "iva" : 13.00,
+        "it" : 3.00,
+        "moneda" : "Dólares",
+        "tipoCambio" : 6.96,
+        "estado" : true,
+        "idEmpresa" : 8,
+        "idCuentaCaja" : 2,
+        "idCuentaClientes" : 3,
+        "idCuentaProveedores" : 2,
+        "idCuentaVentas" : 2,
+        "idCuentaCompras" : 3,
+        "idCuentaIvaDebito" : 2,
+        "idCuentaIvaCredito" : 2,
+        "idCuentaItGasto" : 4,
+        "idCuentaItPasivo" : 4,
+        "idCuentaInventario" : 4,
+        "idCuentaCostoVentas" : 4,
+        "colorPrimario" : "#e56048",
+        "colorSecundario" : "#ffffff"
+      }
+    }
+  }, {
+    "id" : 12,
+    "plan" : {
+      "id" : 2,
+      "nombre" : "Profesional",
+      "descripcion" : "Ideal para empresas en crecimiento que necesitan gestión de inventarios y múltiples usuarios.",
+      "precio" : 99.99,
+      "duracionDias" : 30,
+      "estado" : true,
+      "fechaCreacion" : "2026-05-11T13:48:58.67309",
+      "fechaActualizacion" : "2026-06-01T18:40:55.747764",
+      "caracteristicas" : [ {
+        "id" : 158,
+        "clave" : "mi-empresa",
+        "valor" : "true"
+      }, {
+        "id" : 159,
+        "clave" : "suscripcion",
+        "valor" : "true"
+      }, {
+        "id" : 160,
+        "clave" : "panel-control",
+        "valor" : "true"
+      }, {
+        "id" : 161,
+        "clave" : "configuraciones",
+        "valor" : "true"
+      }, {
+        "id" : 162,
+        "clave" : "roles-permisos",
+        "valor" : "true"
+      }, {
+        "id" : 163,
+        "clave" : "empleados",
+        "valor" : "true"
+      }, {
+        "id" : 164,
+        "clave" : "contabilidad",
+        "valor" : "true"
+      }, {
+        "id" : 165,
+        "clave" : "inventario",
+        "valor" : "true"
+      }, {
+        "id" : 166,
+        "clave" : "ventas",
+        "valor" : "true"
+      }, {
+        "id" : 167,
+        "clave" : "compras",
+        "valor" : "true"
+      }, {
+        "id" : 168,
+        "clave" : "cartera",
+        "valor" : "true"
+      }, {
+        "id" : 169,
+        "clave" : "reportes",
+        "valor" : "false"
+      }, {
+        "id" : 170,
+        "clave" : "max_empleados",
+        "valor" : "10"
+      }, {
+        "id" : 171,
+        "clave" : "max_usuarios",
+        "valor" : "11"
+      } ]
+    },
+    "fechaInicio" : "2026-06-01",
+    "fechaFin" : "2026-07-01",
+    "estado" : false,
+    "monto" : 99.99,
+    "montoPagado" : 99.99,
+    "tipoRenovacion" : "MENSUAL",
+    "idEmpresa" : 8,
+    "empresa" : {
+      "id" : 8,
+      "nombre" : "Zapatos Moda",
+      "razonSocial" : "Zapateria Boliviana",
+      "nit" : "123548981",
+      "direccion" : "Calle Bolivar",
+      "telefono" : "3251462",
+      "correo" : "zapatosbolivia@gmail.com",
+      "estado" : true,
+      "configuracion" : {
+        "id" : 4,
+        "iva" : 13.00,
+        "it" : 3.00,
+        "moneda" : "Dólares",
+        "tipoCambio" : 6.96,
+        "estado" : true,
+        "idEmpresa" : 8,
+        "idCuentaCaja" : 2,
+        "idCuentaClientes" : 3,
+        "idCuentaProveedores" : 2,
+        "idCuentaVentas" : 2,
+        "idCuentaCompras" : 3,
+        "idCuentaIvaDebito" : 2,
+        "idCuentaIvaCredito" : 2,
+        "idCuentaItGasto" : 4,
+        "idCuentaItPasivo" : 4,
+        "idCuentaInventario" : 4,
+        "idCuentaCostoVentas" : 4,
+        "colorPrimario" : "#e56048",
+        "colorSecundario" : "#ffffff"
+      }
+    }
+  }, {
+    "id" : 13,
+    "plan" : {
+      "id" : 1,
+      "nombre" : "Free",
+      "descripcion" : "Ideal para pequeñas empresas. Incluye 5 usuarios y soporte por email.",
+      "precio" : 0.00,
+      "duracionDias" : 30,
+      "estado" : true,
+      "fechaCreacion" : "2026-05-11T13:42:36.097042",
+      "fechaActualizacion" : "2026-06-01T18:40:23.967816",
+      "caracteristicas" : [ {
+        "id" : 144,
+        "clave" : "mi-empresa",
+        "valor" : "true"
+      }, {
+        "id" : 145,
+        "clave" : "suscripcion",
+        "valor" : "true"
+      }, {
+        "id" : 146,
+        "clave" : "panel-control",
+        "valor" : "false"
+      }, {
+        "id" : 147,
+        "clave" : "configuraciones",
+        "valor" : "true"
+      }, {
+        "id" : 148,
+        "clave" : "roles-permisos",
+        "valor" : "false"
+      }, {
+        "id" : 149,
+        "clave" : "empleados",
+        "valor" : "true"
+      }, {
+        "id" : 150,
+        "clave" : "contabilidad",
+        "valor" : "false"
+      }, {
+        "id" : 151,
+        "clave" : "inventario",
+        "valor" : "true"
+      }, {
+        "id" : 152,
+        "clave" : "ventas",
+        "valor" : "true"
+      }, {
+        "id" : 153,
+        "clave" : "compras",
+        "valor" : "true"
+      }, {
+        "id" : 154,
+        "clave" : "cartera",
+        "valor" : "false"
+      }, {
+        "id" : 155,
+        "clave" : "reportes",
+        "valor" : "false"
+      }, {
+        "id" : 156,
+        "clave" : "max_empleados",
+        "valor" : "1"
+      }, {
+        "id" : 157,
+        "clave" : "max_usuarios",
+        "valor" : "2"
+      } ]
+    },
+    "fechaInicio" : "2026-06-01",
+    "fechaFin" : "2026-07-01",
+    "estado" : false,
+    "monto" : 0.00,
+    "montoPagado" : 0.00,
+    "tipoRenovacion" : "MENSUAL",
+    "idEmpresa" : 8,
+    "empresa" : {
+      "id" : 8,
+      "nombre" : "Zapatos Moda",
+      "razonSocial" : "Zapateria Boliviana",
+      "nit" : "123548981",
+      "direccion" : "Calle Bolivar",
+      "telefono" : "3251462",
+      "correo" : "zapatosbolivia@gmail.com",
+      "estado" : true,
+      "configuracion" : {
+        "id" : 4,
+        "iva" : 13.00,
+        "it" : 3.00,
+        "moneda" : "Dólares",
+        "tipoCambio" : 6.96,
+        "estado" : true,
+        "idEmpresa" : 8,
+        "idCuentaCaja" : 2,
+        "idCuentaClientes" : 3,
+        "idCuentaProveedores" : 2,
+        "idCuentaVentas" : 2,
+        "idCuentaCompras" : 3,
+        "idCuentaIvaDebito" : 2,
+        "idCuentaIvaCredito" : 2,
+        "idCuentaItGasto" : 4,
+        "idCuentaItPasivo" : 4,
+        "idCuentaInventario" : 4,
+        "idCuentaCostoVentas" : 4,
+        "colorPrimario" : "#e56048",
+        "colorSecundario" : "#ffffff"
+      }
+    }
+  }, {
+    "id" : 14,
+    "plan" : {
+      "id" : 3,
+      "nombre" : "Premium",
+      "descripcion" : "La solución completa para grandes corporaciones. Sin límites y con todas las funcionalidades activas.",
+      "precio" : 199.99,
+      "duracionDias" : 30,
+      "estado" : true,
+      "fechaCreacion" : "2026-05-11T13:51:17.259349",
+      "fechaActualizacion" : "2026-06-01T18:41:27.070856",
+      "caracteristicas" : [ {
+        "id" : 172,
+        "clave" : "mi-empresa",
+        "valor" : "true"
+      }, {
+        "id" : 173,
+        "clave" : "suscripcion",
+        "valor" : "true"
+      }, {
+        "id" : 174,
+        "clave" : "panel-control",
+        "valor" : "true"
+      }, {
+        "id" : 175,
+        "clave" : "configuraciones",
+        "valor" : "true"
+      }, {
+        "id" : 176,
+        "clave" : "roles-permisos",
+        "valor" : "true"
+      }, {
+        "id" : 177,
+        "clave" : "empleados",
+        "valor" : "true"
+      }, {
+        "id" : 178,
+        "clave" : "contabilidad",
+        "valor" : "true"
+      }, {
+        "id" : 179,
+        "clave" : "inventario",
+        "valor" : "true"
+      }, {
+        "id" : 180,
+        "clave" : "ventas",
+        "valor" : "true"
+      }, {
+        "id" : 181,
+        "clave" : "compras",
+        "valor" : "true"
+      }, {
+        "id" : 182,
+        "clave" : "cartera",
+        "valor" : "true"
+      }, {
+        "id" : 183,
+        "clave" : "reportes",
+        "valor" : "true"
+      }, {
+        "id" : 184,
+        "clave" : "max_empleados",
+        "valor" : "1000"
+      }, {
+        "id" : 185,
+        "clave" : "max_usuarios",
+        "valor" : "1001"
+      } ]
+    },
+    "fechaInicio" : "2026-06-01",
+    "fechaFin" : "2026-07-01",
+    "estado" : false,
+    "monto" : 199.99,
+    "montoPagado" : 199.99,
+    "tipoRenovacion" : "MENSUAL",
+    "idEmpresa" : 8,
+    "empresa" : {
+      "id" : 8,
+      "nombre" : "Zapatos Moda",
+      "razonSocial" : "Zapateria Boliviana",
+      "nit" : "123548981",
+      "direccion" : "Calle Bolivar",
+      "telefono" : "3251462",
+      "correo" : "zapatosbolivia@gmail.com",
+      "estado" : true,
+      "configuracion" : {
+        "id" : 4,
+        "iva" : 13.00,
+        "it" : 3.00,
+        "moneda" : "Dólares",
+        "tipoCambio" : 6.96,
+        "estado" : true,
+        "idEmpresa" : 8,
+        "idCuentaCaja" : 2,
+        "idCuentaClientes" : 3,
+        "idCuentaProveedores" : 2,
+        "idCuentaVentas" : 2,
+        "idCuentaCompras" : 3,
+        "idCuentaIvaDebito" : 2,
+        "idCuentaIvaCredito" : 2,
+        "idCuentaItGasto" : 4,
+        "idCuentaItPasivo" : 4,
+        "idCuentaInventario" : 4,
+        "idCuentaCostoVentas" : 4,
+        "colorPrimario" : "#e56048",
+        "colorSecundario" : "#ffffff"
+      }
+    }
+  }, {
+    "id" : 16,
+    "plan" : {
+      "id" : 1,
+      "nombre" : "Free",
+      "descripcion" : "Ideal para pequeñas empresas. Incluye 5 usuarios y soporte por email.",
+      "precio" : 0.00,
+      "duracionDias" : 30,
+      "estado" : true,
+      "fechaCreacion" : "2026-05-11T13:42:36.097042",
+      "fechaActualizacion" : "2026-06-01T18:40:23.967816",
+      "caracteristicas" : [ {
+        "id" : 144,
+        "clave" : "mi-empresa",
+        "valor" : "true"
+      }, {
+        "id" : 145,
+        "clave" : "suscripcion",
+        "valor" : "true"
+      }, {
+        "id" : 146,
+        "clave" : "panel-control",
+        "valor" : "false"
+      }, {
+        "id" : 147,
+        "clave" : "configuraciones",
+        "valor" : "true"
+      }, {
+        "id" : 148,
+        "clave" : "roles-permisos",
+        "valor" : "false"
+      }, {
+        "id" : 149,
+        "clave" : "empleados",
+        "valor" : "true"
+      }, {
+        "id" : 150,
+        "clave" : "contabilidad",
+        "valor" : "false"
+      }, {
+        "id" : 151,
+        "clave" : "inventario",
+        "valor" : "true"
+      }, {
+        "id" : 152,
+        "clave" : "ventas",
+        "valor" : "true"
+      }, {
+        "id" : 153,
+        "clave" : "compras",
+        "valor" : "true"
+      }, {
+        "id" : 154,
+        "clave" : "cartera",
+        "valor" : "false"
+      }, {
+        "id" : 155,
+        "clave" : "reportes",
+        "valor" : "false"
+      }, {
+        "id" : 156,
+        "clave" : "max_empleados",
+        "valor" : "1"
+      }, {
+        "id" : 157,
+        "clave" : "max_usuarios",
+        "valor" : "2"
+      } ]
+    },
+    "fechaInicio" : "2026-06-06",
+    "fechaFin" : "2026-07-06",
+    "estado" : false,
+    "monto" : 0.00,
+    "montoPagado" : 0.00,
+    "tipoRenovacion" : "MENSUAL",
+    "idEmpresa" : 8,
+    "empresa" : {
+      "id" : 8,
+      "nombre" : "Zapatos Moda",
+      "razonSocial" : "Zapateria Boliviana",
+      "nit" : "123548981",
+      "direccion" : "Calle Bolivar",
+      "telefono" : "3251462",
+      "correo" : "zapatosbolivia@gmail.com",
+      "estado" : true,
+      "configuracion" : {
+        "id" : 4,
+        "iva" : 13.00,
+        "it" : 3.00,
+        "moneda" : "Dólares",
+        "tipoCambio" : 6.96,
+        "estado" : true,
+        "idEmpresa" : 8,
+        "idCuentaCaja" : 2,
+        "idCuentaClientes" : 3,
+        "idCuentaProveedores" : 2,
+        "idCuentaVentas" : 2,
+        "idCuentaCompras" : 3,
+        "idCuentaIvaDebito" : 2,
+        "idCuentaIvaCredito" : 2,
+        "idCuentaItGasto" : 4,
+        "idCuentaItPasivo" : 4,
+        "idCuentaInventario" : 4,
+        "idCuentaCostoVentas" : 4,
+        "colorPrimario" : "#e56048",
+        "colorSecundario" : "#ffffff"
+      }
+    }
+  }, {
+    "id" : 17,
+    "plan" : {
+      "id" : 2,
+      "nombre" : "Profesional",
+      "descripcion" : "Ideal para empresas en crecimiento que necesitan gestión de inventarios y múltiples usuarios.",
+      "precio" : 99.99,
+      "duracionDias" : 30,
+      "estado" : true,
+      "fechaCreacion" : "2026-05-11T13:48:58.67309",
+      "fechaActualizacion" : "2026-06-01T18:40:55.747764",
+      "caracteristicas" : [ {
+        "id" : 158,
+        "clave" : "mi-empresa",
+        "valor" : "true"
+      }, {
+        "id" : 159,
+        "clave" : "suscripcion",
+        "valor" : "true"
+      }, {
+        "id" : 160,
+        "clave" : "panel-control",
+        "valor" : "true"
+      }, {
+        "id" : 161,
+        "clave" : "configuraciones",
+        "valor" : "true"
+      }, {
+        "id" : 162,
+        "clave" : "roles-permisos",
+        "valor" : "true"
+      }, {
+        "id" : 163,
+        "clave" : "empleados",
+        "valor" : "true"
+      }, {
+        "id" : 164,
+        "clave" : "contabilidad",
+        "valor" : "true"
+      }, {
+        "id" : 165,
+        "clave" : "inventario",
+        "valor" : "true"
+      }, {
+        "id" : 166,
+        "clave" : "ventas",
+        "valor" : "true"
+      }, {
+        "id" : 167,
+        "clave" : "compras",
+        "valor" : "true"
+      }, {
+        "id" : 168,
+        "clave" : "cartera",
+        "valor" : "true"
+      }, {
+        "id" : 169,
+        "clave" : "reportes",
+        "valor" : "false"
+      }, {
+        "id" : 170,
+        "clave" : "max_empleados",
+        "valor" : "10"
+      }, {
+        "id" : 171,
+        "clave" : "max_usuarios",
+        "valor" : "11"
+      } ]
+    },
+    "fechaInicio" : "2026-06-06",
+    "fechaFin" : "2026-07-06",
+    "estado" : true,
+    "monto" : 99.99,
+    "montoPagado" : 99.99,
+    "tipoRenovacion" : "MENSUAL",
+    "idEmpresa" : 8,
+    "empresa" : {
+      "id" : 8,
+      "nombre" : "Zapatos Moda",
+      "razonSocial" : "Zapateria Boliviana",
+      "nit" : "123548981",
+      "direccion" : "Calle Bolivar",
+      "telefono" : "3251462",
+      "correo" : "zapatosbolivia@gmail.com",
+      "estado" : true,
+      "configuracion" : {
+        "id" : 4,
+        "iva" : 13.00,
+        "it" : 3.00,
+        "moneda" : "Dólares",
+        "tipoCambio" : 6.96,
+        "estado" : true,
+        "idEmpresa" : 8,
+        "idCuentaCaja" : 2,
+        "idCuentaClientes" : 3,
+        "idCuentaProveedores" : 2,
+        "idCuentaVentas" : 2,
+        "idCuentaCompras" : 3,
+        "idCuentaIvaDebito" : 2,
+        "idCuentaIvaCredito" : 2,
+        "idCuentaItGasto" : 4,
+        "idCuentaItPasivo" : 4,
+        "idCuentaInventario" : 4,
+        "idCuentaCostoVentas" : 4,
+        "colorPrimario" : "#e56048",
+        "colorSecundario" : "#ffffff"
+      }
+    }
+  } ],
+  "roles" : [ {
+    "id" : 13,
+    "nombre" : "ADMIN",
+    "descripcion" : "Administrador",
+    "idEmpresa" : 8,
+    "estado" : true,
+    "permisos" : [ ]
+  }, {
+    "id" : 15,
+    "nombre" : "empleado",
+    "descripcion" : "ayuda",
+    "idEmpresa" : 8,
+    "estado" : true,
+    "permisos" : [ {
+      "id" : 13,
+      "nombre" : "PERM_PRODUCTO_READ",
+      "descripcion" : "Visualizar catálogo de productos"
+    }, {
+      "id" : 14,
+      "nombre" : "PERM_OPERACIONES_READ",
+      "descripcion" : "Visualizar facturas de venta, compra y cartera"
+    }, {
+      "id" : 16,
+      "nombre" : "PERM_EMPRESA_READ",
+      "descripcion" : "Visualizar datos generales de la empresa"
+    } ]
+  } ],
+  "usuarios" : [ {
+    "id" : 39,
+    "username" : "mario",
+    "correo" : "mario@correo.com",
+    "estado" : true,
+    "idEmpresa" : 8,
+    "rol" : {
+      "id" : 13,
+      "nombre" : "ADMIN",
+      "descripcion" : "Administrador",
+      "idEmpresa" : 8,
+      "estado" : true,
+      "permisos" : [ ]
+    }
+  }, {
+    "id" : 41,
+    "username" : "dylan",
+    "correo" : "dylan@correo.com",
+    "estado" : true,
+    "idEmpresa" : 8,
+    "rol" : {
+      "id" : 15,
+      "nombre" : "empleado",
+      "descripcion" : "ayuda",
+      "idEmpresa" : 8,
+      "estado" : true,
+      "permisos" : [ {
+        "id" : 13,
+        "nombre" : "PERM_PRODUCTO_READ",
+        "descripcion" : "Visualizar catálogo de productos"
+      }, {
+        "id" : 14,
+        "nombre" : "PERM_OPERACIONES_READ",
+        "descripcion" : "Visualizar facturas de venta, compra y cartera"
+      }, {
+        "id" : 16,
+        "nombre" : "PERM_EMPRESA_READ",
+        "descripcion" : "Visualizar datos generales de la empresa"
+      } ]
+    }
+  }, {
+    "id" : 42,
+    "username" : "deivid",
+    "correo" : "deivid@correo.com",
+    "estado" : true,
+    "idEmpresa" : 8,
+    "rol" : {
+      "id" : 15,
+      "nombre" : "empleado",
+      "descripcion" : "ayuda",
+      "idEmpresa" : 8,
+      "estado" : true,
+      "permisos" : [ {
+        "id" : 13,
+        "nombre" : "PERM_PRODUCTO_READ",
+        "descripcion" : "Visualizar catálogo de productos"
+      }, {
+        "id" : 14,
+        "nombre" : "PERM_OPERACIONES_READ",
+        "descripcion" : "Visualizar facturas de venta, compra y cartera"
+      }, {
+        "id" : 16,
+        "nombre" : "PERM_EMPRESA_READ",
+        "descripcion" : "Visualizar datos generales de la empresa"
+      } ]
+    }
+  }, {
+    "id" : 43,
+    "username" : "fabi",
+    "correo" : "fabi@correo.com",
+    "estado" : true,
+    "idEmpresa" : 8,
+    "rol" : {
+      "id" : 15,
+      "nombre" : "empleado",
+      "descripcion" : "ayuda",
+      "idEmpresa" : 8,
+      "estado" : true,
+      "permisos" : [ {
+        "id" : 13,
+        "nombre" : "PERM_PRODUCTO_READ",
+        "descripcion" : "Visualizar catálogo de productos"
+      }, {
+        "id" : 14,
+        "nombre" : "PERM_OPERACIONES_READ",
+        "descripcion" : "Visualizar facturas de venta, compra y cartera"
+      }, {
+        "id" : 16,
+        "nombre" : "PERM_EMPRESA_READ",
+        "descripcion" : "Visualizar datos generales de la empresa"
+      } ]
+    }
+  }, {
+    "id" : 44,
+    "username" : "nicol",
+    "correo" : "nicol@correo.com",
+    "estado" : true,
+    "idEmpresa" : 8,
+    "rol" : {
+      "id" : 15,
+      "nombre" : "empleado",
+      "descripcion" : "ayuda",
+      "idEmpresa" : 8,
+      "estado" : true,
+      "permisos" : [ {
+        "id" : 13,
+        "nombre" : "PERM_PRODUCTO_READ",
+        "descripcion" : "Visualizar catálogo de productos"
+      }, {
+        "id" : 14,
+        "nombre" : "PERM_OPERACIONES_READ",
+        "descripcion" : "Visualizar facturas de venta, compra y cartera"
+      }, {
+        "id" : 16,
+        "nombre" : "PERM_EMPRESA_READ",
+        "descripcion" : "Visualizar datos generales de la empresa"
+      } ]
+    }
+  }, {
+    "id" : 45,
+    "username" : "hector",
+    "correo" : "hector@correo.com",
+    "estado" : true,
+    "idEmpresa" : 8,
+    "rol" : {
+      "id" : 15,
+      "nombre" : "empleado",
+      "descripcion" : "ayuda",
+      "idEmpresa" : 8,
+      "estado" : true,
+      "permisos" : [ {
+        "id" : 13,
+        "nombre" : "PERM_PRODUCTO_READ",
+        "descripcion" : "Visualizar catálogo de productos"
+      }, {
+        "id" : 14,
+        "nombre" : "PERM_OPERACIONES_READ",
+        "descripcion" : "Visualizar facturas de venta, compra y cartera"
+      }, {
+        "id" : 16,
+        "nombre" : "PERM_EMPRESA_READ",
+        "descripcion" : "Visualizar datos generales de la empresa"
+      } ]
+    }
+  }, {
+    "id" : 46,
+    "username" : "gualberto",
+    "correo" : "gualberto@correo.com",
+    "estado" : true,
+    "idEmpresa" : 8,
+    "rol" : {
+      "id" : 15,
+      "nombre" : "empleado",
+      "descripcion" : "ayuda",
+      "idEmpresa" : 8,
+      "estado" : true,
+      "permisos" : [ {
+        "id" : 13,
+        "nombre" : "PERM_PRODUCTO_READ",
+        "descripcion" : "Visualizar catálogo de productos"
+      }, {
+        "id" : 14,
+        "nombre" : "PERM_OPERACIONES_READ",
+        "descripcion" : "Visualizar facturas de venta, compra y cartera"
+      }, {
+        "id" : 16,
+        "nombre" : "PERM_EMPRESA_READ",
+        "descripcion" : "Visualizar datos generales de la empresa"
+      } ]
+    }
+  }, {
+    "id" : 47,
+    "username" : "tulio",
+    "correo" : "tulio@correo.com",
+    "estado" : true,
+    "idEmpresa" : 8,
+    "rol" : {
+      "id" : 15,
+      "nombre" : "empleado",
+      "descripcion" : "ayuda",
+      "idEmpresa" : 8,
+      "estado" : true,
+      "permisos" : [ {
+        "id" : 13,
+        "nombre" : "PERM_PRODUCTO_READ",
+        "descripcion" : "Visualizar catálogo de productos"
+      }, {
+        "id" : 14,
+        "nombre" : "PERM_OPERACIONES_READ",
+        "descripcion" : "Visualizar facturas de venta, compra y cartera"
+      }, {
+        "id" : 16,
+        "nombre" : "PERM_EMPRESA_READ",
+        "descripcion" : "Visualizar datos generales de la empresa"
+      } ]
+    }
+  }, {
+    "id" : 48,
+    "username" : "ricardo",
+    "correo" : "ricardo@correo.com",
+    "estado" : true,
+    "idEmpresa" : 8,
+    "rol" : {
+      "id" : 15,
+      "nombre" : "empleado",
+      "descripcion" : "ayuda",
+      "idEmpresa" : 8,
+      "estado" : true,
+      "permisos" : [ {
+        "id" : 13,
+        "nombre" : "PERM_PRODUCTO_READ",
+        "descripcion" : "Visualizar catálogo de productos"
+      }, {
+        "id" : 14,
+        "nombre" : "PERM_OPERACIONES_READ",
+        "descripcion" : "Visualizar facturas de venta, compra y cartera"
+      }, {
+        "id" : 16,
+        "nombre" : "PERM_EMPRESA_READ",
+        "descripcion" : "Visualizar datos generales de la empresa"
+      } ]
+    }
+  }, {
+    "id" : 49,
+    "username" : "saul",
+    "correo" : "saul@correo.com",
+    "estado" : true,
+    "idEmpresa" : 8,
+    "rol" : {
+      "id" : 15,
+      "nombre" : "empleado",
+      "descripcion" : "ayuda",
+      "idEmpresa" : 8,
+      "estado" : true,
+      "permisos" : [ {
+        "id" : 13,
+        "nombre" : "PERM_PRODUCTO_READ",
+        "descripcion" : "Visualizar catálogo de productos"
+      }, {
+        "id" : 14,
+        "nombre" : "PERM_OPERACIONES_READ",
+        "descripcion" : "Visualizar facturas de venta, compra y cartera"
+      }, {
+        "id" : 16,
+        "nombre" : "PERM_EMPRESA_READ",
+        "descripcion" : "Visualizar datos generales de la empresa"
+      } ]
+    }
+  }, {
+    "id" : 50,
+    "username" : "Julio",
+    "correo" : "Julio@correo.com",
+    "estado" : true,
+    "idEmpresa" : 8,
+    "rol" : {
+      "id" : 15,
+      "nombre" : "empleado",
+      "descripcion" : "ayuda",
+      "idEmpresa" : 8,
+      "estado" : true,
+      "permisos" : [ {
+        "id" : 13,
+        "nombre" : "PERM_PRODUCTO_READ",
+        "descripcion" : "Visualizar catálogo de productos"
+      }, {
+        "id" : 14,
+        "nombre" : "PERM_OPERACIONES_READ",
+        "descripcion" : "Visualizar facturas de venta, compra y cartera"
+      }, {
+        "id" : 16,
+        "nombre" : "PERM_EMPRESA_READ",
+        "descripcion" : "Visualizar datos generales de la empresa"
+      } ]
+    }
+  } ],
+  "infoUsuarios" : [ {
+    "id" : 15,
+    "nombre" : "Mario Casas",
+    "ci" : "98521542",
+    "cargo" : "Director",
+    "telefono" : "65481261"
+  } ],
+  "productos" : [ {
+    "id" : 11,
+    "codigo" : "prod-0001",
+    "nombre" : "Samsung A14",
+    "descripcion" : "16 Ram, 256 memoria",
+    "tipo" : "PRODUCTO",
+    "precioVenta" : 250.00,
+    "costoUnitario" : 200.00,
+    "stockActual" : 1.00,
+    "unidadMedida" : "U",
+    "estado" : true,
+    "idEmpresa" : 8,
+    "fechaCreacion" : "2026-05-27T12:04:40.247497",
+    "fechaActualizacion" : "2026-05-28T05:14:31.084324"
+  } ],
+  "movimientosInventario" : [ {
+    "id" : 1,
+    "fecha" : "2026-05-28T05:14:30.980118",
+    "tipo" : "ENTRADA",
+    "cantidad" : 1.00,
+    "costoUnitario" : 200.00,
+    "documentoOrigen" : "Ajuste de Origen",
+    "origenId" : 1,
+    "producto" : {
+      "id" : 11,
+      "codigo" : "prod-0001",
+      "nombre" : "Samsung A14",
+      "descripcion" : "16 Ram, 256 memoria",
+      "tipo" : "PRODUCTO",
+      "precioVenta" : 250.00,
+      "costoUnitario" : 200.00,
+      "stockActual" : 1.00,
+      "unidadMedida" : "U",
+      "estado" : true,
+      "idEmpresa" : 8,
+      "fechaCreacion" : "2026-05-27T12:04:40.247497",
+      "fechaActualizacion" : "2026-05-28T05:14:31.084324"
+    },
+    "idEmpresa" : 8
+  } ],
+  "cuentasContables" : [ {
+    "id" : 2,
+    "codigo" : "11",
+    "nombre" : "Caja Chica",
+    "tipo" : "ACTIVO",
+    "nivel" : 1,
+    "estado" : true,
+    "idEmpresa" : 8,
+    "cuentaPadre" : null
+  }, {
+    "id" : 3,
+    "codigo" : "21",
+    "nombre" : "Deudas",
+    "tipo" : "PASIVO",
+    "nivel" : 1,
+    "estado" : true,
+    "idEmpresa" : 8,
+    "cuentaPadre" : null
+  }, {
+    "id" : 4,
+    "codigo" : "111",
+    "nombre" : "Caja menor",
+    "tipo" : "ACTIVO",
+    "nivel" : 2,
+    "estado" : true,
+    "idEmpresa" : 8,
+    "cuentaPadre" : {
+      "id" : 2,
+      "codigo" : "11",
+      "nombre" : "Caja Chica",
+      "tipo" : "ACTIVO",
+      "nivel" : 1,
+      "estado" : true,
+      "idEmpresa" : 8,
+      "cuentaPadre" : null
+    }
+  } ],
+  "centrosCosto" : [ ],
+  "periodosContables" : [ ],
+  "asientosContables" : [ ],
+  "facturasVenta" : [ ],
+  "facturasCompra" : [ ],
+  "cuentasPorCobrar" : [ ],
+  "cuentasPorPagar" : [ ],
+  "auditLogs" : [ ]
+}

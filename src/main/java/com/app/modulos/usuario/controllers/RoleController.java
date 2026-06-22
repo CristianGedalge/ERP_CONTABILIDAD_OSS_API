@@ -19,8 +19,12 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import com.app.modulos.usuario.security.UserPrincipal;
 import org.springframework.http.HttpStatus;
 
+import com.app.modulos.config.RequiresFeature;
+import com.app.modulos.config.Auditable;
+
 @RestController
 @RequestMapping("/api/roles")
+@RequiresFeature("roles-permisos")
 public class RoleController {
 	private final RoleService roleService;
 
@@ -56,23 +60,30 @@ public class RoleController {
 
 	@PostMapping
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_ROL_WRITE')")
+	@Auditable(accion = "CREAR", modulo = "ROLES_PERMISOS")
 	public ResponseEntity<Rol> create(@RequestBody Rol rol, @AuthenticationPrincipal UserPrincipal principal) {
-		rol.setIdEmpresa(principal.getEmpresaId());
+		boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
+		if (!isSuperAdmin) {
+			rol.setIdEmpresa(principal.getEmpresaId());
+		}
 		return ResponseEntity.ok(roleService.save(rol));
 	}
 
 	@PutMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_ROL_WRITE')")
+	@Auditable(accion = "EDITAR", modulo = "ROLES_PERMISOS")
 	public ResponseEntity<Rol> update(
 			@PathVariable Long id,
 			@RequestBody Rol rol,
 			@AuthenticationPrincipal UserPrincipal principal) {
 		return roleService.findById(id).map(existing -> {
+			boolean isSuperAdmin = principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"));
 			// Seguridad
-			if (!principal.getAuthorities().stream().anyMatch(a -> a.getAuthority().equals("ROLE_SUPERADMIN"))) {
+			if (!isSuperAdmin) {
 				if (!existing.getIdEmpresa().equals(principal.getEmpresaId())) {
 					return ResponseEntity.status(HttpStatus.FORBIDDEN).<Rol>build();
 				}
+				rol.setIdEmpresa(principal.getEmpresaId()); // Prevenir cambio de empresa por un ADMIN
 			}
 			return roleService.update(id, rol)
 					.map(ResponseEntity::ok)
@@ -82,6 +93,7 @@ public class RoleController {
 
 	@DeleteMapping("/{id}")
 	@PreAuthorize("hasRole('ADMIN') or hasRole('SUPERADMIN') or hasAuthority('PERM_ROL_WRITE')")
+	@Auditable(accion = "ELIMINAR", modulo = "ROLES_PERMISOS")
 	public ResponseEntity<Rol> disable(@PathVariable Long id, @AuthenticationPrincipal UserPrincipal principal) {
 		return roleService.findById(id).map(existing -> {
 			// Seguridad
